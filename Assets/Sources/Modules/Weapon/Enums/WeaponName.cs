@@ -1,0 +1,40 @@
+﻿namespace Sources.Modules.Weapon.Enums
+{
+    public enum WeaponName
+    {
+        None,
+        AWP,
+        G3SG1,
+        SCAR20,
+        SSG08,
+        Nova,
+        XM1014,
+        M249,
+        Negev,
+        MAG7,
+        M4A4,
+        M4A1S,
+        AK47,
+        Galil,
+        FAMAS,
+        AUG,
+        SG553,
+        Glock,
+        P2000,
+        USPS,
+        P250,
+        FiveSeven,
+        Tec9,
+        CZ75,
+        Deagle,
+        Revolver,
+        Knife,
+        SawedOff,
+        MAC10,
+        MP9,
+        MP7,
+        UMP45,
+        P90,
+        Bizon
+    }
+}

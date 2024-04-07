@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699d17427bd74880a1307def7854d609, type: 3}
+  m_Name: eSports2013
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: eSports 2013
+  <Price>k__BackingField: 200
+  <Sprite>k__BackingField: {fileID: -1131757625, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
+  <Weapons>k__BackingField:
+  - {fileID: 11400000, guid: 5297e4e8318737d4c817441d11ce3471, type: 2}
+  - {fileID: 11400000, guid: eb11e933ebb7ff2478fee6ba00eae8f6, type: 2}
+  - {fileID: 11400000, guid: e4ff17f5cd30db749895d7fd2b0550ca, type: 2}
+  - {fileID: 11400000, guid: fee78d33ceb3c7d41bbac3c2fd7515b0, type: 2}
+  - {fileID: 11400000, guid: 0b7e04c2ae09bd44db229c2e55599b01, type: 2}
+  - {fileID: 11400000, guid: 15efda04402248240b782f427be8b49b, type: 2}
+  - {fileID: 11400000, guid: e02d2bc29f493d3418cc9f495778145b, type: 2}
+  - {fileID: 11400000, guid: 0102586e87a9d4b4299cc11ca7ea1c30, type: 2}
+  - {fileID: 11400000, guid: 9e48b27cda92efe4792cd2084f15e805, type: 2}
