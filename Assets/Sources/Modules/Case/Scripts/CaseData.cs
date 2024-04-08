@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using Sources.Modules.Weapon.Scripts;
+using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
 
 namespace Sources.Modules.Case.Scripts
@@ -11,6 +10,6 @@ namespace Sources.Modules.Case.Scripts
         [field: SerializeField] public String Name { get; private set; }
         [field: SerializeField] public int Price { get; private set; }
         [field: SerializeField] public Sprite Sprite { get; private set; }
-        [field: SerializeField] public List<WeaponData> Weapons { get; private set; }
+        [field: SerializeField] public WeaponData[] Weapons { get; private set; }
     }
 }

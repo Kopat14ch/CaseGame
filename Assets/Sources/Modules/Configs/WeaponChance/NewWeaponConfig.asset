@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ed3493e6684dc4ba12a6d5e1f422a0, type: 3}
+  m_Name: NewWeaponConfig
+  m_EditorClassIdentifier: 
+  _qualityChances:
+  - <Quality>k__BackingField: 1
+    <Chance>k__BackingField: 70
+  - <Quality>k__BackingField: 2
+    <Chance>k__BackingField: 15
+  - <Quality>k__BackingField: 3
+    <Chance>k__BackingField: 7.5
+  - <Quality>k__BackingField: 4
+    <Chance>k__BackingField: 3.9
+  - <Quality>k__BackingField: 5
+    <Chance>k__BackingField: 2.47
+  - <Quality>k__BackingField: 6
+    <Chance>k__BackingField: 0.58
+  - <Quality>k__BackingField: 7
+    <Chance>k__BackingField: 0.28
+  - <Quality>k__BackingField: 8
+    <Chance>k__BackingField: 0.26

@@ -2,7 +2,7 @@
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Sources.Modules.Weapon.Scripts
+namespace Sources.Modules.Weapon.WeaponData
 {
     [CreateAssetMenu(fileName = "NewWeapon", menuName = "Weapons/WeaponData", order = 0)]
     public class WeaponData : ScriptableObject

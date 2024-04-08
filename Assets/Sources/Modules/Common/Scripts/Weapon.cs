@@ -9,7 +9,7 @@ namespace Sources.Modules.Common.Scripts
     {
         protected WeaponView View { get; private set; }
         
-        public virtual void Awake()
+        private void Awake()
         {
             View = GetComponent<WeaponView>();
         }

@@ -9,6 +9,7 @@
         Mythical,
         Legendary,
         Ancient,
-        Immortal
+        Immortal,
+        Knife
     }
 }

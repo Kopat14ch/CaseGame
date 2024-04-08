@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using Sources.Modules.Common.Interfaces;
+using Sources.Modules.Weapon.WeaponData;
+using UnityEngine;
+using Zenject;
 
 namespace Sources.Modules.WeaponCaseOpener.Scripts
 {
@@ -6,23 +9,40 @@ namespace Sources.Modules.WeaponCaseOpener.Scripts
     public class WeaponCaseOpenerRoot : Common.Scripts.Weapon
     {
         private Rigidbody2D _rigidbody2D;
-        
-        public override void Awake()
-        {
-            base.Awake();
+        private ISpeedUpdater _speedUpdater;
 
+
+        [Inject]
+        public void Construct(ISpeedUpdater speedUpdater)
+        {
+            _speedUpdater = speedUpdater;
+            
             _rigidbody2D = GetComponent<Rigidbody2D>();
         }
-
-        public void UpdateSpeed(float speed)
+        
+        private void OnEnable()
         {
-            _rigidbody2D.velocity = new Vector2(speed, _rigidbody2D.velocity.y);
+            _speedUpdater.SpeedUpdated += UpdateSpeed;
         }
 
-        public void OnDisableEnter(Transform parent)
+        private void OnDisable()
         {
-            transform.SetParent(null);
-            transform.SetParent(parent);
+            _speedUpdater.SpeedUpdated -= UpdateSpeed;
+        }
+
+        public void Init(WeaponData weaponData)
+        {
+            View.UpdateData(weaponData);
+        }
+        
+        public void Disable()
+        {
+            
+        }
+
+        private void UpdateSpeed(float speed)
+        {
+            _rigidbody2D.velocity = new Vector2(speed, _rigidbody2D.velocity.y);
         }
     }
 }

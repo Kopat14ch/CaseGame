@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Sources.Modules.Weapon.Scripts;
+using Sources.Modules.Weapon.WeaponData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,7 +15,7 @@ namespace Sources.Modules.Case.Scripts
         [SerializeField] private TMP_Text _nameText;
         [SerializeField] private Button _openButton;
 
-        public event Action<List<WeaponData>> OpenButtonClicked;
+        public event Action<WeaponData[]> OpenButtonClicked;
 
         public void Awake()
         {
