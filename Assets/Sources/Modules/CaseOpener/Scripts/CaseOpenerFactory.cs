@@ -4,7 +4,7 @@ using Zenject;
 
 namespace Sources.Modules.CaseOpener.Scripts
 {
-    public class CaseOpenerFactory 
+    public class CaseOpenerFactory
     {
         private const int WeaponCount = 70;
         
@@ -18,23 +18,22 @@ namespace Sources.Modules.CaseOpener.Scripts
             _prefab = prefab;
             _container = container; 
             _content = content.transform;
-            _weaponRoots = Create();
+            _weaponRoots = new WeaponCaseOpenerRoot[WeaponCount];
+            Create();
         }
 
-        public WeaponCaseOpenerRoot[] GetWeapons() => _weaponRoots;
-
-        public WeaponCaseOpenerRoot[] Create()
+        public void Inject()
         {
-            WeaponCaseOpenerRoot[] weaponRoots = new WeaponCaseOpenerRoot[WeaponCount];
-            
-            Debug.Log($"INIT {_content == null}");
+            foreach (var weaponCaseOpenerRoot in _weaponRoots)
+                _container.Inject(weaponCaseOpenerRoot);
+        }
 
+        private void Create()
+        {
             for (int i = 0; i < WeaponCount; i++)
-            {
-                weaponRoots[i] = _container.InstantiatePrefabForComponent<WeaponCaseOpenerRoot>(_prefab, _content);
-            }
-
-            return weaponRoots;
+                _weaponRoots[i] = Object.Instantiate(_prefab, _content);
+            
+            _container.Bind<WeaponCaseOpenerRoot[]>().FromInstance(_weaponRoots).AsSingle().NonLazy();
         }
     }
 }

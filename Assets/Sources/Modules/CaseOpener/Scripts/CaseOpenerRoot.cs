@@ -1,8 +1,6 @@
-using System;
 using Sources.Modules.Case.Scripts;
 using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
-using UnityEngine.UI;
 using Zenject;
 
 namespace Sources.Modules.CaseOpener.Scripts
@@ -10,7 +8,6 @@ namespace Sources.Modules.CaseOpener.Scripts
     public class CaseOpenerRoot : MonoBehaviour
     {
         [SerializeField] private CaseData _caseData;
-        [SerializeField] private HorizontalLayoutGroup _horizontalLayoutGroup;
 
         private CaseOpenerHandler _caseOpenerHandler;
 
@@ -18,11 +15,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         public void Construct(CaseOpenerHandler caseOpenerHandler)
         {
             _caseOpenerHandler = caseOpenerHandler;
-        }
-
-        private void Awake()
-        {
-            _horizontalLayoutGroup.enabled = false;
+            Debug.Log("Init2");
         }
 
         public void Open(WeaponData[] weaponDatas)

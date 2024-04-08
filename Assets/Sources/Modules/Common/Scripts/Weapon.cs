@@ -1,5 +1,4 @@
-﻿using System;
-using Sources.Modules.Weapon.Scripts;
+﻿using Sources.Modules.Weapon.Scripts;
 using UnityEngine;
 
 namespace Sources.Modules.Common.Scripts

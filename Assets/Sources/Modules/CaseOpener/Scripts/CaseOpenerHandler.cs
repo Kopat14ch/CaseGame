@@ -5,6 +5,7 @@ using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.Weapon.Enums;
 using Sources.Modules.Weapon.WeaponData;
 using Sources.Modules.WeaponCaseOpener.Scripts;
+using UnityEngine;
 using Random = UnityEngine.Random;
 
 namespace Sources.Modules.CaseOpener.Scripts
@@ -16,10 +17,12 @@ namespace Sources.Modules.CaseOpener.Scripts
 
         public event Action<float> SpeedUpdated; 
 
-        public CaseOpenerHandler(CaseOpenerFactory factory, WeaponChanceConfig weaponChanceConfig)
+        public CaseOpenerHandler(WeaponCaseOpenerRoot[] weaponCaseOpenerRoots, WeaponChanceConfig weaponChanceConfig)
         {
-            _weaponCaseOpenerRoots = factory.GetWeapons();
+            _weaponCaseOpenerRoots = weaponCaseOpenerRoots;
             _weaponChanceConfig = weaponChanceConfig;
+            
+            Debug.Log(weaponCaseOpenerRoots.Length);
         }
 
         public void Enable()
