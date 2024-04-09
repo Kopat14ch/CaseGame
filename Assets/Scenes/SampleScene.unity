@@ -1241,6 +1241,7 @@ MonoBehaviour:
   _caseOpenerRoot: {fileID: 56430518}
   _weaponCaseOpenerPrefab: {fileID: -2764906342428708582, guid: 89be72084847094409ec6ae1b1f0d09c, type: 3}
   _contentCaseOpener: {fileID: 489083768}
+  _weaponsInCaseOpener: 70
 --- !u!114 &2054264666
 MonoBehaviour:
   m_ObjectHideFlags: 0

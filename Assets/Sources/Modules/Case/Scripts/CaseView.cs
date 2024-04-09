@@ -1,6 +1,4 @@
 using System;
-using System.Collections.Generic;
-using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.Weapon.WeaponData;
 using TMPro;
 using UnityEngine;
@@ -16,7 +14,7 @@ namespace Sources.Modules.Case.Scripts
         [SerializeField] private Button _openButton;
 
         public event Action<WeaponData[]> OpenButtonClicked;
-
+        
         public void Awake()
         {
             _image.sprite = _caseData.Sprite;

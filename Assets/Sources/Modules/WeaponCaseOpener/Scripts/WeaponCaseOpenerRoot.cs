@@ -14,7 +14,6 @@ namespace Sources.Modules.WeaponCaseOpener.Scripts
         private Rigidbody2D _rigidbody2D;
         private ISpeedUpdater _speedUpdater;
 
-
         [Inject]
         public void Construct(ISpeedUpdater speedUpdater)
         {

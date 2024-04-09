@@ -13,6 +13,7 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private CaseOpenerRoot _caseOpenerRoot;
         [SerializeField] private WeaponCaseOpenerRoot _weaponCaseOpenerPrefab;
         [SerializeField] private Content _contentCaseOpener;
+        [SerializeField] private int _weaponsInCaseOpener;
         
         public override void InstallBindings()
         {
@@ -28,18 +29,17 @@ namespace Sources.Modules.Installers.Scripts
         private void InstallCaseOpener()
         {
             Container.Bind<Content>().FromInstance(_contentCaseOpener).AsSingle();
-            
-            CaseOpenerFactory factoryInstance = new CaseOpenerFactory(_weaponCaseOpenerPrefab, _contentCaseOpener, Container);
-            Container.Bind<CaseOpenerFactory>().FromInstance(factoryInstance).AsSingle().NonLazy();
+            Container.Bind<WeaponCaseOpenerRoot[]>().FromInstance(new WeaponCaseOpenerRoot[_weaponsInCaseOpener]).AsSingle().NonLazy();
             
             Container.Bind<CaseOpenerHandler>().AsSingle();
-            Container.Bind<ISpeedUpdater>().To<CaseOpenerHandler>().FromResolve();
-            
-            factoryInstance.Inject();
-            
+            Container.BindInterfacesTo<CaseOpenerHandler>().FromResolve();
             
             Container.Bind<CaseOpenerRoot>().FromInstance(_caseOpenerRoot).AsSingle();
+            Container.BindInterfacesTo<CaseOpenerRoot>().FromResolve();
+            
             Container.Bind<WeaponCaseOpenerRoot>().FromInstance(_weaponCaseOpenerPrefab).AsSingle();
+            
+            Container.Bind<CaseOpenerFactory>().AsSingle().NonLazy();
         }
     }
 }

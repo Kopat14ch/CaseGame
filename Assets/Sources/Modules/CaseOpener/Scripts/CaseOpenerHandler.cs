@@ -17,22 +17,10 @@ namespace Sources.Modules.CaseOpener.Scripts
 
         public event Action<float> SpeedUpdated; 
 
-        public CaseOpenerHandler(WeaponCaseOpenerRoot[] weaponCaseOpenerRoots, WeaponChanceConfig weaponChanceConfig)
+        public CaseOpenerHandler(WeaponCaseOpenerRoot[] caseOpenerRoots, WeaponChanceConfig weaponChanceConfig)
         {
-            _weaponCaseOpenerRoots = weaponCaseOpenerRoots;
+            _weaponCaseOpenerRoots = caseOpenerRoots;
             _weaponChanceConfig = weaponChanceConfig;
-            
-            Debug.Log(weaponCaseOpenerRoots.Length);
-        }
-
-        public void Enable()
-        {
-            
-        }
-
-        public void Disable()
-        {
-            
         }
 
         public void Open(WeaponData[] weaponDatas)
@@ -46,6 +34,7 @@ namespace Sources.Modules.CaseOpener.Scripts
                 weaponCaseOpenerRoot.Init(weaponDatasWithQuality[Random.Range(0, weaponDatasWithQuality.Length)]);
             }
         }
+        
 
 
         private void GetRandomWeapon()
