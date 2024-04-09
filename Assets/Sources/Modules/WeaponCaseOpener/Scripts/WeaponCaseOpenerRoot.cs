@@ -10,7 +10,6 @@ namespace Sources.Modules.WeaponCaseOpener.Scripts
     [RequireComponent(typeof(LayoutElement))]
     public class WeaponCaseOpenerRoot : Common.Scripts.Weapon
     {
-        private LayoutElement _layoutElement;
         private Rigidbody2D _rigidbody2D;
         private ISpeedUpdater _speedUpdater;
 
@@ -18,8 +17,6 @@ namespace Sources.Modules.WeaponCaseOpener.Scripts
         public void Construct(ISpeedUpdater speedUpdater)
         {
             _speedUpdater = speedUpdater;
-            
-            _layoutElement = GetComponent<LayoutElement>();
             _rigidbody2D = GetComponent<Rigidbody2D>();
             
             _speedUpdater.SpeedUpdated += UpdateSpeed;
@@ -33,19 +30,16 @@ namespace Sources.Modules.WeaponCaseOpener.Scripts
         public void Init(WeaponData weaponData)
         {
             View.UpdateData(weaponData);
-            _layoutElement.enabled = false;
         }
 
         public void Enable()
         {
             gameObject.SetActive(true);
-            _layoutElement.enabled = false;
         }
         
         public void Disable()
         {
             gameObject.SetActive(false);
-            _layoutElement.enabled = true;
         }
 
         private void UpdateSpeed(float speed)

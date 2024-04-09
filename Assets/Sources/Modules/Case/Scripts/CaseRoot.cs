@@ -1,4 +1,4 @@
-using Sources.Modules.CaseOpener.Scripts;
+using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
 using Zenject;
@@ -9,11 +9,11 @@ namespace Sources.Modules.Case.Scripts
     public class CaseRoot : MonoBehaviour
     {
         private CaseView _caseView;
-        private CaseOpenerRoot _caseOpenerRoot;
+        private ICaseOpener _caseOpenerRoot;
 
 
         [Inject]
-        public void Construct(CaseOpenerRoot caseOpenerRoot)
+        public void Construct(ICaseOpener caseOpenerRoot)
         {
             _caseOpenerRoot = caseOpenerRoot;
             _caseView = GetComponent<CaseView>();

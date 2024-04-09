@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Cysharp.Threading.Tasks;
+using DG.Tweening;
 using Sources.Modules.Common.Interfaces;
 using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.Weapon.Enums;
@@ -23,7 +25,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             _weaponChanceConfig = weaponChanceConfig;
         }
 
-        public void Open(WeaponData[] weaponDatas)
+        public void Open(WeaponData[] weaponDatas, CaseOpenerArrow caseOpenerArrow, Transform transform)
         {
             foreach (var weaponCaseOpenerRoot in _weaponCaseOpenerRoots)
             {
@@ -32,14 +34,22 @@ namespace Sources.Modules.CaseOpener.Scripts
                 WeaponData[] weaponDatasWithQuality = weaponDatas.Where(w => w.Quality == quality).ToArray();
                 
                 weaponCaseOpenerRoot.Init(weaponDatasWithQuality[Random.Range(0, weaponDatasWithQuality.Length)]);
+                weaponCaseOpenerRoot.Enable();
             }
+
+            Scrolling(caseOpenerArrow, transform);
+        }
+
+        public void Disable()
+        {
+            foreach (var weaponCaseOpenerRoot in _weaponCaseOpenerRoots)
+                weaponCaseOpenerRoot.Disable();
         }
         
 
-
-        private void GetRandomWeapon()
+        private void Scrolling(CaseOpenerArrow caseOpenerArrow, Transform transform)
         {
-            
+            transform.DOMove(new Vector3(-500, transform.position.y, transform.position.z), 5);
         }
     }
 }
