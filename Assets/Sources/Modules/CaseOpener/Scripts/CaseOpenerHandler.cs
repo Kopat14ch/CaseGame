@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Linq;
-using Cysharp.Threading.Tasks;
 using DG.Tweening;
-using Sources.Modules.Common.Interfaces;
 using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.Weapon.Enums;
 using Sources.Modules.Weapon.WeaponData;
@@ -12,12 +10,10 @@ using Random = UnityEngine.Random;
 
 namespace Sources.Modules.CaseOpener.Scripts
 {
-    public class CaseOpenerHandler : ISpeedUpdater
+    public class CaseOpenerHandler
     {
         private readonly WeaponCaseOpenerRoot[] _weaponCaseOpenerRoots;
         private readonly WeaponChanceConfig _weaponChanceConfig;
-
-        public event Action<float> SpeedUpdated; 
 
         public CaseOpenerHandler(WeaponCaseOpenerRoot[] caseOpenerRoots, WeaponChanceConfig weaponChanceConfig)
         {
@@ -34,22 +30,18 @@ namespace Sources.Modules.CaseOpener.Scripts
                 WeaponData[] weaponDatasWithQuality = weaponDatas.Where(w => w.Quality == quality).ToArray();
                 
                 weaponCaseOpenerRoot.Init(weaponDatasWithQuality[Random.Range(0, weaponDatasWithQuality.Length)]);
-                weaponCaseOpenerRoot.Enable();
             }
 
             Scrolling(caseOpenerArrow, transform);
         }
 
-        public void Disable()
-        {
-            foreach (var weaponCaseOpenerRoot in _weaponCaseOpenerRoots)
-                weaponCaseOpenerRoot.Disable();
-        }
-        
-
         private void Scrolling(CaseOpenerArrow caseOpenerArrow, Transform transform)
         {
-            transform.DOMove(new Vector3(-500, transform.position.y, transform.position.z), 5);
+            transform.DOMove(
+                new Vector3(
+                    caseOpenerArrow.transform.position.x -
+                    _weaponCaseOpenerRoots[_weaponCaseOpenerRoots.Length - 6].transform.position.x -
+                    Random.Range(0, 300), transform.position.y, transform.position.z), 10);
         }
     }
 }

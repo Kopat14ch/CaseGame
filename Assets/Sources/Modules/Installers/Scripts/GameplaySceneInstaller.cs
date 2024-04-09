@@ -1,5 +1,4 @@
 ﻿using Sources.Modules.CaseOpener.Scripts;
-using Sources.Modules.Common.Interfaces;
 using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.WeaponCaseOpener.Scripts;
 using UnityEngine;
