@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: 32
   <SkinName>k__BackingField: Death by Kitty
-  <Sprite>k__BackingField: {fileID: -61407070, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
+  <Sprite>k__BackingField: {fileID: -123132109, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 6
   _minPrice: 5300
   _maxPrice: 6300

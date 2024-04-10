@@ -37,11 +37,9 @@ namespace Sources.Modules.CaseOpener.Scripts
 
         private void Scrolling(CaseOpenerArrow caseOpenerArrow, Transform transform)
         {
-            transform.DOMove(
-                new Vector3(
-                    caseOpenerArrow.transform.position.x -
-                    _weaponCaseOpenerRoots[_weaponCaseOpenerRoots.Length - 6].transform.position.x -
-                    Random.Range(0, 300), transform.position.y, transform.position.z), 10);
+            transform.DOLocalMoveX(caseOpenerArrow.transform.localPosition.x -
+                                   _weaponCaseOpenerRoots[_weaponCaseOpenerRoots.Length - 6].transform.localPosition.x -
+                                   Random.Range(0, 300), 10);
         }
     }
 }

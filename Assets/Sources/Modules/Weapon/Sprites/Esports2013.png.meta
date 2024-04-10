@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -69,11 +69,11 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 8192
-    resizeAlgorithm: 1
+    maxTextureSize: 1024
+    resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 3
-    compressionQuality: 50
+    compressionQuality: 27
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
@@ -139,12 +139,12 @@ TextureImporter:
       name: Esports2013_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 1
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -160,12 +160,12 @@ TextureImporter:
       name: Esports2013_1
       rect:
         serializedVersion: 2
-        x: 500
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 149
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: Esports2013_2
       rect:
         serializedVersion: 2
-        x: 1000
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 297
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -202,12 +202,12 @@ TextureImporter:
       name: Esports2013_3
       rect:
         serializedVersion: 2
-        x: 1500
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 445
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -223,12 +223,12 @@ TextureImporter:
       name: Esports2013_4
       rect:
         serializedVersion: 2
-        x: 2000
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 593
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -244,12 +244,12 @@ TextureImporter:
       name: Esports2013_5
       rect:
         serializedVersion: 2
-        x: 2500
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 741
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -265,12 +265,12 @@ TextureImporter:
       name: Esports2013_6
       rect:
         serializedVersion: 2
-        x: 3000
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 889
+        y: 896
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -286,12 +286,12 @@ TextureImporter:
       name: Esports2013_7
       rect:
         serializedVersion: 2
-        x: 3500
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 1
+        y: 768
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -307,12 +307,12 @@ TextureImporter:
       name: Esports2013_8
       rect:
         serializedVersion: 2
-        x: 4000
-        y: 1766.6666
-        width: 500
-        height: 353.33334
+        x: 149
+        y: 768
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: Esports2013_9
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1413.6666
-        width: 500
-        height: 353.33334
+        x: 297
+        y: 768
+        width: 128
+        height: 128
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -341,762 +341,6 @@ TextureImporter:
       bones: []
       spriteID: c4d566b2d7996db46a341ea99186257c
       internalID: -223378410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_10
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 608bb22a62ecb3d4fa514458250d7243
-      internalID: 810095465
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_11
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f89249f6497b3f142acaa7a3d011c484
-      internalID: -1062686408
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_12
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 266328b6f0f6a7a4b8b25eca61147c9e
-      internalID: 1754794532
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_13
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: da9b9ae1344139f47a293a259a15321d
-      internalID: 1953964744
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_14
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dc955c9d5cfcbfd469306d52e5c4ca72
-      internalID: 1931825660
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_15
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ecec3f9b645fec4a8e345ae6c0b2acd
-      internalID: -1611017299
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_16
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b9d0b680fa028ac43846a170b05a8279
-      internalID: -2059301988
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_17
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 1413.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7af6cda24d4667a4a81b3f6c571c0ba8
-      internalID: 2026715040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_18
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 103902b15dd766a47b8967c20b9f8806
-      internalID: -1555355725
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_19
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f35dfd833c9fba34e9d5a91259594311
-      internalID: -1087020605
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_20
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 33946f47debb19d4292f1dbfc3dd1801
-      internalID: 1256847516
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_21
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5406215c3e9ed2042b669bf0879a707e
-      internalID: 1360639312
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_22
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 74951e7e47d3a314d8935291ae41d167
-      internalID: 546404412
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_23
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 834b2c739150e66439fbac8f3b0ec3d5
-      internalID: 1489954293
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_24
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ea6d07b7e822e464ea786a72e81647e8
-      internalID: -406725552
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_25
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a8a16697a57955441a1d92b9f4d81c78
-      internalID: -1655357494
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_26
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 1060.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d087a38a0946bea48a54ccf9c79b33a7
-      internalID: 970270485
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_27
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39af25d506b8d4543ba90bd39be25949
-      internalID: -1163074815
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_28
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6db1ee814f8859347a3e545253310281
-      internalID: 582915444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_29
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 773191fb38e85df4f973b9e79c1f79fe
-      internalID: 244204738
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_30
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6e992ce9758c7a44db83def17a4c77f4
-      internalID: -548498913
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_31
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f350dbb8f43f5a94985a24434a474026
-      internalID: 1846332837
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_32
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 72f6e97be0ac64344963be4c298d5c2a
-      internalID: -2058335309
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_33
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 13c71cc97e8aab7459f3ed1aef8050b6
-      internalID: -2052472731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_34
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 152feaa0e431aee4aa4207b493faa2be
-      internalID: -716146368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_35
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 707.6666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3edaa5cf26e09c74199906c232c2917a
-      internalID: 364522579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_36
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3179b9dc76cefa488c8ca4df48dc515
-      internalID: -1350644195
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_37
-      rect:
-        serializedVersion: 2
-        x: 500
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 805b8e0187a878c45b567ab3829c670a
-      internalID: -291363959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_38
-      rect:
-        serializedVersion: 2
-        x: 1000
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf217905f61c99644a0d8d37c161c156
-      internalID: -942491493
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_39
-      rect:
-        serializedVersion: 2
-        x: 1500
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 218935287e86ece418140880512d620a
-      internalID: -870253411
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_40
-      rect:
-        serializedVersion: 2
-        x: 2000
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8bed0ce85eac1d54683562e736fb5ec1
-      internalID: 1669166320
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_41
-      rect:
-        serializedVersion: 2
-        x: 2500
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f68692306f3b7c4a80d53987788107c
-      internalID: 1604822949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_42
-      rect:
-        serializedVersion: 2
-        x: 3000
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: dde3a9559f24454469a2af94b0468185
-      internalID: 250836693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_43
-      rect:
-        serializedVersion: 2
-        x: 3500
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2db25c9bfc7104a40847ca6238b049e6
-      internalID: -1540254290
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_44
-      rect:
-        serializedVersion: 2
-        x: 4000
-        y: 354.66666
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7da19d1094d2d04da33f2616a4018d5
-      internalID: 1633786654
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Esports2013_45
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 1.6666565
-        width: 500
-        height: 353.33334
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e37cff87c3aafaf45b033ed24a79c8f4
-      internalID: 659013791
       vertices: []
       indices: 
       edges: []
@@ -1117,44 +361,9 @@ TextureImporter:
       Esports2013_10: 810095465
       Esports2013_11: -1062686408
       Esports2013_12: 1754794532
-      Esports2013_13: 1953964744
-      Esports2013_14: 1931825660
-      Esports2013_15: -1611017299
-      Esports2013_16: -2059301988
-      Esports2013_17: 2026715040
-      Esports2013_18: -1555355725
-      Esports2013_19: -1087020605
       Esports2013_2: 1206650226
-      Esports2013_20: 1256847516
-      Esports2013_21: 1360639312
-      Esports2013_22: 546404412
-      Esports2013_23: 1489954293
-      Esports2013_24: -406725552
-      Esports2013_25: -1655357494
-      Esports2013_26: 970270485
-      Esports2013_27: -1163074815
-      Esports2013_28: 582915444
-      Esports2013_29: 244204738
       Esports2013_3: -1242918109
-      Esports2013_30: -548498913
-      Esports2013_31: 1846332837
-      Esports2013_32: -2058335309
-      Esports2013_33: -2052472731
-      Esports2013_34: -716146368
-      Esports2013_35: 364522579
-      Esports2013_36: -1350644195
-      Esports2013_37: -291363959
-      Esports2013_38: -942491493
-      Esports2013_39: -870253411
       Esports2013_4: 1034005592
-      Esports2013_40: 1669166320
-      Esports2013_41: 1604822949
-      Esports2013_42: 250836693
-      Esports2013_43: -1540254290
-      Esports2013_44: 1633786654
-      Esports2013_45: 659013791
-      Esports2013_46: 357190623
-      Esports2013_47: 1076931219
       Esports2013_5: 335348218
       Esports2013_6: -123132109
       Esports2013_7: -2052055166
