@@ -13,14 +13,14 @@ namespace Sources.Modules.Configs.WeaponChance
 
         private const float MaxChance = 101;
 
-        public Quality GetQualityWithRandom(WeaponData[] weaponDatas)
+        public WeaponQuality GetQualityWithRandom(WeaponData[] weaponDatas)
         {
             float chance = Random.Range(0, MaxChance);
-            HashSet<Quality> qualities = new HashSet<Quality>(weaponDatas.Select(wd => wd.Quality));
+            HashSet<WeaponQuality> qualities = new HashSet<WeaponQuality>(weaponDatas.Select(wd => wd.Quality));
             
             foreach (var quality in qualities.OrderByDescending(q => q))
             {
-                QualityChance qualityChance = _qualityChances.FirstOrDefault(tempQuality => tempQuality.Quality == quality);
+                QualityChance qualityChance = _qualityChances.FirstOrDefault(tempQuality => tempQuality.WeaponQuality == quality);
                 
                 if (chance <= qualityChance.Chance)
                     return quality;

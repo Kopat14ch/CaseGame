@@ -13,19 +13,17 @@ MonoBehaviour:
   m_Name: NewWeaponConfig
   m_EditorClassIdentifier: 
   _qualityChances:
-  - <Quality>k__BackingField: 1
+  - <WeaponQuality>k__BackingField: 0
     <Chance>k__BackingField: 70
-  - <Quality>k__BackingField: 2
+  - <WeaponQuality>k__BackingField: 1
     <Chance>k__BackingField: 15
-  - <Quality>k__BackingField: 3
+  - <WeaponQuality>k__BackingField: 2
     <Chance>k__BackingField: 7.5
-  - <Quality>k__BackingField: 4
+  - <WeaponQuality>k__BackingField: 3
     <Chance>k__BackingField: 3.9
-  - <Quality>k__BackingField: 5
+  - <WeaponQuality>k__BackingField: 4
     <Chance>k__BackingField: 2.47
-  - <Quality>k__BackingField: 6
+  - <WeaponQuality>k__BackingField: 5
     <Chance>k__BackingField: 0.58
-  - <Quality>k__BackingField: 7
+  - <WeaponQuality>k__BackingField: 6
     <Chance>k__BackingField: 0.28
-  - <Quality>k__BackingField: 8
-    <Chance>k__BackingField: 0.26

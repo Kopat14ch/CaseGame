@@ -1,8 +1,7 @@
 ﻿namespace Sources.Modules.Weapon.Enums
 {
-    public enum Quality
+    public enum WeaponQuality
     {
-        None,
         Common,
         Uncommon,
         Rare,
@@ -10,6 +9,5 @@
         Legendary,
         Ancient,
         Immortal,
-        Knife
     }
 }

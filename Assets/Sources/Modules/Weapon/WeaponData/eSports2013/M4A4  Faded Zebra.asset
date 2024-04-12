@@ -15,6 +15,6 @@ MonoBehaviour:
   <Name>k__BackingField: 10
   <SkinName>k__BackingField: Faded Zebra
   <Sprite>k__BackingField: {fileID: 1034005592, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
-  <Quality>k__BackingField: 3
+  <Quality>k__BackingField: 2
   _minPrice: 470
   _maxPrice: 575

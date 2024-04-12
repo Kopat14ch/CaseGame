@@ -15,6 +15,6 @@ MonoBehaviour:
   <Name>k__BackingField: 1
   <SkinName>k__BackingField: BOOM
   <Sprite>k__BackingField: {fileID: 369031705, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
-  <Quality>k__BackingField: 5
+  <Quality>k__BackingField: 4
   _minPrice: 11400
   _maxPrice: 40000

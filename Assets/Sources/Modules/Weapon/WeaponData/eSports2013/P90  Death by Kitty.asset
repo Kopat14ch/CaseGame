@@ -15,6 +15,6 @@ MonoBehaviour:
   <Name>k__BackingField: 32
   <SkinName>k__BackingField: Death by Kitty
   <Sprite>k__BackingField: {fileID: -123132109, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
-  <Quality>k__BackingField: 6
+  <Quality>k__BackingField: 5
   _minPrice: 5300
   _maxPrice: 6300

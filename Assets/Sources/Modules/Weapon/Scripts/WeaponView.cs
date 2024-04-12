@@ -26,6 +26,7 @@ namespace Sources.Modules.Weapon.Scripts
         private void Init()
         {
             _image.sprite = _weaponData.Sprite;
+            _backgroundTextImage.color = _weaponData.GetCurrentColor();
             _fullNameWeaponText.text = $"{_weaponData.Name} \n{_weaponData.SkinName}";
         }
     }

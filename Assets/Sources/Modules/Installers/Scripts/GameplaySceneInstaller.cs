@@ -1,5 +1,6 @@
 ﻿using Sources.Modules.CaseOpener.Scripts;
 using Sources.Modules.Configs.WeaponChance;
+using Sources.Modules.Inventory.Scripts;
 using Sources.Modules.WeaponCaseOpener.Scripts;
 using UnityEngine;
 using Zenject;
@@ -11,24 +12,24 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private WeaponChanceConfig _weaponChanceConfig;
         [SerializeField] private CaseOpenerRoot _caseOpenerRoot;
         [SerializeField] private WeaponCaseOpenerRoot _weaponCaseOpenerPrefab;
-        [SerializeField] private Content _contentCaseOpener;
-        [SerializeField] private int _weaponsInCaseOpener;
+        [SerializeField] private CaseOpenerContent _contentCaseOpener;
+        [SerializeField] private InventoryContent _inventoryContent;
         
         public override void InstallBindings()
         {
-            InstallConfigs();
-            InstallCaseOpener();
+            BindConfigs();
+            BindCaseOpener();
+            BindInventory();
         }
 
-        private void InstallConfigs()
+        private void BindConfigs()
         {
             Container.Bind<WeaponChanceConfig>().FromInstance(_weaponChanceConfig).AsSingle();
         }
 
-        private void InstallCaseOpener()
+        private void BindCaseOpener()
         {
-            Container.Bind<Content>().FromInstance(_contentCaseOpener).AsSingle();
-            Container.Bind<WeaponCaseOpenerRoot[]>().FromInstance(new WeaponCaseOpenerRoot[_weaponsInCaseOpener]).AsSingle().NonLazy();
+            Container.Bind<CaseOpenerContent>().FromInstance(_contentCaseOpener).AsSingle().NonLazy();
             
             Container.Bind<CaseOpenerHandler>().AsSingle();
             Container.BindInterfacesTo<CaseOpenerHandler>().FromResolve();
@@ -37,8 +38,14 @@ namespace Sources.Modules.Installers.Scripts
             Container.BindInterfacesTo<CaseOpenerRoot>().FromResolve();
             
             Container.Bind<WeaponCaseOpenerRoot>().FromInstance(_weaponCaseOpenerPrefab).AsSingle();
-            
             Container.Bind<CaseOpenerFactory>().AsSingle().NonLazy();
+        }
+
+        private void BindInventory()
+        {
+            Container.Bind<InventoryContent>().FromInstance(_inventoryContent).AsSingle().NonLazy();
+            Container.Bind<InventoryFactory>().AsCached().NonLazy();
+            Container.Bind<InventoryHandler>().AsSingle().NonLazy();
         }
     }
 }
