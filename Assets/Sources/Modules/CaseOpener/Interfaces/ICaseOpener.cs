@@ -1,9 +1,9 @@
-﻿using Sources.Modules.Weapon.WeaponData;
+﻿using Sources.Modules.Case.Scripts;
 
 namespace Sources.Modules.CaseOpener.Interfaces
 {
     public interface ICaseOpener
     {
-        public void Open(WeaponData[] weaponDatas);
+        public void Open(CaseData caseData, bool again = false);
     }
 }

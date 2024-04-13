@@ -16,10 +16,12 @@ namespace Sources.Modules.Common.Scripts
             View = GetComponent<WeaponView>();
         }
         
-        public void Init(WeaponData weaponData)
+        public virtual void Init(WeaponData weaponData)
         {
             Data = weaponData;
             View.UpdateData(Data);
         }
+        
+
     }
 }

@@ -516,6 +516,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4733a2a4cdf644ca8e16925b622aa031, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _data: {fileID: 0}
 --- !u!114 &8760108149299219644
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbd52d6491b497c999973f23ac4d21d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _caseData: {fileID: 11400000, guid: b9e28618bba96b14bbda2fe4bb67b558, type: 2}
   _image: {fileID: 1941703836986318229}
   _nameText: {fileID: 1325137052277467070}
+  _openText: {fileID: 7617868659121140562}
   _openButton: {fileID: 2485089727122578801}

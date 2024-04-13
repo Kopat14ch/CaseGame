@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: eSports2013
   m_EditorClassIdentifier: 
   <Name>k__BackingField: eSports 2013
-  <Price>k__BackingField: 4500
+  <Price>k__BackingField: 1
   <Sprite>k__BackingField: {fileID: -1131757625, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 5297e4e8318737d4c817441d11ce3471, type: 2}

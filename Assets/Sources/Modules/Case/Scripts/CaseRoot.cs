@@ -1,4 +1,5 @@
 using Sources.Modules.CaseOpener.Interfaces;
+using Sources.Modules.Wallet.Interfaces;
 using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
 using Zenject;
@@ -8,15 +9,19 @@ namespace Sources.Modules.Case.Scripts
     [RequireComponent(typeof(CaseView))]
     public class CaseRoot : MonoBehaviour
     {
+        [SerializeField] private CaseData _data;
+        
         private CaseView _caseView;
         private ICaseOpener _caseOpenerRoot;
-
+        private IWalletRoot _walletRoot;
 
         [Inject]
-        public void Construct(ICaseOpener caseOpenerRoot)
+        public void Construct(ICaseOpener caseOpenerRoot, IWalletRoot walletRoot)
         {
+            _walletRoot = walletRoot;
             _caseOpenerRoot = caseOpenerRoot;
             _caseView = GetComponent<CaseView>();
+            _caseView.Init(_data);
         }
         
         private void OnEnable()
@@ -29,9 +34,13 @@ namespace Sources.Modules.Case.Scripts
             _caseView.OpenButtonClicked -= OnOpenButtonClicked;
         }
 
-        private void OnOpenButtonClicked(WeaponData[] weaponDatas)
+        private void OnOpenButtonClicked()
         {
-            _caseOpenerRoot.Open(weaponDatas);
+            if (_walletRoot.TryTakeMoney(_data.Price) == false)
+                return;
+            
+            _caseOpenerRoot.Open(_data);
         }
+        
     }
 }

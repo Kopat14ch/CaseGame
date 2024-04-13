@@ -14,7 +14,7 @@ namespace Sources.Modules.CaseOpener.Scripts
     public class CaseOpenerHandler : ICaseOpenerHandler
     {
         private readonly WeaponChanceConfig _weaponChanceConfig;
-        private CaseOpenerContent _caseOpenerRoots;
+        private readonly CaseOpenerContent _caseOpenerRoots;
 
         private const float Offset = 100;
         private const int MinWeaponCaseOpenerIndex = 10;
@@ -53,6 +53,11 @@ namespace Sources.Modules.CaseOpener.Scripts
                                                       tempCaseOpenerRoot.transform.localPosition.x - Random.Range(-Offset, Offset), 10);
             
             localMoveX.OnComplete(() => ScrollComplete?.Invoke(tempCaseOpenerRoot));
+        }
+
+        private void OpenAgain()
+        {
+            
         }
     }
 }

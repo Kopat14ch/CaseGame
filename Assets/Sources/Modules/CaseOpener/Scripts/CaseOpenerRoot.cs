@@ -1,6 +1,6 @@
 using Sources.Modules.Case.Scripts;
 using Sources.Modules.CaseOpener.Interfaces;
-using Sources.Modules.Weapon.WeaponData;
+using Sources.Modules.Wallet.Interfaces;
 using UnityEngine;
 using Zenject;
 
@@ -9,16 +9,19 @@ namespace Sources.Modules.CaseOpener.Scripts
     [RequireComponent(typeof(CaseOpenerView))]
     public class CaseOpenerRoot : MonoBehaviour, ICaseOpener
     {
-        [SerializeField] private CaseData _caseData;
         [SerializeField] private CaseOpenerArrow _caseOpenerArrow;
         
         private CaseOpenerHandler _caseOpenerHandler;
         private CaseOpenerView _caseOpenerView;
         private CaseOpenerContent _contentCaseOpener;
+        private CaseData _lastCaseData;
+        private IWalletRoot _walletRoot;
+        
 
         [Inject]
-        public void Construct(CaseOpenerHandler caseOpenerHandler)
+        public void Construct(CaseOpenerHandler caseOpenerHandler, IWalletRoot walletRoot)
         {
+            _walletRoot = walletRoot;
             _caseOpenerHandler = caseOpenerHandler;
             _caseOpenerView = GetComponent<CaseOpenerView>();
         }
@@ -27,11 +30,34 @@ namespace Sources.Modules.CaseOpener.Scripts
         {
             _caseOpenerView.DisableView();
         }
-        
-        public void Open(WeaponData[] weaponDatas)
+
+        private void OnEnable()
         {
-            _caseOpenerHandler.Open(weaponDatas,_caseOpenerArrow, _caseOpenerView.Content.transform);
-            _caseOpenerView.EnableView();
+            _caseOpenerView.OpenAgainButtonClicked += OpenAgain;
+        }
+
+        private void OnDisable()
+        {
+            _caseOpenerView.OpenAgainButtonClicked -= OpenAgain;
+        }
+
+        public void Open(CaseData caseData, bool again = false)
+        {
+            if (again == false)
+                _lastCaseData = caseData;
+            else
+                _caseOpenerView.DisableView();
+            
+            _caseOpenerHandler.Open(_lastCaseData.Weapons, _caseOpenerArrow, _caseOpenerView.Content.transform);
+            _caseOpenerView.EnableView(caseData.Price);
+        }
+
+        private void OpenAgain()
+        {
+            if (_walletRoot.TryTakeMoney(_lastCaseData.Price) == false)
+                return;
+            
+            Open(_lastCaseData, true);
         }
     }
 }

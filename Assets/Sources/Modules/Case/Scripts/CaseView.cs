@@ -8,17 +8,25 @@ namespace Sources.Modules.Case.Scripts
 {
     public class CaseView : MonoBehaviour
     {
-        [SerializeField] private CaseData _caseData;
         [SerializeField] private Image _image;
         [SerializeField] private TMP_Text _nameText;
+        [SerializeField] private TMP_Text _openText;
         [SerializeField] private Button _openButton;
 
-        public event Action<WeaponData[]> OpenButtonClicked;
+        public event Action OpenButtonClicked;
+
+        private CaseData _caseData;
         
         public void Awake()
         {
             _image.sprite = _caseData.Sprite;
             _nameText.text = _caseData.Name;
+        }
+
+        public void Init(CaseData caseData)
+        {
+            _caseData = caseData;
+            _openText.text = $"Открыть \n{_caseData.Price}$";
         }
 
         private void OnEnable()
@@ -31,6 +39,9 @@ namespace Sources.Modules.Case.Scripts
             _openButton.onClick.RemoveListener(OnOpenButtonClick);
         }
 
-        private void OnOpenButtonClick() => OpenButtonClicked?.Invoke(_caseData.Weapons);
+        private void OnOpenButtonClick()
+        {
+            OpenButtonClicked?.Invoke();
+        }
     }
 }
