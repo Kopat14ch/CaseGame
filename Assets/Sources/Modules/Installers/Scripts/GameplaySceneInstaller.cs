@@ -1,6 +1,9 @@
 ﻿using Sources.Modules.CaseOpener.Scripts;
 using Sources.Modules.Configs.WeaponChance;
+using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Inventory.Scripts;
+using Sources.Modules.Level.Configs;
+using Sources.Modules.Level.Scripts;
 using Sources.Modules.Wallet.Scripts;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.WeaponCaseOpener.Scripts;
@@ -20,6 +23,7 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private InventoryContent _inventoryContent;
         [SerializeField] private WalletRoot _walletRoot;
         [SerializeField] private InventoryView _inventoryView;
+        [SerializeField] private LevelConfig _levelConfig;
         
         public override void InstallBindings()
         {
@@ -28,6 +32,7 @@ namespace Sources.Modules.Installers.Scripts
             BindCaseOpener();
             BindInventory();
             BindWallet();
+            BindLevel();
         }
 
         private void BindConfigs()
@@ -56,6 +61,7 @@ namespace Sources.Modules.Installers.Scripts
             Container.Bind<InventoryContent>().FromInstance(_inventoryContent).AsSingle().NonLazy();
             Container.Bind<InventoryFactory>().AsCached().NonLazy();
             Container.Bind<InventoryHandler>().AsSingle().NonLazy();
+            Container.BindInterfacesTo<InventoryHandler>().FromResolve();
         }
 
         private void BindWeaponRoot()
@@ -66,6 +72,13 @@ namespace Sources.Modules.Installers.Scripts
         private void BindWallet()
         {
             Container.BindInterfacesTo<WalletRoot>().FromInstance(_walletRoot).AsSingle();
+        }
+
+        private void BindLevel()
+        {
+            Container.Bind<LevelConfig>().FromInstance(_levelConfig).AsSingle();
+            Container.Bind<LevelHandler>().AsSingle();
+            Container.BindInterfacesTo<LevelHandler>().FromResolve();
         }
     }
 }

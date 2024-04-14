@@ -1,18 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
-public class LevelRoot : MonoBehaviour
+namespace Sources.Modules.Level.Scripts
 {
-    // Start is called before the first frame update
-    void Start()
+    public class LevelRoot : MonoBehaviour
     {
-        
-    }
+        private LevelHandler _levelHandler;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        [Inject]
+        public void Construct(LevelHandler levelHandler)
+        {
+            _levelHandler = levelHandler;
+        }
+
+        private void Start()
+        {
+            _levelHandler.Init();
+        }
     }
 }

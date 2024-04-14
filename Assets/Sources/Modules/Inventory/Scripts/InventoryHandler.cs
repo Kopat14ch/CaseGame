@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Inventory.Interfaces;
+using Sources.Modules.Weapon.Enums;
 using Sources.Modules.Weapon.Scripts;
 
 namespace Sources.Modules.Inventory.Scripts
 {
-    public class InventoryHandler : IDisposable
+    public class InventoryHandler : IDisposable, IInventoryHandler
     {
         private readonly InventoryFactory _inventoryFactory;
         private readonly ICaseOpenerHandler _caseOpenerHandler;
@@ -15,6 +16,8 @@ namespace Sources.Modules.Inventory.Scripts
         private readonly List<WeaponRoot> _weaponRoots;
 
         private WeaponRoot _newWeapon;
+
+        public event Action<WeaponQuality> WeaponSelled; 
 
         public InventoryHandler(InventoryFactory inventoryFactory, ICaseOpenerHandler caseOpenerHandler, ICaseOpenerView caseOpenerView, IInventoryView view)
         {
@@ -56,6 +59,8 @@ namespace Sources.Modules.Inventory.Scripts
 
         private void WeaponSell(WeaponRoot weaponRoot)
         {
+            WeaponSelled?.Invoke(weaponRoot.Data.Quality);
+            
             _weaponRoots.Remove(weaponRoot);
             weaponRoot.Clicked -= OnWeaponRootClicked;
             weaponRoot.Sell();
