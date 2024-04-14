@@ -10,6 +10,6 @@ namespace Sources.Modules.Case.Scripts
         [field: SerializeField] public String Name { get; private set; }
         [field: SerializeField] public int Price { get; private set; }
         [field: SerializeField] public Sprite Sprite { get; private set; }
-        [field: SerializeField] public WeaponData[] Weapons { get; private set; }
+        [field: SerializeField] public BaseWeaponData[] Weapons { get; private set; }
     }
 }

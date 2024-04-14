@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd09ba93ce5f489490c01b38cc877118, type: 3}
+  m_Script: {fileID: 11500000, guid: 512dc9e248474abebf949d5cd596eae3, type: 3}
   m_Name: FAMAS  Doomkitty
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 14
   <SkinName>k__BackingField: Doomkitty
   <Sprite>k__BackingField: {fileID: 1206650226, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 2
   _minPrice: 537
-  _maxPrice: 595
+  _maxPrice: 600
+  _weaponName: 14

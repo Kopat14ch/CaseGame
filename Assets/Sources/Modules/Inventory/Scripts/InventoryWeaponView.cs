@@ -20,7 +20,7 @@ namespace Sources.Modules.Inventory.Scripts
             _sellButton.onClick.RemoveListener(OnSellButtonClick);
         }
 
-        public override void Init(WeaponData weaponData)
+        public override void Init(BaseWeaponData weaponData)
         {
             base.Init(weaponData);
             _sellButtonText.text = $"Продать \n+{weaponData.GetCurrentPrice()}$";

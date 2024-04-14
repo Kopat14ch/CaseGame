@@ -93,7 +93,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             EnableWinUI();
 
             _sellButtonText.text = $"Продать \n{Math.Round(weapon.Data.GetCurrentPrice(), 2)}$";
-            _winItemText.text = $"Вы выбили: {weapon.Data.Name}\n{weapon.Data.SkinName}";
+            _winItemText.text = $"Вы выбили: {weapon.Data.GetName()}\n{weapon.Data.SkinName}";
         }
 
         private void EnableWinUI()

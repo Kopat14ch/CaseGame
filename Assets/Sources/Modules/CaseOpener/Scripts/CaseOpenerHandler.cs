@@ -28,7 +28,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             _weaponChanceConfig = weaponChanceConfig;
         }
 
-        public void Open(WeaponData[] weaponDatas, CaseOpenerArrow caseOpenerArrow, Transform transform)
+        public void Open(BaseWeaponData[] weaponDatas, CaseOpenerArrow caseOpenerArrow, Transform transform)
         {
             WeaponCaseOpenerRoot[] weaponCaseOpenerRoots = _caseOpenerRoots.GetWeapons();
             
@@ -36,7 +36,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             {
                 WeaponQuality weaponQuality = _weaponChanceConfig.GetQualityWithRandom(weaponDatas);
                 
-                WeaponData[] weaponDatasWithQuality = weaponDatas.Where(w => w.Quality == weaponQuality).ToArray();
+                BaseWeaponData[] weaponDatasWithQuality = weaponDatas.Where(w => w.Quality == weaponQuality).ToArray();
                 
                 weaponCaseOpenerRoot.Init(weaponDatasWithQuality[Random.Range(0, weaponDatasWithQuality.Length)]);
             }

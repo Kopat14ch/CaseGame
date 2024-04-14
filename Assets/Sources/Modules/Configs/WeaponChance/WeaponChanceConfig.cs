@@ -13,7 +13,7 @@ namespace Sources.Modules.Configs.WeaponChance
 
         private const float MaxChance = 101;
 
-        public WeaponQuality GetQualityWithRandom(WeaponData[] weaponDatas)
+        public WeaponQuality GetQualityWithRandom(BaseWeaponData[] weaponDatas)
         {
             float chance = Random.Range(0, MaxChance);
             HashSet<WeaponQuality> qualities = new HashSet<WeaponQuality>(weaponDatas.Select(wd => wd.Quality));

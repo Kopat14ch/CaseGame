@@ -28,7 +28,6 @@
         CZ75,
         Deagle,
         Revolver,
-        Knife,
         SawedOff,
         MAC10,
         MP9,

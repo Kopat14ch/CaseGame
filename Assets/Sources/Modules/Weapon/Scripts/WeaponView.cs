@@ -6,7 +6,7 @@ namespace Sources.Modules.Weapon.Scripts
 {
     public class WeaponView : MonoBehaviour
     {
-        [SerializeField] private WeaponData.WeaponData _weaponData;
+        [SerializeField] private WeaponData.BaseWeaponData _weaponData;
         [SerializeField] private Image _image;
         [SerializeField] private TMP_Text _fullNameWeaponText;
         [SerializeField] private Image _backgroundTextImage;
@@ -16,7 +16,7 @@ namespace Sources.Modules.Weapon.Scripts
             Init();
         }
 
-        public void UpdateData(WeaponData.WeaponData weaponData)
+        public void UpdateData(WeaponData.BaseWeaponData weaponData)
         {
             _weaponData = weaponData;
             
@@ -27,7 +27,7 @@ namespace Sources.Modules.Weapon.Scripts
         {
             _image.sprite = _weaponData.Sprite;
             _backgroundTextImage.color = _weaponData.GetCurrentColor();
-            _fullNameWeaponText.text = $"{_weaponData.Name} \n{_weaponData.SkinName}";
+            _fullNameWeaponText.text = $"{_weaponData.GetName()} \n{_weaponData.SkinName}";
         }
     }
 }

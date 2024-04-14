@@ -7,7 +7,7 @@ namespace Sources.Modules.Common.Scripts
     [RequireComponent(typeof(WeaponView))]
     public abstract class Weapon : MonoBehaviour
     {
-        public WeaponData Data { get; private set; }
+        public BaseWeaponData Data { get; private set; }
         
         protected WeaponView View { get; private set; }
         
@@ -16,7 +16,7 @@ namespace Sources.Modules.Common.Scripts
             View = GetComponent<WeaponView>();
         }
         
-        public virtual void Init(WeaponData weaponData)
+        public virtual void Init(BaseWeaponData weaponData)
         {
             Data = weaponData;
             View.UpdateData(Data);
