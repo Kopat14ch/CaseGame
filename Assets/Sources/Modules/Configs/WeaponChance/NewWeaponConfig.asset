@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _qualityChances:
   - <WeaponQuality>k__BackingField: 0
-    <Chance>k__BackingField: 70
+    <Chance>k__BackingField: 80
   - <WeaponQuality>k__BackingField: 1
-    <Chance>k__BackingField: 15
+    <Chance>k__BackingField: 60
   - <WeaponQuality>k__BackingField: 2
-    <Chance>k__BackingField: 7.5
+    <Chance>k__BackingField: 35
   - <WeaponQuality>k__BackingField: 3
-    <Chance>k__BackingField: 3.9
+    <Chance>k__BackingField: 18
   - <WeaponQuality>k__BackingField: 4
-    <Chance>k__BackingField: 2.47
+    <Chance>k__BackingField: 12
   - <WeaponQuality>k__BackingField: 5
-    <Chance>k__BackingField: 0.58
+    <Chance>k__BackingField: 5
   - <WeaponQuality>k__BackingField: 6
-    <Chance>k__BackingField: 0.28
+    <Chance>k__BackingField: 2

@@ -12,9 +12,9 @@ namespace Sources.Modules.Inventory.Scripts
         private readonly ICaseOpenerHandler _caseOpenerHandler;
         private readonly ICaseOpenerView _caseOpenerView;
         private readonly IInventoryView _view;
+        private readonly List<WeaponRoot> _weaponRoots;
 
         private WeaponRoot _newWeapon;
-        private List<WeaponRoot> _weaponRoots;
 
         public InventoryHandler(InventoryFactory inventoryFactory, ICaseOpenerHandler caseOpenerHandler, ICaseOpenerView caseOpenerView, IInventoryView view)
         {
