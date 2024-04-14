@@ -1,5 +1,6 @@
 using System;
 using Sources.Modules.Wallet.Interfaces;
+using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -7,6 +8,7 @@ using Zenject;
 namespace Sources.Modules.Weapon.Scripts
 {
     [RequireComponent(typeof(WeaponView))]
+    [RequireComponent(typeof(Button))]
     public class WeaponRoot : Common.Scripts.Weapon
     {
         private IWalletRoot _walletRoot;
@@ -23,20 +25,17 @@ namespace Sources.Modules.Weapon.Scripts
 
         private void OnEnable()
         {
-            if (_button != null)
-                _button.onClick.AddListener(OnClicked);
-            
+            _button.onClick.AddListener(OnClicked);
         }
 
         private void OnDisable()
         {
-            if (_button != null)
-                _button.onClick.RemoveListener(OnClicked);
+            _button.onClick.RemoveListener(OnClicked);
         }
 
         public void Sell()
         {
-            _walletRoot.AddMoney(Data.GetCurrentPrice());
+            _walletRoot.AddMoney(Price);
             Destroy(gameObject);
         }
 

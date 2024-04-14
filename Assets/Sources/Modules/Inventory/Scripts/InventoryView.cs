@@ -29,7 +29,7 @@ namespace Sources.Modules.Inventory.Scripts
             }
             
             _currentWeapon = weaponRoot;
-            _weaponView.Init(_currentWeapon.Data);
+            _weaponView.Init(_currentWeapon);
         }
 
         private void OnEnable()

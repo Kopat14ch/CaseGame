@@ -1,6 +1,5 @@
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Wallet.Interfaces;
-using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
 using Zenject;
 

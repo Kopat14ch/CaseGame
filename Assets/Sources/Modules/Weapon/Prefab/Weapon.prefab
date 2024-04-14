@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7c0f378d5a7fd54590e6f5c7e897cb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _weaponData: {fileID: 11400000, guid: 5297e4e8318737d4c817441d11ce3471, type: 2}
+  _weaponData: {fileID: 11400000, guid: 646555ae9870ba24bb56640030853c9c, type: 2}
   _image: {fileID: 1858461306211062472}
   _fullNameWeaponText: {fileID: 1382685588805733061}
   _backgroundTextImage: {fileID: 7405963713654865113}

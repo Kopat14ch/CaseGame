@@ -20,7 +20,7 @@ namespace Sources.Modules.Inventory.Scripts
         {
            WeaponRoot weaponRoot = _container.InstantiatePrefabForComponent<WeaponRoot>(_prefab, _inventoryContent.transform);
            
-           weaponRoot.Init(weapon.Data);
+           weaponRoot.Init(weapon);
 
            return weaponRoot;
         }

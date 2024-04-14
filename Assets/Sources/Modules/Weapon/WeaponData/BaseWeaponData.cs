@@ -24,9 +24,6 @@ namespace Sources.Modules.Weapon.WeaponData
             {WeaponQuality.Ancient, new Color(1f, 0f, 0f)},
             {WeaponQuality.Immortal, new Color(0.5f, 0.5f, 0f)}
         };
-        
-        private float _currentPrice;
-        private Color _myColor;
 
 
         public Color GetCurrentColor()
@@ -36,12 +33,9 @@ namespace Sources.Modules.Weapon.WeaponData
 
         public abstract string GetName();
 
-        public float GetCurrentPrice()
+        public float GetPrice()
         {
-            if (_currentPrice <= 0)
-                _currentPrice = Random.Range(_minPrice, _maxPrice);
-            
-            return _currentPrice;
+            return Random.Range(_minPrice, _maxPrice);;
         }
     }
 }

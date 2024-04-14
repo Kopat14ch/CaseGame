@@ -1,4 +1,5 @@
-﻿using Sources.Modules.Weapon.WeaponData;
+﻿using System;
+using Sources.Modules.Weapon.WeaponData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,10 +21,10 @@ namespace Sources.Modules.Inventory.Scripts
             _sellButton.onClick.RemoveListener(OnSellButtonClick);
         }
 
-        public override void Init(BaseWeaponData weaponData)
+        public override void Init(Common.Scripts.Weapon weapon)
         {
-            base.Init(weaponData);
-            _sellButtonText.text = $"Продать \n+{weaponData.GetCurrentPrice()}$";
+            base.Init(weapon);
+            _sellButtonText.text = $"Продать \n+{Math.Round(weapon.Price, 2)}$";  
         }
 
         private void OnSellButtonClick()
