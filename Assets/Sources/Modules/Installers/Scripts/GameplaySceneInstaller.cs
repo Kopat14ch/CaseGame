@@ -1,13 +1,14 @@
 ﻿using Sources.Modules.CaseOpener.Scripts;
 using Sources.Modules.Configs.WeaponChance;
-using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Inventory.Scripts;
 using Sources.Modules.Level.Configs;
 using Sources.Modules.Level.Scripts;
+using Sources.Modules.MiniGames.Clicker.Scripts;
 using Sources.Modules.Wallet.Scripts;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.WeaponCaseOpener.Scripts;
 using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 
 namespace Sources.Modules.Installers.Scripts
@@ -24,6 +25,7 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private WalletRoot _walletRoot;
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private LevelConfig _levelConfig;
+        [FormerlySerializedAs("_coin")] [SerializeField] private CoinRoot coinRoot;
         
         public override void InstallBindings()
         {
@@ -33,6 +35,7 @@ namespace Sources.Modules.Installers.Scripts
             BindInventory();
             BindWallet();
             BindLevel();
+            BindClicker();
         }
 
         private void BindConfigs()
@@ -79,6 +82,12 @@ namespace Sources.Modules.Installers.Scripts
             Container.Bind<LevelConfig>().FromInstance(_levelConfig).AsSingle();
             Container.Bind<LevelHandler>().AsSingle();
             Container.BindInterfacesTo<LevelHandler>().FromResolve();
+        }
+
+        private void BindClicker()
+        {
+            Container.Bind<CoinRoot>().FromInstance(coinRoot).AsSingle();
+            Container.Bind<ClickerHandler>().AsSingle().NonLazy();
         }
     }
 }
