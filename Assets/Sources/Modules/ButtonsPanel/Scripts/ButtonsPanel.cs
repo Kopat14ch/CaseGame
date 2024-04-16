@@ -1,4 +1,5 @@
 ﻿using System;
+using Sources.Modules.Utils;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,8 +10,9 @@ namespace Sources.Modules.ButtonsPanel.Scripts
     {
         [SerializeField] private Button _currentButton;
         [SerializeField] private CanvasGroup _currentCanvasGroup;
-
+        
         public event Action<ButtonsPanel> Clicked;
+        
         
         public void Enable()
         {
@@ -25,16 +27,12 @@ namespace Sources.Modules.ButtonsPanel.Scripts
 
         public void EnableUI()
         {
-            _currentCanvasGroup.alpha = 1;
-            _currentCanvasGroup.interactable = true;
-            _currentCanvasGroup.blocksRaycasts = true;
+            CanvasGroupUtil.Enable(_currentCanvasGroup);
         }
 
         public void DisableUI()
         {
-            _currentCanvasGroup.alpha = 0;
-            _currentCanvasGroup.interactable = false;
-            _currentCanvasGroup.blocksRaycasts = false;
+            CanvasGroupUtil.Disable(_currentCanvasGroup);
         }
 
         private void OnButtonClick()

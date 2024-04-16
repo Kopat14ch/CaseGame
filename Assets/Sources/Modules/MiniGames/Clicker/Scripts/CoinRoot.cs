@@ -1,5 +1,4 @@
 ﻿using System;
-using Sources.Modules.Wallet.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -1,5 +1,6 @@
 ﻿using System;
 using Sources.Modules.Inventory.Interfaces;
+using Sources.Modules.Utils;
 using Sources.Modules.Weapon.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
@@ -22,9 +23,7 @@ namespace Sources.Modules.Inventory.Scripts
         {
             if (_isActive == false)
             {
-                _canvasGroup.alpha = 1;
-                _canvasGroup.interactable = true;
-                _canvasGroup.blocksRaycasts = true;
+                CanvasGroupUtil.Enable(_canvasGroup);
                 _isActive = true;
             }
             
@@ -46,9 +45,7 @@ namespace Sources.Modules.Inventory.Scripts
         {
             SellButtonClicked?.Invoke(_currentWeapon);
             
-            _canvasGroup.alpha = 0;
-            _canvasGroup.interactable = false;
-            _canvasGroup.blocksRaycasts = false;
+            CanvasGroupUtil.Disable(_canvasGroup);
             
             _isActive = false;
         }
