@@ -12,6 +12,7 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private FlappyChickenObstacleRoots _flappyChickenObstacles;
         [SerializeField] private FlappyChickenSpawnPoint _flappyChickenSpawnPoint;
         [SerializeField] private FlappyChickenView _flappyChickenView;
+        [SerializeField] private FlappyChickenObstacleDisabler _flappyChickenObstacleDisabler;
         
         public override void InstallBindings()
         {
@@ -28,6 +29,7 @@ namespace Sources.Modules.Installers.Scripts
 
         private void BindFlappyChicken()
         {
+            Container.Bind<FlappyChickenObstacleDisabler>().FromInstance(_flappyChickenObstacleDisabler).AsSingle();
             Container.Bind<FlappyChickenRoot>().FromInstance(_flappyChickenRoot).AsSingle();
             Container.Bind<FlappyChickenObstacleRoots>().FromInstance(_flappyChickenObstacles).AsSingle();
             Container.Bind<FlappyChickenSpawnPoint>().FromInstance(_flappyChickenSpawnPoint).AsSingle();

@@ -6,7 +6,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
 {
     public class FlappyChickenHandler : IDisposable
     {
-        private const float Force = 170;
+        private const float Force = 11000;
             
         private readonly PlayerInput _player;
         
@@ -28,7 +28,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         
         private void OnJump(InputAction.CallbackContext ctx)
         {
-            _rigidbody2D.AddForce(Vector2.up * Force, ForceMode2D.Impulse);
+            _rigidbody2D.velocity = Vector2.up * Force * Time.fixedDeltaTime;
         }
     }
 }

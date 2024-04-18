@@ -5,7 +5,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
 {
     public class FlappyChickenObstacleRoots : MonoBehaviour
     {
-        [field: SerializeField] public FlappyChickenObstacleRoot[] Obstacles { get; private set; }
+        public FlappyChickenObstacleRoot[] Obstacles { get; private set; }
         
         private FlappyChickenRoot _flappyChickenRoot;
 
@@ -14,6 +14,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         public void Construct(FlappyChickenRoot flappyChickenRoot)
         {
             _flappyChickenRoot = flappyChickenRoot;
+            Obstacles = GetComponentsInChildren<FlappyChickenObstacleRoot>();
         }
         
         private void OnEnable()

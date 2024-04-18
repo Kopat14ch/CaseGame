@@ -10,6 +10,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
     {
         private readonly FlappyChickenSpawnPoint _flappyChickenSpawnPoint;
         private readonly IFlappyChickenView _flappyChickenView;
+        private readonly FlappyChickenObstacleDisabler _disabler;
         private readonly Vector3 _offsetPosition;
         private readonly Random _random;
         
@@ -17,7 +18,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         
         private FlappyChickenObstacleRoot[] _flappyChickenObstacles;
         
-        public FlappyChickenObstacleSpawner(FlappyChickenObstacleRoots obstacles, FlappyChickenSpawnPoint flappyChickenSpawnPoint, IFlappyChickenView flappyChickenView)
+        public FlappyChickenObstacleSpawner(FlappyChickenObstacleRoots obstacles, FlappyChickenSpawnPoint flappyChickenSpawnPoint, IFlappyChickenView flappyChickenView, FlappyChickenObstacleDisabler disabler)
         {
             _offsetPosition = new Vector3(230, 0, 0);
             _random = new Random();
@@ -25,19 +26,17 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             _flappyChickenObstacles = obstacles.Obstacles;
             _flappyChickenSpawnPoint = flappyChickenSpawnPoint;
             _flappyChickenView = flappyChickenView;
+            _disabler = disabler;
             _currentLastIndex = _flappyChickenObstacles.Length - 1;
-            
-            foreach (var flappyChickenObstacle in _flappyChickenObstacles)
-                flappyChickenObstacle.DisableEntered += OnDisableEntered;
+
+            _disabler.DisableEntered += OnDisableEntered;
 
             _flappyChickenView.EnterButtonClick += Init;
         }
         
         public void Dispose()
         {
-            foreach (var flappyChickenObstacle in _flappyChickenObstacles)
-                flappyChickenObstacle.DisableEntered -= OnDisableEntered;
-            
+            _disabler.DisableEntered += OnDisableEntered;
             _flappyChickenView.EnterButtonClick -= Init;
         }
         
