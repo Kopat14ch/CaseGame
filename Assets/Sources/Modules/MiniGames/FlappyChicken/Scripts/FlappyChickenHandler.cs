@@ -6,7 +6,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
 {
     public class FlappyChickenHandler : IDisposable
     {
-        private const float Force = 11000;
+        private const float Force = 13000;
             
         private readonly PlayerInput _player;
         

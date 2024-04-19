@@ -14,7 +14,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
 
         public FlappyChickenObstacleHandler(Rigidbody2D rigidbody2D)
         {
-            _speed = 3500;
+            _speed = 5200;
             _rigidbody2D = rigidbody2D;
             _cancellationTokenSource = new CancellationTokenSource();
         }
@@ -47,9 +47,9 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             
             try
             {
-                while (!cancellationToken.IsCancellationRequested)
+                while (cancellationToken.IsCancellationRequested == false)
                 {
-                    _rigidbody2D.velocity = Vector2.left * Time.fixedDeltaTime * _speed;
+                    _rigidbody2D.velocity = _speed * Time.fixedDeltaTime * Vector2.left;
                     
                     await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken);
                 }

@@ -20,7 +20,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         
         public FlappyChickenObstacleSpawner(FlappyChickenObstacleRoots obstacles, FlappyChickenSpawnPoint flappyChickenSpawnPoint, IFlappyChickenView flappyChickenView, FlappyChickenObstacleDisabler disabler)
         {
-            _offsetPosition = new Vector3(230, 0, 0);
+            _offsetPosition = new Vector3(260, 0, 0);
             _random = new Random();
             
             _flappyChickenObstacles = obstacles.Obstacles;
