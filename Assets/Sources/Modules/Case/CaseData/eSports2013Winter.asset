@@ -10,21 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 699d17427bd74880a1307def7854d609, type: 3}
-  m_Name: eSports2013
+  m_Name: eSports2013Winter
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: eSports 2013
-  <Price>k__BackingField: 4700
-  <Sprite>k__BackingField: {fileID: -1131757625, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
+  <Name>k__BackingField: eSports 2013 Winter
+  <Price>k__BackingField: 960
+  <Sprite>k__BackingField: {fileID: 110637439, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
-  - {fileID: 11400000, guid: 646555ae9870ba24bb56640030853c9c, type: 2}
-  - {fileID: 11400000, guid: abc2505d4ab63a24f803ec05a7324fa3, type: 2}
-  - {fileID: 11400000, guid: 378a2a0a663576443bb5937188930533, type: 2}
-  - {fileID: 11400000, guid: ba972ced300ff3c459a70213e2c92e9c, type: 2}
-  - {fileID: 11400000, guid: 8e36987cc9cfc0d4cb7505340597cb48, type: 2}
-  - {fileID: 11400000, guid: e7ff5e8fe4b4e4e4aac520db56897545, type: 2}
-  - {fileID: 11400000, guid: 5493152a11ef824469b13e2b063b3050, type: 2}
-  - {fileID: 11400000, guid: 11c8ccd6a6423b1468f1ae86524b44cf, type: 2}
-  - {fileID: 11400000, guid: df0f3f2685a55b949a881980d479105b, type: 2}
+  - {fileID: 11400000, guid: 479fefca225383d4e908210de347ff86, type: 2}
+  - {fileID: 11400000, guid: e1b184d6bc9666c43a7addaf646edad1, type: 2}
+  - {fileID: 11400000, guid: a673a2105d1945b4c82a2a2ecdd94b99, type: 2}
+  - {fileID: 11400000, guid: c40f8d9cd78ff7a469190d3adfbcc009, type: 2}
+  - {fileID: 11400000, guid: 54267b1bd9820ae40a6279a4b1e11f6d, type: 2}
+  - {fileID: 11400000, guid: 0973174f19ed3b843b81b56487dcd7ce, type: 2}
+  - {fileID: 11400000, guid: a8500ec77c44cf04fb61c09e0c104083, type: 2}
+  - {fileID: 11400000, guid: 3875f00cb7bb4e3498c6260b215fc1a7, type: 2}
+  - {fileID: 11400000, guid: 8a60fb2f00bdaa3408fb7661aaf38b1b, type: 2}
+  - {fileID: 11400000, guid: 011ff257557f5d2468d476427119b220, type: 2}
+  - {fileID: 11400000, guid: 538e083642eb7db4cb9b0b459d8380ee, type: 2}
+  - {fileID: 11400000, guid: 1de7d22fd2c278f4d95d35870447ea96, type: 2}
   - {fileID: 11400000, guid: f0e0042ef1e250a4086e900790109f16, type: 2}
   - {fileID: 11400000, guid: c837329e4911e194c826a49f247912ba, type: 2}
   - {fileID: 11400000, guid: e046204ee3bbca94885ad66c75e65f7d, type: 2}

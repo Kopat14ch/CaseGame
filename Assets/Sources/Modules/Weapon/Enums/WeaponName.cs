@@ -34,6 +34,7 @@
         MP7,
         UMP45,
         P90,
-        Bizon
+        Bizon,
+        DualBerettas,
     }
 }
