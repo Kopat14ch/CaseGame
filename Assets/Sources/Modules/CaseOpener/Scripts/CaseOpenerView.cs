@@ -24,6 +24,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         private Common.Scripts.Weapon _currentWeapon;
         
         public CaseOpenerContent Content => _content;
+        private bool _isEnable;
         
         public event Action SellButtonClicked;
         public event Action OpenAgainButtonClicked;
@@ -63,6 +64,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             _canvasGroup.alpha = 1;
             _openAgainButtonText.text = $"Еще раз\n{casePrice}$";
             _content.DisableLayout();
+            _isEnable = true;
         }
 
         public void DisableView()
@@ -74,6 +76,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             _content.EnableLayout();
             _content.EnableWeapons();
             DisableWinUI();
+            _isEnable = false;
         }
 
 
@@ -111,6 +114,8 @@ namespace Sources.Modules.CaseOpener.Scripts
             _winItemText.gameObject.SetActive(false);
             _openAgainButton.gameObject.SetActive(false);
         }
+
+        public bool IsEnable() => _isEnable;
 
         private void OpenAgain()
         {

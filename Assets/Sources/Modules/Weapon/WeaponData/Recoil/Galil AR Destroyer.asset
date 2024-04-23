@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512dc9e248474abebf949d5cd596eae3, type: 3}
+  m_Name: Galil AR Destroyer
+  m_EditorClassIdentifier: 
+  <SkinName>k__BackingField: Destroyer
+  <Sprite>k__BackingField: {fileID: 21300000, guid: c1808be9eff62a845ba9010324c53df1, type: 3}
+  <Quality>k__BackingField: 2
+  _minPrice: 4.7
+  _maxPrice: 24
+  _weaponName: 13

@@ -36,5 +36,7 @@
         P90,
         Bizon,
         DualBerettas,
+        Zeus,
+        MP5
     }
 }

@@ -7,7 +7,7 @@ namespace Sources.Modules.CaseOpener.Scripts
     {
         [SerializeField] private Transform _parent;
         
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerStay2D(Collider2D other)
         {
             if (other.TryGetComponent(out WeaponCaseOpenerRoot weaponCaseOpenerRoot))
                 weaponCaseOpenerRoot.Disable();

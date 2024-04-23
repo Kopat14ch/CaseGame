@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512dc9e248474abebf949d5cd596eae3, type: 3}
+  m_Name: AWP Chrome Cannon
+  m_EditorClassIdentifier: 
+  <SkinName>k__BackingField: Chrome Cannon
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 98e51f69317a26d4392ce65cc71a8e81, type: 3}
+  <Quality>k__BackingField: 5
+  _minPrice: 5500
+  _maxPrice: 24000
+  _weaponName: 1

@@ -6,5 +6,7 @@ namespace Sources.Modules.CaseOpener.Interfaces
     {
         public event Action SellButtonClicked;
         public event Action OpenAgainButtonClicked;
+
+        public bool IsEnable();
     }
 }

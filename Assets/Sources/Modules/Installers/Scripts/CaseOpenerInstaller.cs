@@ -29,7 +29,7 @@ namespace Sources.Modules.Installers.Scripts
             
             Container.Bind<WeaponCaseOpenerRoot>().FromInstance(_weaponCaseOpenerPrefab).AsSingle();
             Container.Bind<CaseOpenerFactory>().AsSingle().NonLazy();
-            Container.BindInterfacesTo<CaseOpenerView>().FromInstance(_caseOpenerView).AsSingle();
+            Container.BindInterfacesTo<CaseOpenerView>().FromInstance(_caseOpenerView).AsSingle().NonLazy();
         }
     }
 }

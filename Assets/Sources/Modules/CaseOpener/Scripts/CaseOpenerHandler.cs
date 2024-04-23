@@ -19,6 +19,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         private const float Offset = 100;
         private const int MinWeaponCaseOpenerIndex = 10;
         private const int MaxWeaponCaseOpenerIndex = 20;
+        private const float OpenDuration = 9;
 
         public event Action<Common.Scripts.Weapon> ScrollComplete;
 
@@ -50,7 +51,8 @@ namespace Sources.Modules.CaseOpener.Scripts
             WeaponCaseOpenerRoot tempCaseOpenerRoot = weaponCaseOpenerRoot[weaponCaseOpenerIndex];
             
             Tween localMoveX = transform.DOLocalMoveX(caseOpenerArrow.transform.localPosition.x - 
-                                                      tempCaseOpenerRoot.transform.localPosition.x - Random.Range(-Offset, Offset), 10);
+                                                      tempCaseOpenerRoot.transform.localPosition.x - Random.Range(-Offset, Offset), OpenDuration)
+                .SetEase(Ease.OutCirc);
             
             localMoveX.OnComplete(() => ScrollComplete?.Invoke(tempCaseOpenerRoot));
         }
