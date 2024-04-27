@@ -1,0 +1,65 @@
+﻿using Agava.YandexGames;
+using Sources.Modules.YandexSDK.Scripts.Interfaces;
+using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
+using UnityEngine;
+using Zenject;
+
+namespace Sources.Modules.YandexSDK.Scripts
+{
+    public class YandexSDKRoot : MonoBehaviour, IYandexSDKRoot
+    {
+        private ILeaderboardViewHandler _leaderboardViewHandler;
+
+        public bool IsAuthorized
+        {
+            get
+            {
+#if UNITY_EDITOR
+                return true;
+#endif
+                
+                return PlayerAccount.IsAuthorized;
+            }
+        }
+
+        [Inject]
+        public void Construct(ILeaderboardViewHandler leaderboardViewHandler)
+        {
+            _leaderboardViewHandler = leaderboardViewHandler;
+        }
+
+#if UNITY_EDITOR == false
+        private void Awake()
+        {
+            YandexGamesSdk.CallbackLogging = true;
+        }
+
+        private IEnumerator Start()
+        {
+            yield return YandexGamesSdk.Initialize(YandexGamesSdk.GameReady);
+        }
+#endif
+
+        private void OnEnable()
+        {
+            _leaderboardViewHandler.Opened += OnLeaderboardOpened;
+        }
+
+        private void OnDisable()
+        {
+            _leaderboardViewHandler.Opened -= OnLeaderboardOpened;
+        }
+
+        private void OnLeaderboardOpened()
+        {
+#if UNITY_EDITOR
+            return;
+#endif
+            
+            PlayerAccount.Authorize();
+
+            if (PlayerAccount.IsAuthorized)
+                PlayerAccount.RequestPersonalProfileDataPermission();
+        }
+    }
+}

@@ -13,12 +13,13 @@ namespace Sources.Modules.Level.Scripts
         private readonly ICaseOpenerHandler _caseOpenerHandler;
         private readonly IInventoryHandler _inventoryHandler;
 
-        private uint _current;
+        private int _current;
         private uint _experience;
         private uint _limit;
         
         public event Action<uint> ExperienceUpdated;
-        public event Action<uint, uint> LevelUpdated;
+        public event Action<int, uint> LevelLimitUpdated;
+        public event Action<int> LevelUpdated; 
 
         public LevelHandler(LevelConfig config, ICaseOpenerHandler caseOpenerHandler, IInventoryHandler inventoryHandler)
         {
@@ -36,7 +37,8 @@ namespace Sources.Modules.Level.Scripts
             _experience = 0;
             _limit = 50;
             
-            LevelUpdated?.Invoke(_current, _limit);
+            LevelLimitUpdated?.Invoke(_current, _limit);
+            LevelUpdated?.Invoke(_current);
             ExperienceUpdated?.Invoke(_experience);
         }
 
@@ -72,7 +74,8 @@ namespace Sources.Modules.Level.Scripts
             _limit = (uint)(_limit * _config.LimitMultiplier);
             _current++;
             
-            LevelUpdated?.Invoke(_current, _limit);
+            LevelLimitUpdated?.Invoke(_current, _limit);
+            LevelUpdated?.Invoke(_current);
         }
     }
 }

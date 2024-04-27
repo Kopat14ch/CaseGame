@@ -24,16 +24,16 @@ namespace Sources.Modules.Level.Scripts
         private void OnEnable()
         {
             _levelHandlerEvent.ExperienceUpdated += OnExperienceUpdated;
-            _levelHandlerEvent.LevelUpdated += OnLevelUpdate;
+            _levelHandlerEvent.LevelLimitUpdated += OnLevelLimitUpdate;
         }
 
         private void OnDisable()
         {
             _levelHandlerEvent.ExperienceUpdated -= OnExperienceUpdated;
-            _levelHandlerEvent.LevelUpdated -= OnLevelUpdate;
+            _levelHandlerEvent.LevelLimitUpdated -= OnLevelLimitUpdate;
         }
 
-        private void OnLevelUpdate(uint level, uint limit)
+        private void OnLevelLimitUpdate(int level, uint limit)
         {
             _levelText.text = $"Level: {level}";
             _slider.maxValue = limit;
