@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u2605Bayonet Lore"
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Lore
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 0a44f12323a79a84db5ac849bb2167ae, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: cf8c009f70dec6241a35d72b55d0cd74, type: 3}
   <Quality>k__BackingField: 6
   _minPrice: 60000
   _maxPrice: 90000

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: "\u2605Bayonet Gamma Doppler Emerald"
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Gamma Doppler Emerald
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 77fce67d1d5163c4596a9275e8eef5ef, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 9979a45b262bf5041bb8ddaafeea6ccd, type: 3}
   <Quality>k__BackingField: 6
   _minPrice: 225000
   _maxPrice: 540000
