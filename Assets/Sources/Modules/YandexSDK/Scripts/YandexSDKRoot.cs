@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using Agava.YandexGames;
+﻿using Agava.YandexGames;
 using Sources.Modules.YandexSDK.Scripts.Interfaces;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
 using UnityEngine;
@@ -26,20 +25,12 @@ namespace Sources.Modules.YandexSDK.Scripts
         [Inject]
         public void Construct(ILeaderboardViewHandler leaderboardViewHandler)
         {
+#if UNITY_EDITOR == false
+            YandexGamesSdk.GameReady();
+#endif
+            
             _leaderboardViewHandler = leaderboardViewHandler;
         }
-
-#if UNITY_EDITOR == false
-        private void Awake()
-        {
-            YandexGamesSdk.CallbackLogging = true;
-        }
-
-        private IEnumerator Start()
-        {
-            yield return YandexGamesSdk.Initialize(YandexGamesSdk.GameReady);
-        }
-#endif
 
         private void OnEnable()
         {

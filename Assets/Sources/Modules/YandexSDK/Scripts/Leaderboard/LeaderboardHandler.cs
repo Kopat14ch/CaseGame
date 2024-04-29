@@ -18,7 +18,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
         private readonly ILeaderboardViewHandler _leaderboardViewHandler;
         private readonly UsersContainer _container;
         
-        private List<UserRoot> _userRoots;
+        private readonly List<UserRoot> _userRoots;
 
         public LeaderboardHandler(UserRoot userPrefab, ILeaderboardViewHandler leaderboardViewHandler, UsersContainer container)
         {
@@ -35,10 +35,10 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
             _leaderboardViewHandler.Opened -= OnOpened;
         }
 
-        private UserRoot ConstructPlayer(int top, string nickName, int level, Color? color = null)
+        private UserRoot ConstructPlayer(int top, string nickName, int level, Color color)
         {
-            UserRoot userRoot = Object.Instantiate(_userPrefab);
-            userRoot.Init(top,nickName, level, color);
+            UserRoot userRoot = Object.Instantiate(_userPrefab, _container.transform);
+            userRoot.Init(top, nickName, level, color);
             
             return userRoot;
         }
@@ -46,6 +46,16 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
         private void OnOpened()
         {
 #if UNITY_EDITOR
+            _container.Clear();
+            _userRoots.Clear();
+            
+            for (int i = 0; i < 10; i++)
+            {
+                ColorWithRank.GetColor(i + 1, out Color color);
+                _userRoots.Add(ConstructPlayer(i + 1, $"Бобер {i + 1}", i, color));
+            }
+            
+            ConstructLeaderboard();
             return;
 #endif
             if (PlayerAccount.IsAuthorized == false)
@@ -65,7 +75,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
                 int level = result.score;
                 string name = "Я";
                 
-                ColorWithRank.Colors.TryGetValue(result.rank, out Color color);
+                ColorWithRank.GetColor(result.rank, out Color color);
                 
                 _userRoots.Add(ConstructPlayer(rank, name, level, color));
             });
@@ -84,7 +94,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
                     if (string.IsNullOrEmpty(name))
                         name = AnonymousName;
 
-                    ColorWithRank.Colors.TryGetValue(rank, out Color color);
+                    ColorWithRank.GetColor(rank, out Color color);
                     
                     _userRoots.Add(ConstructPlayer(rank, name, level, color));
                 }
@@ -95,20 +105,34 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
 
         private void ConstructLeaderboard()
         {
-            _userRoots = _userRoots.OrderBy(root => root.Level).ToList();
+            /*_userRoots = _userRoots.OrderBy(root => root.Level).ToList();
             
             foreach (var root in _userRoots)
-                root.SetParent(_container.transform);
+                root.SetParent(_container.transform);*/
         }
     }
 
     static class ColorWithRank
     {
-        public static readonly IReadOnlyDictionary<int, Color> Colors = new Dictionary<int, Color>()
+        private static readonly Color[] TopPlayerColors =
         {
-            {1, new Color(246,255,0)},
-            {2, new Color(125,125,125)},
-            {3, new Color(135,98,41)}
+            new (246f / 255f, 255f / 255f, 0f / 255f),    // Яркий желтый
+            new (125f / 255f, 125f / 255f, 125f / 255f),  // Серый
+            new (135f / 255f, 98f / 255f, 41f / 255f)     // Коричневый
         };
+        
+        private static readonly IReadOnlyDictionary<int, Color> Colors = new Dictionary<int, Color>()
+        {
+            {1, TopPlayerColors[0]},
+            {2, TopPlayerColors[1]},
+            {3, TopPlayerColors[2]}
+        };
+        
+        public static void GetColor(int rank, out Color resultColor)
+        {
+            resultColor = Colors.TryGetValue(rank, out Color color) ?
+                resultColor = color :
+                resultColor = Color.white;
+        }
     }
 }

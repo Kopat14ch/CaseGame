@@ -12,12 +12,11 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
         
         public int Level { get; private set; }
 
-        public void Init(int top, string nickName, int level, Color? color = null)
+        public void Init(int top, string nickName, int level, Color color)
         {
             Level = level;
             
-            if (color != null)
-                _topText.color = (Color)color;
+            _topText.color = color;
             
             _topText.text = top.ToString();
             _nickNameText.text = nickName;

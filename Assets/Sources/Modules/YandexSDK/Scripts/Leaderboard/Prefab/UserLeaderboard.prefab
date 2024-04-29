@@ -214,7 +214,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _topText: {fileID: 5711204334533017337}
   _nickNameText: {fileID: 2345028469472246603}
-  _levelText: {fileID: 2345028469472246603}
+  _levelText: {fileID: 5651117181738084379}
 --- !u!1 &3647551757042790196
 GameObject:
   m_ObjectHideFlags: 0

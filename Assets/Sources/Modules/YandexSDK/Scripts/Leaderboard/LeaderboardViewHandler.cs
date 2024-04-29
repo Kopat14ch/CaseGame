@@ -1,4 +1,5 @@
 ﻿using System;
+using Agava.YandexGames;
 using Sources.Modules.Utils;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
 using UnityEngine;
@@ -38,6 +39,12 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
         private void OnOpenButtonClick()
         {
             Opened?.Invoke();
+
+#if UNITY_EDITOR == false
+            if (PlayerAccount.IsAuthorized)
+                CanvasGroupUtil.Enable(_canvasGroup);
+            return;
+#endif
             
             CanvasGroupUtil.Enable(_canvasGroup);
         }
