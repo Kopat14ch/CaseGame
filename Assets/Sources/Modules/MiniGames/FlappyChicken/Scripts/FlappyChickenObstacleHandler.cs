@@ -8,13 +8,14 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
     public class FlappyChickenObstacleHandler : IDisposable
     {
         private readonly Rigidbody2D _rigidbody2D;
-        private float _speed;
+        private readonly float _speed;
+        
         private CancellationTokenSource _cancellationTokenSource;
         private bool _isMoving;
 
         public FlappyChickenObstacleHandler(Rigidbody2D rigidbody2D)
         {
-            _speed = 5200;
+            _speed = 1.7f;
             _rigidbody2D = rigidbody2D;
             _cancellationTokenSource = new CancellationTokenSource();
         }
@@ -38,6 +39,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         
         public void Dispose()
         {
+            _cancellationTokenSource?.Cancel();
             _cancellationTokenSource?.Dispose();
         }
 
@@ -49,7 +51,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             {
                 while (cancellationToken.IsCancellationRequested == false)
                 {
-                    _rigidbody2D.velocity = _speed * Time.fixedDeltaTime * Vector2.left;
+                    _rigidbody2D.velocity = _speed * Vector2.left;
                     
                     await UniTask.Yield(PlayerLoopTiming.FixedUpdate, cancellationToken);
                 }
