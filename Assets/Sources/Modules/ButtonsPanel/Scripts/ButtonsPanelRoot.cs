@@ -11,15 +11,17 @@ namespace Sources.Modules.ButtonsPanel.Scripts
         private void Awake()
         {
             _buttonsPanelHandler = new ButtonsPanelHandler(_buttonsPanels);
+
+            foreach (var buttonsPanel in _buttonsPanels)
+                buttonsPanel.Init();
+            
+            _buttonsPanelHandler.Enable();
         }
 
         private void OnEnable()
         {
-            _buttonsPanelHandler.Enable();
-
             foreach (var buttonsPanel in _buttonsPanels)
                 buttonsPanel.Enable();
-            
         }
 
         private void OnDisable()

@@ -10,11 +10,12 @@ namespace Sources.Modules.ButtonsPanel.Scripts
         public ButtonsPanelHandler(List<ButtonsPanel> buttonsPanels)
         {
             _buttonsPanels = buttonsPanels;
-            SwitchPanel(buttonsPanels.First());
         }
 
         public void Enable()
         {
+            SwitchPanel(_buttonsPanels.First());
+            
             foreach (var buttonsPanel in _buttonsPanels)
                 buttonsPanel.Clicked += SwitchPanel;
         }
