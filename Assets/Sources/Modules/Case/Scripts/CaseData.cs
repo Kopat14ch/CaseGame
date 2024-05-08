@@ -1,5 +1,5 @@
 ﻿using System;
-using Sources.Modules.Weapon.WeaponData;
+using Sources.Modules.Weapon.Scripts.WeaponData;
 using UnityEngine;
 
 namespace Sources.Modules.Case.Scripts

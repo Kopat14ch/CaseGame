@@ -15,6 +15,7 @@ namespace Sources.Modules.Installers.Scripts
         
         public override void InstallBindings()
         {
+            BindSaver();
             BindLeaderboard();
         }
 
@@ -26,6 +27,11 @@ namespace Sources.Modules.Installers.Scripts
 
             LeaderboardHandler leaderboardHandler = new LeaderboardHandler(_userPrefab, Container.Resolve<ILeaderboardViewHandler>(), _usersContainer);
             Container.Bind<LeaderboardHandler>().FromInstance(leaderboardHandler).AsSingle().NonLazy();
+        }
+
+        private void BindSaver()
+        {
+            Container.Bind<YandexSaves>().AsSingle().NonLazy();
         }
     }
 }

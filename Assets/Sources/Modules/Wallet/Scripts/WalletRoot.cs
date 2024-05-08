@@ -11,9 +11,9 @@ namespace Sources.Modules.Wallet.Scripts
         private WalletHandler _walletHandler;
 
         [Inject]
-        public void Construct()
+        public void Construct(WalletHandler walletHandler)
         {
-            _walletHandler = new WalletHandler();
+            _walletHandler = walletHandler;
             
             _walletView = GetComponent<WalletView>();
             _walletView.Init(_walletHandler);

@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Inventory.Interfaces;
-using Sources.Modules.Weapon.Enums;
 using Sources.Modules.Weapon.Scripts;
+using Zenject;
 
 namespace Sources.Modules.Inventory.Scripts
 {
-    public class InventoryHandler : IDisposable, IInventoryHandler
+    public class InventoryHandler : IDisposable, IInventoryHandler, IInitializable
     {
         private readonly InventoryFactory _inventoryFactory;
         private readonly ICaseOpenerHandler _caseOpenerHandler;
@@ -17,7 +17,8 @@ namespace Sources.Modules.Inventory.Scripts
 
         private WeaponRoot _newWeapon;
 
-        public event Action<WeaponQuality> WeaponSelled; 
+        public event Action<WeaponRoot> WeaponSold; 
+        public event Action<WeaponRoot> WeaponAdded;
 
         public InventoryHandler(InventoryFactory inventoryFactory, ICaseOpenerHandler caseOpenerHandler, ICaseOpenerView caseOpenerView, IInventoryView view)
         {
@@ -31,6 +32,12 @@ namespace Sources.Modules.Inventory.Scripts
             _caseOpenerHandler.ScrollComplete += OnScrollComplete;
             _caseOpenerView.SellButtonClicked += OnCaseOpenerSellButtonClicked;
             _view.SellButtonClicked += WeaponSell;
+        }
+        
+        public void Initialize()
+        {
+            foreach (var weaponRoot in _inventoryFactory.Initialize())
+                WeaponAdd(weaponRoot);
         }
 
         public void Dispose()
@@ -53,13 +60,14 @@ namespace Sources.Modules.Inventory.Scripts
         
         private void WeaponAdd(WeaponRoot weaponRoot)
         {
+            WeaponAdded?.Invoke(weaponRoot);
             _weaponRoots.Add(weaponRoot);
             weaponRoot.Clicked += OnWeaponRootClicked;
         }
 
         private void WeaponSell(WeaponRoot weaponRoot)
         {
-            WeaponSelled?.Invoke(weaponRoot.Data.Quality);
+            WeaponSold?.Invoke(weaponRoot);
             
             _weaponRoots.Remove(weaponRoot);
             weaponRoot.Clicked -= OnWeaponRootClicked;

@@ -1,7 +1,7 @@
 ﻿using Sources.Modules.Weapon.Enums;
 using UnityEngine;
 
-namespace Sources.Modules.Weapon.WeaponData
+namespace Sources.Modules.Weapon.Scripts.WeaponData
 {
     [CreateAssetMenu(fileName = "KnifeData", menuName = "BaseWeaponData/NewKnifeData", order = 51)]
     public class KnifeData : BaseWeaponData
@@ -10,8 +10,7 @@ namespace Sources.Modules.Weapon.WeaponData
 
         public override string GetName()
         {
-            Name = _knifeName.ToString();
-            return Name;
+            return _knifeName.ToString();
         }
     }
 }

@@ -1,6 +1,5 @@
 using System;
 using Sources.Modules.Wallet.Interfaces;
-using Sources.Modules.Weapon.WeaponData;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;

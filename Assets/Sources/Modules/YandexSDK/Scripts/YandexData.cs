@@ -1,22 +1,22 @@
 ﻿using System;
-using Sources.Modules.Weapon.Scripts;
-using Sources.Modules.Weapon.WeaponData;
-using UnityEngine.Serialization;
+using Sources.Modules.Weapon.Scripts.WeaponData;
 
 namespace Sources.Modules.YandexSDK.Scripts
 {
     [Serializable]
     public class YandexData
     {
-        [FormerlySerializedAs("Weapons")] public BaseWeaponData[] WeaponsData;
+        public WeaponSaveData[] WeaponsData;
         public float Money;
         public int Level;
         public uint Experience;
         public uint MaxExperience;
+
+        public static int Index;
         
         public YandexData()
         {
-            WeaponsData = Array.Empty<BaseWeaponData>();
+            WeaponsData = Array.Empty<WeaponSaveData>();
         }
     }
 }

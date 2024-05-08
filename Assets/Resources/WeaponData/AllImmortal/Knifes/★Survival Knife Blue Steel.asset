@@ -13,8 +13,9 @@ MonoBehaviour:
   m_Name: "\u2605Survival Knife Blue Steel"
   m_EditorClassIdentifier: 
   <SkinName>k__BackingField: Blue Steel
-  <Sprite>k__BackingField: {fileID: 21300000, guid: 1a2ea6e0e13163f48accd140d05e2aae, type: 3}
+  <Sprite>k__BackingField: {fileID: 21300000, guid: bcae5aa04823e6d41b4dba8ed691d5ff, type: 3}
   <Quality>k__BackingField: 6
+  <Name>k__BackingField: 
   _minPrice: 17000
   _maxPrice: 22000
   _knifeName: 13

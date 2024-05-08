@@ -1,21 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using Sources.Modules.Weapon.Enums;
+using UnityEditor;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Sources.Modules.Weapon.WeaponData
+namespace Sources.Modules.Weapon.Scripts.WeaponData
 {
     public abstract class BaseWeaponData : ScriptableObject
     {
         [field: SerializeField] public string SkinName { get; private set; }
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public WeaponQuality Quality { get; private set; }
-        [field: SerializeField] public string Name { get; protected set; }
+        [field: SerializeField] public string PathToFile { private set; get; }
         
         [SerializeField] private float _minPrice;
         [SerializeField] private float _maxPrice;
-        
+
         private readonly Dictionary<WeaponQuality, Color> _colorWithQuality = new()
         {
             {WeaponQuality.Common, new Color(0.5f, 0.5f, 0.5f)},

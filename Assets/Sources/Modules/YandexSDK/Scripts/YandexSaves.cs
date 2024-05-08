@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Agava.YandexGames;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Interfaces;
 using Sources.Modules.Wallet.Interfaces;
 using Sources.Modules.Weapon.Scripts;
-using Sources.Modules.Weapon.WeaponData;
+using Sources.Modules.Weapon.Scripts.WeaponData;
 using UnityEngine;
 
 namespace Sources.Modules.YandexSDK.Scripts
@@ -70,18 +71,51 @@ namespace Sources.Modules.YandexSDK.Scripts
 
         private void OnWeaponAdded(WeaponRoot weaponRoot)
         {
-            var newWeapons = new List<BaseWeaponData>(_yandexData.WeaponsData) { weaponRoot.Data };
-            _yandexData.WeaponsData = newWeapons.ToArray();
+            List<WeaponSaveData> newWeaponsData = new List<WeaponSaveData>(_yandexData.WeaponsData);
             
-            Debug.Log(JsonUtility.ToJson(weaponRoot));
+            WeaponSaveData weaponSaveData = new WeaponSaveData()
+            {
+                PathToFile = weaponRoot.Data.PathToFile,
+                Price = weaponRoot.Price
+            };
+
+            bool canAdd;
+            
+            do
+            {
+                canAdd = true;
+                
+                foreach (var weapon in _yandexData.WeaponsData)
+                {
+                    if (weapon.Id == weaponRoot.Id)
+                    {
+                        canAdd = false;
+                        break;
+                    }
+                }
+
+                if (canAdd == false)
+                    weaponRoot.UpdateId();
+
+            } while (canAdd == false);
+
+            weaponSaveData.Id = weaponRoot.Id;
+            
+            newWeaponsData.Add(weaponSaveData);
+            
+            _yandexData.WeaponsData = newWeaponsData.ToArray();
             
             Save();
         }
 
         private void OnWeaponSold(WeaponRoot weaponRoot)
         {
-            var newWeapons = new List<BaseWeaponData>(_yandexData.WeaponsData);
-            newWeapons.Remove(weaponRoot.Data);
+            var newWeapons = new List<WeaponSaveData>(_yandexData.WeaponsData);
+
+            foreach (var weapon in _yandexData.WeaponsData)
+                if (weapon.Id == weaponRoot.Id)
+                    newWeapons.Remove(weapon);
+            
             _yandexData.WeaponsData = newWeapons.ToArray();
             
             Save();

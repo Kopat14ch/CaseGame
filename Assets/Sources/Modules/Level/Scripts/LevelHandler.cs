@@ -4,6 +4,7 @@ using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Configs;
 using Sources.Modules.Level.Interfaces;
 using Sources.Modules.Weapon.Enums;
+using Sources.Modules.Weapon.Scripts;
 
 namespace Sources.Modules.Level.Scripts
 {
@@ -28,7 +29,7 @@ namespace Sources.Modules.Level.Scripts
             _inventoryHandler = inventoryHandler;
 
             _caseOpenerHandler.ScrollComplete += OnScrollComplete;
-            _inventoryHandler.WeaponSelled += OnWeaponSelled;
+            _inventoryHandler.WeaponSold += OnWeaponSold;
         }
         
         public void Init()
@@ -60,9 +61,9 @@ namespace Sources.Modules.Level.Scripts
             AddExperience(_config.GetExperienceWithQuality(weapon.Data.Quality));
         }
 
-        private void OnWeaponSelled(WeaponQuality quality)
+        private void OnWeaponSold(WeaponRoot weaponRoot)
         {
-            AddExperience(_config.GetExperienceWithQuality(quality) / 2);
+            AddExperience(_config.GetExperienceWithQuality(weaponRoot.Data.Quality) / 2);
         }
 
         private void TryUp()

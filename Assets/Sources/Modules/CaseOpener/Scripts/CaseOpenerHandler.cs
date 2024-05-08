@@ -4,7 +4,7 @@ using DG.Tweening;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.Weapon.Enums;
-using Sources.Modules.Weapon.WeaponData;
+using Sources.Modules.Weapon.Scripts.WeaponData;
 using Sources.Modules.WeaponCaseOpener.Scripts;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -39,7 +39,9 @@ namespace Sources.Modules.CaseOpener.Scripts
                 
                 BaseWeaponData[] weaponDatasWithQuality = weaponDatas.Where(w => w.Quality == weaponQuality).ToArray();
                 
-                weaponCaseOpenerRoot.Init(weaponDatasWithQuality[Random.Range(0, weaponDatasWithQuality.Length)]);
+                weaponCaseOpenerRoot.UpdateId();
+                
+                weaponCaseOpenerRoot.Init(weaponDatasWithQuality[Random.Range(0, weaponDatasWithQuality.Length)], weaponCaseOpenerRoot.Id);
             }
 
             Scrolling(caseOpenerArrow, transform, weaponCaseOpenerRoots);

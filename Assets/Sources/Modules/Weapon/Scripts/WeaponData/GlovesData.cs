@@ -1,8 +1,7 @@
 ﻿using Sources.Modules.Weapon.Enums;
 using UnityEngine;
-using Zenject;
 
-namespace Sources.Modules.Weapon.WeaponData
+namespace Sources.Modules.Weapon.Scripts.WeaponData
 {
     
     [CreateAssetMenu(fileName = "GlovesData", menuName = "BaseWeaponData/NewGlovesData", order = 51)]
@@ -12,8 +11,7 @@ namespace Sources.Modules.Weapon.WeaponData
 
         public override string GetName()
         {
-            Name = _glovesName.ToString();
-            return Name;
+            return _glovesName.ToString();
         }
     }
 }

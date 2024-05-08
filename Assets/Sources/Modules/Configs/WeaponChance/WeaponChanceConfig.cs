@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Sources.Modules.Weapon.Enums;
-using Sources.Modules.Weapon.WeaponData;
+using Sources.Modules.Weapon.Scripts.WeaponData;
 using UnityEngine;
 
 namespace Sources.Modules.Configs.WeaponChance

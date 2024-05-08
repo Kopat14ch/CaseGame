@@ -1,5 +1,4 @@
 using System;
-using Sources.Modules.Weapon.WeaponData;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;

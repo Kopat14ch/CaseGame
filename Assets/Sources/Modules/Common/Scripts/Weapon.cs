@@ -1,6 +1,8 @@
-﻿using Sources.Modules.Weapon.Scripts;
-using Sources.Modules.Weapon.WeaponData;
+﻿using System;
+using Sources.Modules.Weapon.Scripts;
+using Sources.Modules.Weapon.Scripts.WeaponData;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Sources.Modules.Common.Scripts
 {
@@ -11,18 +13,20 @@ namespace Sources.Modules.Common.Scripts
         
         protected WeaponView View { get; private set; }
         public float Price { get; private set; } = -1;
+        public int Id { get; private set; }
         
         private void Awake()
         {
             View = GetComponent<WeaponView>();
         }
         
-        public void Init(BaseWeaponData weaponData)
+        public void Init(BaseWeaponData weaponData, int id, float price = 0)
         {
             Data = weaponData;
             View.UpdateData(Data);
 
-            Price = weaponData.GetPrice();
+            Id = id;
+            Price = price <= 0 ? weaponData.GetPrice() : price;
         }
         
         public virtual void Init(Weapon weapon)
@@ -31,6 +35,14 @@ namespace Sources.Modules.Common.Scripts
             View.UpdateData(Data);
 
             Price = weapon.Price;
+
+            Price = weapon.Price;
+            Id = weapon.Id;
+        }
+
+        public void UpdateId()
+        {
+            Id = Random.Range(int.MinValue, int.MaxValue);
         }
     }
 }
