@@ -1,5 +1,6 @@
 ﻿using Sources.Modules.Weapon.Enums;
 using UnityEngine;
+using Zenject;
 
 namespace Sources.Modules.Weapon.WeaponData
 {
@@ -9,6 +10,10 @@ namespace Sources.Modules.Weapon.WeaponData
     {
         [SerializeField] private GlovesName _glovesName;
 
-        public override string GetName() => _glovesName.ToString();
+        public override string GetName()
+        {
+            Name = _glovesName.ToString();
+            return Name;
+        }
     }
 }

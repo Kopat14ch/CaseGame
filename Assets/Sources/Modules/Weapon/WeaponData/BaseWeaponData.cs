@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Sources.Modules.Weapon.Enums;
 using UnityEngine;
 using Random = UnityEngine.Random;
@@ -10,10 +11,11 @@ namespace Sources.Modules.Weapon.WeaponData
         [field: SerializeField] public string SkinName { get; private set; }
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public WeaponQuality Quality { get; private set; }
+        [field: SerializeField] public string Name { get; protected set; }
         
         [SerializeField] private float _minPrice;
         [SerializeField] private float _maxPrice;
-
+        
         private readonly Dictionary<WeaponQuality, Color> _colorWithQuality = new()
         {
             {WeaponQuality.Common, new Color(0.5f, 0.5f, 0.5f)},
@@ -25,16 +27,16 @@ namespace Sources.Modules.Weapon.WeaponData
             {WeaponQuality.Immortal, new Color(0.5f, 0.5f, 0f)}
         };
 
+        public abstract string GetName();
+
 
         public Color GetCurrentColor()
         {
             return _colorWithQuality[Quality];
         }
 
-        public abstract string GetName();
-
         public float GetPrice()
-        {
+        {   
             return Random.Range(_minPrice, _maxPrice);;
         }
     }

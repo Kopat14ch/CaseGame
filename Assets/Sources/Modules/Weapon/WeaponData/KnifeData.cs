@@ -8,6 +8,10 @@ namespace Sources.Modules.Weapon.WeaponData
     {
         [SerializeField] private KnifeName _knifeName;
 
-        public override string GetName() => _knifeName.ToString();
+        public override string GetName()
+        {
+            Name = _knifeName.ToString();
+            return Name;
+        }
     }
 }
