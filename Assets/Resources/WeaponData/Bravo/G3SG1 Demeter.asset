@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Demeter
   <Sprite>k__BackingField: {fileID: 21300000, guid: d0c9d15d7a0a9ae4585fcb8aadfcbc95, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Bravo/G3SG1 Demeter
   _minPrice: 1000
   _maxPrice: 1600
   _weaponName: 2

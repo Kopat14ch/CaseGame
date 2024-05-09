@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Jawbreaker
   <Sprite>k__BackingField: {fileID: 21300000, guid: 7b2268c6d1d29ee48bd47516e4b292d1, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/USP-S Jawbreaker
   _minPrice: 960
   _maxPrice: 3600
   _weaponName: 19

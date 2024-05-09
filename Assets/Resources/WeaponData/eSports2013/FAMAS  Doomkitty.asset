@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Doomkitty
   <Sprite>k__BackingField: {fileID: 1206650226, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/eSports2013/FAMAS  Doomkitty
   _minPrice: 537
   _maxPrice: 600
   _weaponName: 14

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Wild Child
   <Sprite>k__BackingField: {fileID: 21300000, guid: 979a3f4bacb2e7d469c90fb47d01bc27, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Revolution/UMP-45 Wild Child
   _minPrice: 186
   _maxPrice: 750
   _weaponName: 30

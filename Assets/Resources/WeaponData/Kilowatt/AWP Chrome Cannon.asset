@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Chrome Cannon
   <Sprite>k__BackingField: {fileID: 21300000, guid: 98e51f69317a26d4392ce65cc71a8e81, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/AWP Chrome Cannon
   _minPrice: 5500
   _maxPrice: 24000
   _weaponName: 1

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Graven
   <Sprite>k__BackingField: {fileID: 21300000, guid: 9f7cbff06219c9540b3dd9c4112d363b, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/Bravo/MAC-10 Graven
   _minPrice: 3200
   _maxPrice: 4800
   _weaponName: 27

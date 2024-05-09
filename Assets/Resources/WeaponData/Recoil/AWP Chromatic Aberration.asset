@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Chromatic Aberration
   <Sprite>k__BackingField: {fileID: 21300000, guid: 97f74f858da35a04982586cbed160688, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Recoil/AWP Chromatic Aberration
   _minPrice: 670
   _maxPrice: 2500
   _weaponName: 1

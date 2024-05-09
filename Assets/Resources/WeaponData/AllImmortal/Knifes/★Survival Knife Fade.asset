@@ -15,6 +15,8 @@ MonoBehaviour:
   <SkinName>k__BackingField: Fade
   <Sprite>k__BackingField: {fileID: 21300000, guid: 78cde6af2f9875d49b423482acf4042f, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Survival Knife
+    Fade"
   _minPrice: 55000
   _maxPrice: 57000
   _knifeName: 13

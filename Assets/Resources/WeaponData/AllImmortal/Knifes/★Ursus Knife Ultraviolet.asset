@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Ultraviolet
   <Sprite>k__BackingField: {fileID: 21300000, guid: 3a6c1f69c03e20d48893e0a1e3cf9be8, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Ursus Knife Ultraviolet"
   _minPrice: 17000
   _maxPrice: 31000
   _knifeName: 14

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Ghost Camo
   <Sprite>k__BackingField: {fileID: 21300000, guid: ba2b1ab1fd5b27f4d82d034c1aa04017, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/Nova Ghost Camo
   _minPrice: 225
   _maxPrice: 260
   _weaponName: 5

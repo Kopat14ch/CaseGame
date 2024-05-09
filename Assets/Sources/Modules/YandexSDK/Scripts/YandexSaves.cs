@@ -19,6 +19,7 @@ namespace Sources.Modules.YandexSDK.Scripts
         private YandexData _yandexData;
 
         public static YandexSaves Instance { get; private set; }
+        public bool IsLoaded;
 
         public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler, IWalletHandler walletHandler)
         {
@@ -30,10 +31,14 @@ namespace Sources.Modules.YandexSDK.Scripts
 
 #if UNITY_EDITOR == false
             PlayerAccount.GetCloudSaveData(json =>
-                _yandexData = JsonUtility.FromJson<YandexData>(json) ?? new YandexData()
+                {
+                    _yandexData = JsonUtility.FromJson<YandexData>(json) ?? new YandexData();
+                    IsLoaded = true;
+                }
             );
 #else
             _yandexData = new YandexData();
+            IsLoaded = true;
 #endif
             
             _levelHandlerEvent.LevelLimitUpdated += OnLevelLimitUpdated;
@@ -111,10 +116,14 @@ namespace Sources.Modules.YandexSDK.Scripts
         private void OnWeaponSold(WeaponRoot weaponRoot)
         {
             var newWeapons = new List<WeaponSaveData>(_yandexData.WeaponsData);
-
+            
             foreach (var weapon in _yandexData.WeaponsData)
-                if (weapon.Id == weaponRoot.Id)
-                    newWeapons.Remove(weapon);
+            {
+                if (weapon.Id != weaponRoot.Id)
+                    continue;
+                
+                newWeapons.Remove(weapon);
+            }
             
             _yandexData.WeaponsData = newWeapons.ToArray();
             

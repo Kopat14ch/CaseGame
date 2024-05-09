@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Cysharp.Threading.Tasks;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.Weapon.Scripts.WeaponData;
 using Sources.Modules.YandexSDK.Scripts;
@@ -29,16 +31,18 @@ namespace Sources.Modules.Inventory.Scripts
            return weaponRoot;
         }
 
-        public WeaponRoot[] Initialize()
+        public async Task<WeaponRoot[]> Initialize()
         {
-            return InitWeapons();
+            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
+            
+            return InitWeapons(YandexSaves.Instance.Load().WeaponsData);
         }
 
-        private WeaponRoot[] InitWeapons()
+        private WeaponRoot[] InitWeapons(WeaponSaveData[] weaponSaveDatas)
         {
             List<WeaponRoot> weaponRoots = new List<WeaponRoot>();
             
-            foreach (var data in YandexSaves.Instance.Load().WeaponsData)
+            foreach (var data in weaponSaveDatas)
             {
                 BaseWeaponData weaponData = Resources.Load<BaseWeaponData>(data.PathToFile);
                 

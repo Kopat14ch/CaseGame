@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Olympus
   <Sprite>k__BackingField: {fileID: 21300000, guid: b49c0e7025baf864b9e8c51dd82c29da, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/Zeus x27 Olympus
   _minPrice: 940
   _maxPrice: 2600
   _weaponName: 34

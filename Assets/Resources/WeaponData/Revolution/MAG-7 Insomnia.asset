@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Insomnia
   <Sprite>k__BackingField: {fileID: 21300000, guid: 06f5183ae2033f24b954e3ff7103de6f, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Revolution/MAG-7 Insomnia
   _minPrice: 4.7
   _maxPrice: 30
   _weaponName: 9

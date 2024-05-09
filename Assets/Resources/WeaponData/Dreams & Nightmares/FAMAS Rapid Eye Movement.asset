@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Rapid Eye Movement
   <Sprite>k__BackingField: {fileID: 21300000, guid: 22cfcf76434ff614182e232787eda152, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/FAMAS Rapid Eye Movement
   _minPrice: 110
   _maxPrice: 800
   _weaponName: 14

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Duality
   <Sprite>k__BackingField: {fileID: 21300000, guid: 654247fa272edc14e8b07158a1cc808c, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Revolution/AWP Duality
   _minPrice: 215
   _maxPrice: 1500
   _weaponName: 1

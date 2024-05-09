@@ -15,6 +15,8 @@ MonoBehaviour:
   <SkinName>k__BackingField: Doppler Phase 3
   <Sprite>k__BackingField: {fileID: 21300000, guid: e64288fe45a94324caf93fa82abaa95c, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Ursus Knife Doppler
+    Phase 3"
   _minPrice: 62000
   _maxPrice: 70000
   _knifeName: 14

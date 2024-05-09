@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Inheritance
   <Sprite>k__BackingField: {fileID: 21300000, guid: 5bfd56c5e35ad274eb2793f4dace5478, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/AK-47 Inheritance
   _minPrice: 8000
   _maxPrice: 30000
   _weaponName: 12

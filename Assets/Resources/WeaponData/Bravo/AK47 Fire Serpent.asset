@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Fire Serpent
   <Sprite>k__BackingField: {fileID: 21300000, guid: b7dc6602052815949988d5632a25ace9, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Bravo/AK47 Fire Serpent
   _minPrice: 72000
   _maxPrice: 350000
   _weaponName: 12

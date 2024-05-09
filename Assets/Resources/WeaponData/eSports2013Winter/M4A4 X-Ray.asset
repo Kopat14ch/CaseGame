@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: X-Ray
   <Sprite>k__BackingField: {fileID: 21300000, guid: 8484479ffe7f6554cbaed3f03fa57dc2, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/M4A4 X-Ray
   _minPrice: 1300
   _maxPrice: 2700
   _weaponName: 10

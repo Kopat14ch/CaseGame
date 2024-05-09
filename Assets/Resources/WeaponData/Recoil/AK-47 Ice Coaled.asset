@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Ice Coaled
   <Sprite>k__BackingField: {fileID: 21300000, guid: 07d8bf785a8740c40a04c5ad8c2b9e02, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Recoil/AK-47 Ice Coaled
   _minPrice: 477
   _maxPrice: 2400
   _weaponName: 12

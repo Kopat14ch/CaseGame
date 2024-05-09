@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Splash
   <Sprite>k__BackingField: {fileID: -2052055166, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/eSports2013/P250 Splash
   _minPrice: 2280
   _maxPrice: 5100
   _weaponName: 20

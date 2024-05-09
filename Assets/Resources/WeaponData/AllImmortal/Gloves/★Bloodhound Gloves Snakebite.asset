@@ -15,6 +15,8 @@ MonoBehaviour:
   <SkinName>k__BackingField: Snakebite
   <Sprite>k__BackingField: {fileID: 21300000, guid: bee4dbc5ed4561c418dfa72c30ac45ba, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Gloves/\u2605Bloodhound Gloves
+    Snakebite"
   _minPrice: 8000
   _maxPrice: 52000
   _glovesName: 1

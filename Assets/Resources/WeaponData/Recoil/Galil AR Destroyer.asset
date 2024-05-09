@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Destroyer
   <Sprite>k__BackingField: {fileID: 21300000, guid: c1808be9eff62a845ba9010324c53df1, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Recoil/Galil AR Destroyer
   _minPrice: 4.7
   _maxPrice: 24
   _weaponName: 13

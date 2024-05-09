@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Marina
   <Sprite>k__BackingField: {fileID: 21300000, guid: 546a31e421bc9844e978f01acac102be, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/WinterOffensiveWeapon/Dual Berettas Marina
   _minPrice: 400
   _maxPrice: 2200
   _weaponName: 33

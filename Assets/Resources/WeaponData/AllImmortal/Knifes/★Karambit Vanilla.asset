@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Vanilla
   <Sprite>k__BackingField: {fileID: 21300000, guid: 375d93ffc37411a4eaa9bc48a57751dc, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Karambit Vanilla"
   _minPrice: 137000
   _maxPrice: 151000
   _knifeName: 1

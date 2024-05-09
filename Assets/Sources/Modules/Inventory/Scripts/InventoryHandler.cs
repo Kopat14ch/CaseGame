@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Weapon.Scripts;
+using Sources.Modules.YandexSDK.Scripts;
+using UnityEngine;
 using Zenject;
 
 namespace Sources.Modules.Inventory.Scripts
@@ -34,9 +36,11 @@ namespace Sources.Modules.Inventory.Scripts
             _view.SellButtonClicked += WeaponSell;
         }
         
-        public void Initialize()
+        public async void Initialize()
         {
-            foreach (var weaponRoot in _inventoryFactory.Initialize())
+            WeaponRoot[] weaponRoots = await _inventoryFactory.Initialize();
+            
+            foreach (var weaponRoot in weaponRoots)
                 WeaponAdd(weaponRoot);
         }
 
@@ -58,9 +62,11 @@ namespace Sources.Modules.Inventory.Scripts
             WeaponSell(_newWeapon);
         }
         
-        private void WeaponAdd(WeaponRoot weaponRoot)
+        private void WeaponAdd(WeaponRoot weaponRoot, bool wantInvoke = true)
         {
-            WeaponAdded?.Invoke(weaponRoot);
+            if (wantInvoke) 
+                WeaponAdded?.Invoke(weaponRoot);
+            
             _weaponRoots.Add(weaponRoot);
             weaponRoot.Clicked += OnWeaponRootClicked;
         }

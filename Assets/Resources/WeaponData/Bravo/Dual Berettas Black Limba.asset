@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Black Limba
   <Sprite>k__BackingField: {fileID: 21300000, guid: d7b0f17865987da46a4b5d6b9ddbdb0c, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Bravo/Dual Berettas Black Limba
   _minPrice: 1000
   _maxPrice: 1150
   _weaponName: 33

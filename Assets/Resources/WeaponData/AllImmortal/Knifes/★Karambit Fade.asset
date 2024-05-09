@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Fade
   <Sprite>k__BackingField: {fileID: 21300000, guid: fef7aded45dbcb246b8cccd17b5e290b, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Karambit Fade"
   _minPrice: 323000
   _maxPrice: 350000
   _knifeName: 1

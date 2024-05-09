@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Faded Zebra
   <Sprite>k__BackingField: {fileID: 1034005592, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/eSports2013/M4A4 Faded Zebra
   _minPrice: 470
   _maxPrice: 575
   _weaponName: 10

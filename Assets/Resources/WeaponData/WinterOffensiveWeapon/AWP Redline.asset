@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Redline
   <Sprite>k__BackingField: {fileID: 21300000, guid: 300e74aaca77ab543b220839c2d7414f, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/WinterOffensiveWeapon/AWP Redline
   _minPrice: 5600
   _maxPrice: 8700
   _weaponName: 1

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Autotronic
   <Sprite>k__BackingField: {fileID: 21300000, guid: 0eacc7352ce4e1c438658a8d19463b62, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Bayonet Autotronic"
   _minPrice: 52000
   _maxPrice: 72000
   _knifeName: 2

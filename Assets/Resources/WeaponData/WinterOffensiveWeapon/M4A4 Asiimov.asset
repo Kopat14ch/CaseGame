@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Asiimov
   <Sprite>k__BackingField: {fileID: 21300000, guid: 97635a2f87dbcd04eb4b6a64dc12c84a, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/WinterOffensiveWeapon/M4A4 Asiimov
   _minPrice: 7000
   _maxPrice: 18000
   _weaponName: 10

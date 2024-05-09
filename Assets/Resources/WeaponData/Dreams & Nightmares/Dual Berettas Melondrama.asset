@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Melondrama
   <Sprite>k__BackingField: {fileID: 21300000, guid: c14508b5ee346094ea2b7cf6dc1f65f1, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/Dual Berettas Melondrama
   _minPrice: 120
   _maxPrice: 900
   _weaponName: 33

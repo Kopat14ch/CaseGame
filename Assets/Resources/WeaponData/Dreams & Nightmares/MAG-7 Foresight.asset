@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Foresight
   <Sprite>k__BackingField: {fileID: 21300000, guid: 051242a261d339a41a6a76f2a43e99ff, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/MAG-7 Foresight
   _minPrice: 4.7
   _maxPrice: 20
   _weaponName: 9

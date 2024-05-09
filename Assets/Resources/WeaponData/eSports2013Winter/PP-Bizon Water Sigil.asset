@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Water Sigil
   <Sprite>k__BackingField: {fileID: 21300000, guid: 964122878356f1941b90af7fde31a46d, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/PP-Bizon Water Sigil
   _minPrice: 200
   _maxPrice: 250
   _weaponName: 32

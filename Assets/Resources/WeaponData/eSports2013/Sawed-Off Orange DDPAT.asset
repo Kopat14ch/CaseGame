@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Orange DDPAT
   <Sprite>k__BackingField: {fileID: -1147011634, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/eSports2013/Sawed-Off Orange DDPAT
   _minPrice: 1450
   _maxPrice: 2100
   _weaponName: 26

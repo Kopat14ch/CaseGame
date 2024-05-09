@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Monkeyflage
   <Sprite>k__BackingField: {fileID: 21300000, guid: 466bf24176ec49349a145ff224461e94, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Recoil/MAC-10 Monkeyflage
   _minPrice: 4.7
   _maxPrice: 25
   _weaponName: 27

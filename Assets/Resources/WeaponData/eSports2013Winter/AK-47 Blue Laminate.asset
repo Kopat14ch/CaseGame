@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Blue Laminate
   <Sprite>k__BackingField: {fileID: 21300000, guid: f1c68960d68c456419628ad6ee701953, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/AK-47 Blue Laminate
   _minPrice: 1300
   _maxPrice: 1700
   _weaponName: 12

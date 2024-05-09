@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Spearmint
   <Sprite>k__BackingField: {fileID: 21300000, guid: 3b0ca794a8d9fc54dba72bab0782b307, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Gloves/\u2605Moto Gloves Spearmint"
   _minPrice: 45000
   _maxPrice: 650000
   _glovesName: 5

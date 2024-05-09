@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Afterimage
   <Sprite>k__BackingField: {fileID: 21300000, guid: 5a154989c2d7d4642abb824ad0be4768, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/FAMAS Afterimage
   _minPrice: 2200
   _maxPrice: 6100
   _weaponName: 14

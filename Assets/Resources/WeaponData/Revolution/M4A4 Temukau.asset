@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Temukau
   <Sprite>k__BackingField: {fileID: 21300000, guid: 384f03d8bf667e34a9f9c4580052e9f5, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Revolution/M4A4 Temukau
   _minPrice: 817
   _maxPrice: 16000
   _weaponName: 10

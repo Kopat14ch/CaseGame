@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Fragments
   <Sprite>k__BackingField: {fileID: 21300000, guid: f2cf2a8ff6d3ae34295e9643b6cf4758, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Revolution/SCAR-20 Fragments
   _minPrice: 4
   _maxPrice: 30
   _weaponName: 3

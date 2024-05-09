@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Cobalt Disruption
   <Sprite>k__BackingField: {fileID: 21300000, guid: ed949550ff1243349b0572a6a44615bd, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/Desert Eagle Cobalt Disruption
   _minPrice: 7900
   _maxPrice: 12000
   _weaponName: 24

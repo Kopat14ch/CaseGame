@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Dragon Tech
   <Sprite>k__BackingField: {fileID: 21300000, guid: bfef48e2739a4674498e7f57dfb8aeeb, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/Recoil/SG 553 Dragon Tech
   _minPrice: 41
   _maxPrice: 200
   _weaponName: 16

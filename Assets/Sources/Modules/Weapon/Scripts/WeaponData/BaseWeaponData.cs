@@ -28,6 +28,8 @@ namespace Sources.Modules.Weapon.Scripts.WeaponData
             {WeaponQuality.Immortal, new Color(0.5f, 0.5f, 0f)}
         };
 
+        
+        
         public abstract string GetName();
 
 

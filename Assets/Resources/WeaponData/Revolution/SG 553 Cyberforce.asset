@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Cyberforce
   <Sprite>k__BackingField: {fileID: 21300000, guid: 13372501b37e9d94482e3266183063fc, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Revolution/SG 553 Cyberforce
   _minPrice: 4.7
   _maxPrice: 12
   _weaponName: 16

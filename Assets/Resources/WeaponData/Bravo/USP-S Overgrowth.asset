@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Overgrowth
   <Sprite>k__BackingField: {fileID: 21300000, guid: 6d931f7889115c44990f7ee5f858bdc5, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/Bravo/USP-S Overgrowth
   _minPrice: 3000
   _maxPrice: 8700
   _weaponName: 19

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Death by Kitty
   <Sprite>k__BackingField: {fileID: -123132109, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/eSports2013/P90 Death by Kitty
   _minPrice: 5300
   _maxPrice: 6300
   _weaponName: 31

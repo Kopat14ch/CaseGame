@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Ocean Foam
   <Sprite>k__BackingField: {fileID: 21300000, guid: 6663a2fbe949a194f94d6d47e5ec19be, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Bravo/P2000 Ocean Foam
   _minPrice: 18000
   _maxPrice: 19000
   _weaponName: 18

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Analog Input
   <Sprite>k__BackingField: {fileID: 21300000, guid: 90120478092d07b4c906dd196faa94b9, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/Sawed-Off Analog Input
   _minPrice: 130
   _maxPrice: 340
   _weaponName: 26

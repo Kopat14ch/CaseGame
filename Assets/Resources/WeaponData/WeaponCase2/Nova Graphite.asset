@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Graphite
   <Sprite>k__BackingField: {fileID: 21300000, guid: d8c1f079715b02d488731e4b2c917beb, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/WeaponCase2/Nova Graphite
   _minPrice: 900
   _maxPrice: 1000
   _weaponName: 5

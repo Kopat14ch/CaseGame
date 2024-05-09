@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Serum
   <Sprite>k__BackingField: {fileID: 21300000, guid: a5012ae6e0d0a034ba39f067ab2586ee, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/WeaponCase2/USP-S Serum
   _minPrice: 3700
   _maxPrice: 7000
   _weaponName: 19

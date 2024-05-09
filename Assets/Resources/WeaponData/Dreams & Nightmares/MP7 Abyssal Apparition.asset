@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Abyssal Apparition
   <Sprite>k__BackingField: {fileID: 21300000, guid: aa8f29ef5b74d504bbf11c1033ca5e65, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/MP7 Abyssal Apparition
   _minPrice: 100
   _maxPrice: 900
   _weaponName: 29

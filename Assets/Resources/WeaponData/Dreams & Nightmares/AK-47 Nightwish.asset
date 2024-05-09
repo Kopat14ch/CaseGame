@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Nightwish
   <Sprite>k__BackingField: {fileID: 21300000, guid: 08eecada51d81b14f94a6a9881e23e47, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/AK-47 Nightwish
   _minPrice: 590
   _maxPrice: 9000
   _weaponName: 12

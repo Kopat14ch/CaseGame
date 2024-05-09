@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Head Shot
   <Sprite>k__BackingField: {fileID: 21300000, guid: 9ae5e1b848aed3e4397465f3f3a5e5a1, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Revolution/AK-47 Head Shot
   _minPrice: 770
   _maxPrice: 8000
   _weaponName: 12

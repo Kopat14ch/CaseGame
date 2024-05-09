@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Blue Titanium
   <Sprite>k__BackingField: {fileID: 21300000, guid: aa3f6ff96f1928446910d681e5a9b1e7, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/WeaponCase2/Tec-9 Blue Titanium
   _minPrice: 700
   _maxPrice: 750
   _weaponName: 22

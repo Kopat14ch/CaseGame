@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Visions
   <Sprite>k__BackingField: {fileID: 21300000, guid: aa4c7702c2294324a8509b2c4e57ee36, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Recoil/P250 Visions
   _minPrice: 267
   _maxPrice: 1100
   _weaponName: 20

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Wicked Sick
   <Sprite>k__BackingField: {fileID: 21300000, guid: d706f0769331cc54c96ae895ddc913b9, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Revolution/P2000 Wicked Sick
   _minPrice: 155
   _maxPrice: 1300
   _weaponName: 18

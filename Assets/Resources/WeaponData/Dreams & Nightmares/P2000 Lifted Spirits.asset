@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Lifted Spirits
   <Sprite>k__BackingField: {fileID: 21300000, guid: 513d97b99c1bb434aa13b03775d88e84, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/P2000 Lifted Spirits
   _minPrice: 4.7
   _maxPrice: 20
   _weaponName: 18

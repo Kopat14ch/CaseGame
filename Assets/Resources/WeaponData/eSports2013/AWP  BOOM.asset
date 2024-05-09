@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: BOOM
   <Sprite>k__BackingField: {fileID: 369031705, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/eSports2013/AWP  BOOM
   _minPrice: 11400
   _maxPrice: 40000
   _weaponName: 1

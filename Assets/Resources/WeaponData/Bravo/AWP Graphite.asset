@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Graphite
   <Sprite>k__BackingField: {fileID: 21300000, guid: 8d7b8426529d4394d80f0404556a6d7c, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Bravo/AWP Graphite
   _minPrice: 18000
   _maxPrice: 20000
   _weaponName: 1

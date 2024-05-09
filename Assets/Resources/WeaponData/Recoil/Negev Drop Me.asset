@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Drop Me
   <Sprite>k__BackingField: {fileID: 21300000, guid: 055a543b286c1e44fa1d66f92454673a, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Recoil/Negev Drop Me
   _minPrice: 4.7
   _maxPrice: 25
   _weaponName: 8

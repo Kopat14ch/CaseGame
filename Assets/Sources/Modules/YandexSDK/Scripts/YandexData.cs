@@ -11,8 +11,6 @@ namespace Sources.Modules.YandexSDK.Scripts
         public int Level;
         public uint Experience;
         public uint MaxExperience;
-
-        public static int Index;
         
         public YandexData()
         {

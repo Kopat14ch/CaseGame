@@ -3720,6 +3720,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef8f14224d14df2b58f229151a327e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponDatas:
+  - PathToFile: WeaponData/Bravo/AK47 Fire Serpent
+    Price: 777
+    Id: 228
+  - PathToFile: WeaponData/Bravo/AWP Graphite
+    Price: 99911
+    Id: 332
+  _prefab: {fileID: 2351350339109625753, guid: c48758eaf2f7a3e4c98e64ed9d180892, type: 3}
 --- !u!114 &563165826
 MonoBehaviour:
   m_ObjectHideFlags: 0

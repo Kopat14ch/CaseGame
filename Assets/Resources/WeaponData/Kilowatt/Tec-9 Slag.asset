@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Slag
   <Sprite>k__BackingField: {fileID: 21300000, guid: 5b6b1bcef8f251f48aab2acdfad0d735, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/Tec-9 Slag
   _minPrice: 14
   _maxPrice: 45
   _weaponName: 22

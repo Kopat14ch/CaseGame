@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Meow 36
   <Sprite>k__BackingField: {fileID: 21300000, guid: ebef6df86b54d9f45ac79a31e7eb8f75, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Recoil/FAMAS Meow 36
   _minPrice: 4.7
   _maxPrice: 30
   _weaponName: 14

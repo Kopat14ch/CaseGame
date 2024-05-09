@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Printstream
   <Sprite>k__BackingField: {fileID: 21300000, guid: cd604c1be962f0d4fb443d2d2f91c7a0, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Recoil/USP-S Printstream
   _minPrice: 3125
   _maxPrice: 13000
   _weaponName: 19

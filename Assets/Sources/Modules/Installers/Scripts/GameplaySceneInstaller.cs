@@ -39,7 +39,7 @@ namespace Sources.Modules.Installers.Scripts
             Container.Bind<InventoryContent>().FromInstance(_inventoryContent).AsSingle().NonLazy();
             Container.Bind<InventoryFactory>().AsSingle().NonLazy();
             Container.Bind<InventoryHandler>().AsSingle().NonLazy();
-            Container.BindInterfacesTo<InventoryHandler>().FromResolve();
+            Container.BindInterfacesTo<InventoryHandler>().FromResolve().NonLazy();
         }
 
         private void BindWeaponRoot()

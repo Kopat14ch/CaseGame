@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Dark Sigil
   <Sprite>k__BackingField: {fileID: 21300000, guid: 0e1a574b290222b4f870fe6b3e70860a, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/Nova Dark Sigil
   _minPrice: 14
   _maxPrice: 45
   _weaponName: 5

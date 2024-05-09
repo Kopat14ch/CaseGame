@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Blood in the Water
   <Sprite>k__BackingField: {fileID: 21300000, guid: e12594acb998efa41ae59619bc860169, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/WeaponCase2/SSG 08 Blood in the Water
   _minPrice: 5000
   _maxPrice: 7000
   _weaponName: 4

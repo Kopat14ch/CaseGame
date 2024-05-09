@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Light Box
   <Sprite>k__BackingField: {fileID: 21300000, guid: 5591cfbe6d20bf24997d46e9ed58bc31, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Kilowatt/MAC-10 Light Box
   _minPrice: 30
   _maxPrice: 400
   _weaponName: 27

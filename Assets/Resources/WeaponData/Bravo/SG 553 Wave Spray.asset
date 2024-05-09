@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Wave Spray
   <Sprite>k__BackingField: {fileID: 21300000, guid: fa49dfd64e6452340a804f39973ff609, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Bravo/SG 553 Wave Spray
   _minPrice: 900
   _maxPrice: 1100
   _weaponName: 16

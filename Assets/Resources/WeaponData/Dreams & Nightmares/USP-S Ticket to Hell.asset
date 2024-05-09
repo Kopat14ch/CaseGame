@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Ticket to Hell
   <Sprite>k__BackingField: {fileID: 21300000, guid: 2efd4fa97babd27429feaffa3d462cd1, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/USP-S Ticket to Hell
   _minPrice: 29
   _maxPrice: 177
   _weaponName: 19

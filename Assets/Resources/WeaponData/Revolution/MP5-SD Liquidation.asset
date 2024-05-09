@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Liquidation
   <Sprite>k__BackingField: {fileID: 21300000, guid: 7b4ac6b2ebf315844ab67897550f216d, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Revolution/MP5-SD Liquidation
   _minPrice: 4.7
   _maxPrice: 30
   _weaponName: 35

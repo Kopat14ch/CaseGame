@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Kami
   <Sprite>k__BackingField: {fileID: 21300000, guid: fe63fded022a02247b44462a3408d676, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/WinterOffensiveWeapon/Five-SeveN Kami
   _minPrice: 133
   _maxPrice: 240
   _weaponName: 21

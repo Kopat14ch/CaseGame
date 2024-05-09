@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: MAC-10 Ensnared
   <Sprite>k__BackingField: {fileID: 21300000, guid: dc7ccffae1ebe96478d09afb6a102d4e, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/MAC-10 Ensnared
   _minPrice: 4.7
   _maxPrice: 23
   _weaponName: 27

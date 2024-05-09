@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Starlight Protector
   <Sprite>k__BackingField: {fileID: 21300000, guid: 220cd286ced89184e9748e3b6ee62d1e, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/MP9 Starlight Protector
   _minPrice: 260
   _maxPrice: 2400
   _weaponName: 28

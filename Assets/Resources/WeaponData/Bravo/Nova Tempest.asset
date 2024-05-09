@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Tempest
   <Sprite>k__BackingField: {fileID: 21300000, guid: db1affbd54985894ca935192f9690267, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Bravo/Nova Tempest
   _minPrice: 1100
   _maxPrice: 1700
   _weaponName: 5

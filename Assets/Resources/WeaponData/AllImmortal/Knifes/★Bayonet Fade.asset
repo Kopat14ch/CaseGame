@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Fade
   <Sprite>k__BackingField: {fileID: 21300000, guid: fdc051963ce2da9418113f1b7ef88dc3, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Knifes/\u2605Bayonet Fade"
   _minPrice: 100000
   _maxPrice: 120000
   _knifeName: 2

@@ -15,6 +15,8 @@ MonoBehaviour:
   <SkinName>k__BackingField: Mangrove
   <Sprite>k__BackingField: {fileID: 21300000, guid: 84065d880b3da4e4db8ab9fe93c514fd, type: 3}
   <Quality>k__BackingField: 6
+  <PathToFile>k__BackingField: "WeaponData/AllImmortal/Gloves/\u2605Hydra Gloves
+    Mangrove"
   _minPrice: 7000
   _maxPrice: 25000
   _glovesName: 11

@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Rising Skull
   <Sprite>k__BackingField: {fileID: 21300000, guid: fa9ececc7956dc2439fc7043e53ba3b1, type: 3}
   <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/WinterOffensiveWeapon/Nova Rising Skull
   _minPrice: 633
   _maxPrice: 770
   _weaponName: 5

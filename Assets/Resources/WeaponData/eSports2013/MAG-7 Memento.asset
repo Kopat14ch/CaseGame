@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Memento
   <Sprite>k__BackingField: {fileID: 335348218, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/eSports2013/MAG-7 Memento
   _minPrice: 615
   _maxPrice: 1010
   _weaponName: 9

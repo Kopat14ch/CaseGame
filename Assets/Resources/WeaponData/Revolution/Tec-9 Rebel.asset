@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Rebel
   <Sprite>k__BackingField: {fileID: 21300000, guid: 2973a70d4d2b1f84f9328fa47278b788, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Revolution/Tec-9 Rebel
   _minPrice: 4.7
   _maxPrice: 30
   _weaponName: 22

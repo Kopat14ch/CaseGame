@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Nightshade
   <Sprite>k__BackingField: {fileID: 21300000, guid: cc34cf6f58c26fb4b9f19ef93f893264, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/Five-SeveN Nightshade
   _minPrice: 230
   _maxPrice: 271
   _weaponName: 21

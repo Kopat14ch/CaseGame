@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Poultrygeist
   <Sprite>k__BackingField: {fileID: 21300000, guid: a6d9d363f924adb4fbbeafe635dc187e, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/Dreams & Nightmares/SCAR-20 Poultrygeist
   _minPrice: 4.7
   _maxPrice: 18
   _weaponName: 3

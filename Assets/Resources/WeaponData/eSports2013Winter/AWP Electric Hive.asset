@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Electric Hive
   <Sprite>k__BackingField: {fileID: 21300000, guid: 88055143eb74a4443a883c78826837fa, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/eSports2013Winter/AWP Electric Hive
   _minPrice: 4000
   _maxPrice: 7500
   _weaponName: 1

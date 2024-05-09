@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Red Laminate
   <Sprite>k__BackingField: {fileID: -61407070, guid: 7130fe6bfff19484eb531da095bd14b6, type: 3}
   <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/eSports2013/AK-47 Red Laminate
   _minPrice: 5000
   _maxPrice: 7600
   _weaponName: 12

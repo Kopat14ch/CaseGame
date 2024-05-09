@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: The Kraken
   <Sprite>k__BackingField: {fileID: 21300000, guid: 3a21d3934533cd0418aa4073e92ece0d, type: 3}
   <Quality>k__BackingField: 5
+  <PathToFile>k__BackingField: WeaponData/WinterOffensiveWeapon/Sawed-Off The Kraken
   _minPrice: 556
   _maxPrice: 721
   _weaponName: 26

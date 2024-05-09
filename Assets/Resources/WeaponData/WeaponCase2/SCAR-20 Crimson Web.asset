@@ -15,6 +15,7 @@ MonoBehaviour:
   <SkinName>k__BackingField: Crimson Web
   <Sprite>k__BackingField: {fileID: 21300000, guid: 920e085ced10e15489e328b4c35493fd, type: 3}
   <Quality>k__BackingField: 2
+  <PathToFile>k__BackingField: WeaponData/WeaponCase2/SCAR-20 Crimson Web
   _minPrice: 500
   _maxPrice: 1500
   _weaponName: 3
