@@ -24,7 +24,6 @@ namespace Sources.Modules.Common.Scripts
         {
             Data = weaponData;
             View.UpdateData(Data);
-
             Id = id;
             Price = price <= 0 ? weaponData.GetPrice() : price;
         }

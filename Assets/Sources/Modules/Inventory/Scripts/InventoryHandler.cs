@@ -41,7 +41,7 @@ namespace Sources.Modules.Inventory.Scripts
             WeaponRoot[] weaponRoots = await _inventoryFactory.Initialize();
             
             foreach (var weaponRoot in weaponRoots)
-                WeaponAdd(weaponRoot);
+                WeaponAdd(weaponRoot, false);
         }
 
         public void Dispose()
