@@ -1,10 +1,12 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Configs;
 using Sources.Modules.Level.Interfaces;
 using Sources.Modules.Weapon.Enums;
 using Sources.Modules.Weapon.Scripts;
+using Sources.Modules.YandexSDK.Scripts;
 
 namespace Sources.Modules.Level.Scripts
 {
@@ -16,7 +18,7 @@ namespace Sources.Modules.Level.Scripts
 
         private int _current;
         private uint _experience;
-        private uint _limit;
+        private uint _maxExperience;
         
         public event Action<uint> ExperienceUpdated;
         public event Action<int, uint> LevelLimitUpdated;
@@ -32,13 +34,17 @@ namespace Sources.Modules.Level.Scripts
             _inventoryHandler.WeaponSold += OnWeaponSold;
         }
         
-        public void Init()
+        public async void Init()
         {
-            _current = 0;
-            _experience = 0;
-            _limit = 50;
+            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
+
+            YandexData yandexSaves = YandexSaves.Instance.Load();
             
-            LevelLimitUpdated?.Invoke(_current, _limit);
+            _current = yandexSaves.Level;
+            _experience = yandexSaves.Experience;
+            _maxExperience = yandexSaves.MaxExperience;
+            
+            LevelLimitUpdated?.Invoke(_current, _maxExperience);
             LevelUpdated?.Invoke(_current);
             ExperienceUpdated?.Invoke(_experience);
         }
@@ -68,14 +74,14 @@ namespace Sources.Modules.Level.Scripts
 
         private void TryUp()
         {
-            if (_experience < _limit) 
+            if (_experience < _maxExperience) 
                 return;
             
-            _experience -= _limit;
-            _limit = (uint)(_limit * _config.LimitMultiplier);
+            _experience -= _maxExperience;
+            _maxExperience = (uint)(_maxExperience * _config.LimitMultiplier);
             _current++;
             
-            LevelLimitUpdated?.Invoke(_current, _limit);
+            LevelLimitUpdated?.Invoke(_current, _maxExperience);
             LevelUpdated?.Invoke(_current);
         }
     }

@@ -1,5 +1,7 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using Sources.Modules.Wallet.Interfaces;
+using Sources.Modules.YandexSDK.Scripts;
 
 namespace Sources.Modules.Wallet.Scripts
 {
@@ -24,9 +26,11 @@ namespace Sources.Modules.Wallet.Scripts
 
         public event Action<float> MoneyChanged;
         
-        public void Init()
+        public async void Init()
         {
-            Money = StartMoney;
+            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
+            
+            Money = YandexSaves.Instance.Load().Money;
         }
 
         public bool TryTakeMoney(float value)

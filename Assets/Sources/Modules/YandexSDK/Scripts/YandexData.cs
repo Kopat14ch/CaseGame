@@ -14,6 +14,9 @@ namespace Sources.Modules.YandexSDK.Scripts
         
         public YandexData()
         {
+            Money = 1000;
+            Experience = 0;
+            MaxExperience = 50;
             WeaponsData = Array.Empty<WeaponSaveData>();
         }
     }
