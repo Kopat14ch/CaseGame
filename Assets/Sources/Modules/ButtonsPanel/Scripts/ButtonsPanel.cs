@@ -16,8 +16,7 @@ namespace Sources.Modules.ButtonsPanel.Scripts
         private ColorBlock _colorBlock;
         
         public event Action<ButtonsPanel> Clicked;
-
-
+        
         public void Init()
         {
             _colorBlock = _currentButton.colors;

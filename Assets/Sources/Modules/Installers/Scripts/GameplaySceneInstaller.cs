@@ -2,6 +2,8 @@
 using Sources.Modules.Inventory.Scripts;
 using Sources.Modules.Level.Configs;
 using Sources.Modules.Level.Scripts;
+using Sources.Modules.Settings.Scripts;
+using Sources.Modules.Settings.Scripts.Sound;
 using Sources.Modules.Wallet.Scripts;
 using Sources.Modules.Weapon.Scripts;
 using UnityEngine;
@@ -17,6 +19,7 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private WalletRoot _walletRoot;
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private LevelConfig _levelConfig;
+        [SerializeField] private SettingsRoot _settingsRoot;
         
         public override void InstallBindings()
         { 
@@ -25,6 +28,7 @@ namespace Sources.Modules.Installers.Scripts
             BindInventory();
             BindWallet();
             BindLevel();
+            BindSettings();
         }
 
         private void BindConfigs()
@@ -58,6 +62,11 @@ namespace Sources.Modules.Installers.Scripts
         {
             Container.Bind<LevelHandler>().AsSingle();
             Container.BindInterfacesTo<LevelHandler>().FromResolve();
+        }
+
+        private void BindSettings()
+        {
+            Container.BindInterfacesTo<SettingsRoot>().FromInstance(_settingsRoot).AsSingle().NonLazy();
         }
     }
 }

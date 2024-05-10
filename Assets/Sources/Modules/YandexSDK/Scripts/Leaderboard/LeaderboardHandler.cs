@@ -54,8 +54,6 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
                 ColorWithRank.GetColor(i + 1, out Color color);
                 _userRoots.Add(ConstructPlayer(i + 1, $"Бобер {i + 1}", i, color));
             }
-            
-            ConstructLeaderboard();
             return;
 #endif
             if (PlayerAccount.IsAuthorized == false)
@@ -99,16 +97,6 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
                     _userRoots.Add(ConstructPlayer(rank, name, level, color));
                 }
             });
-            
-            ConstructLeaderboard();
-        }
-
-        private void ConstructLeaderboard()
-        {
-            /*_userRoots = _userRoots.OrderBy(root => root.Level).ToList();
-            
-            foreach (var root in _userRoots)
-                root.SetParent(_container.transform);*/
         }
     }
 

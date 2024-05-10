@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using Agava.YandexGames;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Interfaces;
+using Sources.Modules.Settings.Interfaces;
 using Sources.Modules.Wallet.Interfaces;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.Weapon.Scripts.WeaponData;
-using UnityEngine;
 
 namespace Sources.Modules.YandexSDK.Scripts
 {
@@ -16,18 +14,20 @@ namespace Sources.Modules.YandexSDK.Scripts
         private readonly ILevelHandlerEvent _levelHandlerEvent;
         private readonly IInventoryHandler _inventoryHandler;
         private readonly IWalletHandler _walletHandler;
+        private readonly ISettingsRoot _settingsRoot;
         private YandexData _yandexData;
 
         public static YandexSaves Instance { get; private set; }
         public bool IsLoaded;
 
-        public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler, IWalletHandler walletHandler)
+        public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler, IWalletHandler walletHandler, ISettingsRoot settingsRoot)
         {
             Instance = this;
             
             _levelHandlerEvent = levelHandlerEvent;
             _inventoryHandler = inventoryHandler;
             _walletHandler = walletHandler;
+            _settingsRoot = settingsRoot;
 
 #if UNITY_EDITOR == false
             PlayerAccount.GetCloudSaveData(json =>
@@ -46,6 +46,7 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler.WeaponSold += OnWeaponSold;
             _inventoryHandler.WeaponAdded += OnWeaponAdded;
             _walletHandler.MoneyChanged += OnMoneyChanged;
+            _settingsRoot.Disabled += OnSettingsDisabled;
         }
 
         public YandexData Load() => _yandexData;
@@ -57,6 +58,7 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler.WeaponSold -= OnWeaponSold;
             _inventoryHandler.WeaponAdded -= OnWeaponAdded;
             _walletHandler.MoneyChanged -= OnMoneyChanged;
+            _settingsRoot.Disabled -= OnSettingsDisabled;
         }
         
         private void OnLevelLimitUpdated(int level, uint maxExperience)
@@ -135,6 +137,11 @@ namespace Sources.Modules.YandexSDK.Scripts
             _yandexData.Money = money;
             
             Save();
+        }
+
+        private void OnSettingsDisabled()
+        {
+            
         }
 
         private void Save()

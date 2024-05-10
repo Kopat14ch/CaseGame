@@ -23,6 +23,8 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
 
             _closeButton.onClick.AddListener(OnCloseButtonClick);
             _openButton.onClick.AddListener(OnOpenButtonClick);
+            
+            CanvasGroupUtil.Disable(_canvasGroup);
         }
 
         public void Dispose()

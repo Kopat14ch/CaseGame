@@ -52,6 +52,7 @@ namespace Sources.Modules.Level.Scripts
         public void Dispose()
         {
             _caseOpenerHandler.ScrollComplete -= OnScrollComplete;
+            _inventoryHandler.WeaponSold -= OnWeaponSold;
         }
         
         private void AddExperience(uint exp)
