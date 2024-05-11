@@ -1,8 +1,10 @@
 ﻿using System;
 using Sources.Modules.Settings.Interfaces;
+using Sources.Modules.Settings.Scripts.Sound;
 using Sources.Modules.Utils;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Sources.Modules.Settings.Scripts
 {
@@ -11,10 +13,12 @@ namespace Sources.Modules.Settings.Scripts
         [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private Button _enableButton;
         [SerializeField] private Button _disableButton;
+        [SerializeField] private SoundRoot _soundRoot;
         
-        public event Action Disabled;
-
-        private void Awake()
+        
+        public event Action<SoundSettingsHandler> Disabled;
+        
+        public void Awake()
         {
             CanvasGroupUtil.Disable(_canvasGroup);
         }
@@ -34,7 +38,7 @@ namespace Sources.Modules.Settings.Scripts
         private void OnDisableButtonClick()
         {
             CanvasGroupUtil.Disable(_canvasGroup);
-            Disabled?.Invoke();
+            Disabled?.Invoke(_soundRoot.SoundSettingsHandler);
         }
 
         private void OnEnableButtonClick()

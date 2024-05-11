@@ -12,9 +12,9 @@ namespace Sources.Modules.Settings.Scripts.Sound
         private readonly Image _image;
         private readonly Sprite _enableSprite;
         private readonly Sprite _disableSprite;
-        private float _lastVolume;
+        public float LastVolume { get; private set; }
         
-        private bool _isEnable;
+        public bool IsEnable { get; private set; }
 
         public SoundSettingsHandler(Slider slider, Button toggleButton, Image image, Sprite enableSprite, Sprite disableSprite)
         {
@@ -45,34 +45,34 @@ namespace Sources.Modules.Settings.Scripts.Sound
 
             SoundData soundData = YandexSaves.Instance.Load().SoundData;
 
-            _isEnable = soundData.IsEnable;
-            _lastVolume = soundData.LastVolume;
+            IsEnable = soundData.IsEnable;
+            LastVolume = soundData.LastVolume;
             
-            _slider.value = _lastVolume;
+            _slider.value = LastVolume;
             
-            AudioListener.volume = _lastVolume;
+            AudioListener.volume = LastVolume;
             
-            UpdateSprite(_isEnable);
+            UpdateSprite(IsEnable);
         }
         
 
 
         private void Toggle(float volume = -1)
         {
-            _isEnable = !_isEnable;
+            IsEnable = !IsEnable;
             
-            UpdateSprite(_isEnable);
+            UpdateSprite(IsEnable);
 
             if (volume >= 0)
-                _lastVolume = volume;
+                LastVolume = volume;
             
-            if (_isEnable)
+            if (IsEnable)
             {
-                AudioListener.volume = _lastVolume;
+                AudioListener.volume = LastVolume;
             }
             else
             {
-                _lastVolume = AudioListener.volume;
+                LastVolume = AudioListener.volume;
                 AudioListener.volume = 0;
             }
             
@@ -85,9 +85,9 @@ namespace Sources.Modules.Settings.Scripts.Sound
 
         private void OnSliderUpdate(float value)
         {
-            if (value <= 0 && _isEnable)
+            if (value <= 0 && IsEnable)
                 Toggle(value);
-            else if (value > 0 && _isEnable == false)
+            else if (value > 0 && IsEnable == false)
                 Toggle(value);
             else
                 AudioListener.volume = value;

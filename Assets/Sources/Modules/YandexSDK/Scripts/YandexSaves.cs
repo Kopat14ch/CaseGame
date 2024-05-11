@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using Agava.YandexGames;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Interfaces;
 using Sources.Modules.Settings.Interfaces;
+using Sources.Modules.Settings.Scripts.Sound;
 using Sources.Modules.Wallet.Interfaces;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.Weapon.Scripts.WeaponData;
+using UnityEngine;
 
 namespace Sources.Modules.YandexSDK.Scripts
 {
@@ -18,7 +21,7 @@ namespace Sources.Modules.YandexSDK.Scripts
         private YandexData _yandexData;
 
         public static YandexSaves Instance { get; private set; }
-        public bool IsLoaded;
+        public bool IsLoaded { get; private set; }
 
         public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler, IWalletHandler walletHandler, ISettingsRoot settingsRoot)
         {
@@ -139,9 +142,12 @@ namespace Sources.Modules.YandexSDK.Scripts
             Save();
         }
 
-        private void OnSettingsDisabled()
+        private void OnSettingsDisabled(SoundSettingsHandler soundSettingsHandler)
         {
+            _yandexData.SoundData.LastVolume = soundSettingsHandler.LastVolume;
+            _yandexData.SoundData.IsEnable = soundSettingsHandler.IsEnable;
             
+            Save();
         }
 
         private void Save()

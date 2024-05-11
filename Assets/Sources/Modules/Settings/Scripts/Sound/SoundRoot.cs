@@ -12,22 +12,22 @@ namespace Sources.Modules.Settings.Scripts.Sound
         [SerializeField] private Sprite _enableSprite;
         [SerializeField] private Sprite _disableSprite;
 
-        private SoundSettingsHandler _soundSettingsHandler;
+        public SoundSettingsHandler SoundSettingsHandler { get; private set; }
 
         [Inject]
         public void Construct()
         {
-            _soundSettingsHandler = new SoundSettingsHandler(_slider, _toggleButton, _image, _enableSprite, _disableSprite);
+            SoundSettingsHandler = new SoundSettingsHandler(_slider, _toggleButton, _image, _enableSprite, _disableSprite);
         }
 
         private void OnEnable()
         {
-            _soundSettingsHandler.Enable();
+            SoundSettingsHandler.Enable();
         }
 
         private void OnDisable()
         {
-            _soundSettingsHandler.Disable();
+            SoundSettingsHandler.Disable();
         }
     }
 }
