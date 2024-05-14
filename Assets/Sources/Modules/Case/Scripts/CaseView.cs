@@ -1,4 +1,5 @@
 using System;
+using Lean.Localization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -25,7 +26,7 @@ namespace Sources.Modules.Case.Scripts
         public void Init(CaseData caseData)
         {
             _caseData = caseData;
-            _openText.text = $"Открыть \n{_caseData.Price}$";
+            _openText.text = $"{LeanLocalization.GetTranslationText("Open")} \n{_caseData.Price}$";
         }
 
         private void OnEnable()

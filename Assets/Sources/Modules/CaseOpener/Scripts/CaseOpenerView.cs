@@ -1,4 +1,5 @@
 ﻿using System;
+using Lean.Localization;
 using Sources.Modules.CaseOpener.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -62,7 +63,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             _canvasGroup.interactable = true;
             _canvasGroup.blocksRaycasts = true;
             _canvasGroup.alpha = 1;
-            _openAgainButtonText.text = $"Еще раз\n{casePrice}$";
+            _openAgainButtonText.text = $"{LeanLocalization.GetTranslationText("Again")}\n{casePrice}$";
             _content.DisableLayout();
             _isEnable = true;
         }
@@ -95,8 +96,8 @@ namespace Sources.Modules.CaseOpener.Scripts
         {
             EnableWinUI();
 
-            _sellButtonText.text = $"Продать \n{Math.Round(weapon.Price, 2)}$";
-            _winItemText.text = $"Вы выбили: {weapon.Data.GetName()}\n{weapon.Data.SkinName}";
+            _sellButtonText.text = $"{LeanLocalization.GetTranslationText("Sell")} \n{Math.Round(weapon.Price, 2)}$";
+            _winItemText.text = $"{LeanLocalization.GetTranslationText("You received")}: {weapon.Data.GetName()}\n{weapon.Data.SkinName}";
         }
 
         private void EnableWinUI()

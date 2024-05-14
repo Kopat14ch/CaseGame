@@ -15,7 +15,6 @@ namespace Sources.Modules.Inventory.Scripts
         private readonly ICaseOpenerHandler _caseOpenerHandler;
         private readonly ICaseOpenerView _caseOpenerView;
         private readonly IInventoryView _view;
-        private readonly List<WeaponRoot> _weaponRoots;
 
         private WeaponRoot _newWeapon;
 
@@ -24,8 +23,6 @@ namespace Sources.Modules.Inventory.Scripts
 
         public InventoryHandler(InventoryFactory inventoryFactory, ICaseOpenerHandler caseOpenerHandler, ICaseOpenerView caseOpenerView, IInventoryView view)
         {
-            _weaponRoots = new List<WeaponRoot>();
-            
             _view = view;
             _inventoryFactory = inventoryFactory;
             _caseOpenerHandler = caseOpenerHandler;
@@ -66,8 +63,7 @@ namespace Sources.Modules.Inventory.Scripts
         {
             if (wantInvoke) 
                 WeaponAdded?.Invoke(weaponRoot);
-            
-            _weaponRoots.Add(weaponRoot);
+
             weaponRoot.Clicked += OnWeaponRootClicked;
         }
 
@@ -75,7 +71,6 @@ namespace Sources.Modules.Inventory.Scripts
         {
             WeaponSold?.Invoke(weaponRoot);
             
-            _weaponRoots.Remove(weaponRoot);
             weaponRoot.Clicked -= OnWeaponRootClicked;
             weaponRoot.Sell();
         }

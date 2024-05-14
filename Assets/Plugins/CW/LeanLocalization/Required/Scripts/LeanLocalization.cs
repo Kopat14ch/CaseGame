@@ -432,8 +432,10 @@ namespace Lean.Localization
 		/// <summary>Set the instance, merge old instance, and update translations.</summary>
 		protected virtual void OnEnable()
 		{
+			if (Instances.Count > 0)
+				return;
+			
 			Instances.Add(this);
-
 			UpdateTranslations();
 		}
 

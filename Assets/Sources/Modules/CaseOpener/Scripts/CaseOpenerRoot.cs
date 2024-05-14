@@ -17,7 +17,6 @@ namespace Sources.Modules.CaseOpener.Scripts
         private CaseData _lastCaseData;
         private IWalletRoot _walletRoot;
         
-
         [Inject]
         public void Construct(CaseOpenerHandler caseOpenerHandler, IWalletRoot walletRoot)
         {

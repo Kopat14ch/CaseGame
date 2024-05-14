@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Agava.YandexGames;
+using Lean.Localization;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
 using UnityEngine;
 using Object = UnityEngine.Object;
@@ -10,7 +11,8 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
 {
     public class LeaderboardHandler : IDisposable
     {
-        private const string AnonymousName = "Anonymous";
+        private const string Anonymous = nameof(Anonymous);
+        private const string Me = nameof(Me);
         private const int MaxPlayersCount = 10;
         private const int MinPlayersCount = 0;
         
@@ -71,7 +73,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
             {
                 int rank = result.rank;
                 int level = result.score;
-                string name = "Я";
+                string name = LeanLocalization.GetTranslationText(Me);
                 
                 ColorWithRank.GetColor(result.rank, out Color color);
                 
@@ -90,7 +92,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
                     string name = entries[i].player.publicName;
 
                     if (string.IsNullOrEmpty(name))
-                        name = AnonymousName;
+                        name = LeanLocalization.GetTranslationText(Anonymous);
 
                     ColorWithRank.GetColor(rank, out Color color);
                     

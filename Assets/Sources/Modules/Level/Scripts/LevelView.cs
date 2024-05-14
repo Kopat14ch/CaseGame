@@ -1,4 +1,5 @@
 ﻿using System;
+using Lean.Localization;
 using Sources.Modules.Level.Interfaces;
 using TMPro;
 using UnityEngine;
@@ -35,7 +36,7 @@ namespace Sources.Modules.Level.Scripts
 
         private void OnLevelLimitUpdate(int level, uint limit)
         {
-            _levelText.text = $"Level: {level}";
+            _levelText.text = $"{LeanLocalization.GetTranslationText("Level")}: {level}";
             _slider.maxValue = limit;
         }
 

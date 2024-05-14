@@ -49,13 +49,12 @@ namespace Sources.Modules.Settings.Scripts.Sound
             LastVolume = soundData.LastVolume;
             
             _slider.value = LastVolume;
-            
-            AudioListener.volume = LastVolume;
+
+            if (IsEnable)
+                AudioListener.volume = LastVolume;
             
             UpdateSprite(IsEnable);
         }
-        
-
 
         private void Toggle(float volume = -1)
         {

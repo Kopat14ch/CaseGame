@@ -1,4 +1,5 @@
 ﻿using System;
+using Lean.Localization;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,7 +24,7 @@ namespace Sources.Modules.Inventory.Scripts
         public override void Init(Common.Scripts.Weapon weapon)
         {
             base.Init(weapon);
-            _sellButtonText.text = $"Продать \n+{Math.Round(weapon.Price, 2)}$";  
+            _sellButtonText.text = $"{LeanLocalization.GetTranslationText("Sell")} \n+{Math.Round(weapon.Price, 2)}$";  
         }
 
         private void OnSellButtonClick()
