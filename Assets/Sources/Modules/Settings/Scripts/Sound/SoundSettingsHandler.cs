@@ -1,11 +1,12 @@
 using Cysharp.Threading.Tasks;
+using Sources.Modules.Settings.Interfaces;
 using Sources.Modules.YandexSDK.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Sources.Modules.Settings.Scripts.Sound
 {
-    public class SoundSettingsHandler
+    public class SoundSettingsHandler : ISoundSettingsHandler
     {
         private readonly Slider _slider;
         private readonly Button _toggleButton;

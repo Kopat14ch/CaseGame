@@ -1,4 +1,5 @@
 ﻿using Sources.Modules.YandexSDK.Scripts;
+using Sources.Modules.YandexSDK.Scripts.Advertisement;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
 using UnityEngine;
@@ -17,6 +18,7 @@ namespace Sources.Modules.Installers.Scripts
         {
             BindSaver();
             BindLeaderboard();
+            BindAd();
         }
 
         private void BindLeaderboard()
@@ -32,6 +34,11 @@ namespace Sources.Modules.Installers.Scripts
         private void BindSaver()
         {
             Container.Bind<YandexSaves>().AsSingle().NonLazy();
+        }
+
+        private void BindAd()
+        {
+            Container.BindInterfacesTo<AdvertisementHandler>().AsSingle().NonLazy();
         }
     }
 }

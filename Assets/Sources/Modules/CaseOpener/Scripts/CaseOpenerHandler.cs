@@ -22,6 +22,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         private const float OpenDuration = 9;
 
         public event Action<Common.Scripts.Weapon> ScrollComplete;
+        public event Action Opened;
 
         public CaseOpenerHandler(CaseOpenerContent caseOpenerRoots, WeaponChanceConfig weaponChanceConfig)
         {
@@ -31,6 +32,8 @@ namespace Sources.Modules.CaseOpener.Scripts
 
         public void Open(BaseWeaponData[] weaponDatas, CaseOpenerArrow caseOpenerArrow, Transform transform)
         {
+            Opened?.Invoke();
+            
             WeaponCaseOpenerRoot[] weaponCaseOpenerRoots = _caseOpenerRoots.GetWeapons();
             
             foreach (var weaponCaseOpenerRoot in weaponCaseOpenerRoots)

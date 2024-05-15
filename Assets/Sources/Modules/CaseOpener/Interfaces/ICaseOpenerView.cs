@@ -5,6 +5,8 @@ namespace Sources.Modules.CaseOpener.Interfaces
     public interface ICaseOpenerView
     {
         public event Action SellButtonClicked;
+        public event Action OpenAgainButtonClicked;
+        public event Action TakeButtonClicked;
 
         public bool IsEnable();
     }

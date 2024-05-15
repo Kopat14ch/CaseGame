@@ -1,5 +1,4 @@
-﻿using System;
-using Sources.Modules.CaseOpener.Interfaces;
+﻿using Sources.Modules.CaseOpener.Interfaces;
 using UnityEngine;
 using Zenject;
 

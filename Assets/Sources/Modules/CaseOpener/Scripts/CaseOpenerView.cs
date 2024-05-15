@@ -29,6 +29,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         
         public event Action SellButtonClicked;
         public event Action OpenAgainButtonClicked;
+        public event Action TakeButtonClicked;
 
         [Inject]
         public void Construct(ICaseOpenerHandler caseOpenerHandler, CaseOpenerContent contentCaseOpener)
@@ -84,6 +85,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         private void OnTakeButtonClick()
         {
             DisableView();
+            TakeButtonClicked?.Invoke();
         }
 
         private void OnSellButtonClick()
