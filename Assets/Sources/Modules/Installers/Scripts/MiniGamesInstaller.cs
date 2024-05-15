@@ -24,6 +24,7 @@ namespace Sources.Modules.Installers.Scripts
         private void BindClicker()
         {
             Container.Bind<CoinRoot>().FromInstance(coinRoot).AsSingle();
+            Container.BindInterfacesTo<CoinRoot>().FromResolve();
             Container.Bind<ClickerHandler>().AsSingle().NonLazy();
         }
 

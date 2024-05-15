@@ -1,11 +1,12 @@
 ﻿using System;
+using Sources.Modules.MiniGames.Clicker.Interfaces;
 using UnityEngine;
 using UnityEngine.UI;
 
 namespace Sources.Modules.MiniGames.Clicker.Scripts
 {
     [RequireComponent(typeof(Button))]
-    public class CoinRoot : MonoBehaviour
+    public class CoinRoot : MonoBehaviour, ICoinRoot
     {
         private Button _button;
         
