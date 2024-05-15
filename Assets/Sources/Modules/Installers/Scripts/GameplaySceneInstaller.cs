@@ -67,6 +67,15 @@ namespace Sources.Modules.Installers.Scripts
         private void BindSettings()
         {
             Container.BindInterfacesTo<SettingsRoot>().FromInstance(_settingsRoot).AsSingle().NonLazy();
+
+            SoundSettingsHandler soundSettingsHandler = new SoundSettingsHandler(_settingsRoot.SoundRoot.Slider,
+                _settingsRoot.SoundRoot.ToggleButton,
+                _settingsRoot.SoundRoot.Image,
+                _settingsRoot.SoundRoot.EnableSprite,
+                _settingsRoot.SoundRoot.DisableSprite);
+            Container.Bind<SoundSettingsHandler>().FromInstance(soundSettingsHandler).AsSingle().NonLazy();
+            Container.BindInterfacesTo<SoundSettingsHandler>().FromResolve();
+
         }
     }
 }

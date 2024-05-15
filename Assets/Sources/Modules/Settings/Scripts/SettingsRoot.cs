@@ -15,8 +15,8 @@ namespace Sources.Modules.Settings.Scripts
         [SerializeField] private Button _disableButton;
         [SerializeField] private SoundRoot _soundRoot;
         
-        
         public event Action<SoundSettingsHandler> Disabled;
+        public SoundRoot SoundRoot => _soundRoot;
         
         public void Awake()
         {

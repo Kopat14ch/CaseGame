@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -12,12 +13,18 @@ namespace Sources.Modules.Settings.Scripts.Sound
         [SerializeField] private Sprite _enableSprite;
         [SerializeField] private Sprite _disableSprite;
 
+        public Slider Slider => _slider;
+        public Button ToggleButton => _toggleButton;
+        public Image Image => _image;
+        public Sprite EnableSprite => _enableSprite;
+        public Sprite DisableSprite => _disableSprite;
+
         public SoundSettingsHandler SoundSettingsHandler { get; private set; }
 
         [Inject]
-        public void Construct()
+        public void Construct(SoundSettingsHandler soundSettingsHandler)
         {
-            SoundSettingsHandler = new SoundSettingsHandler(_slider, _toggleButton, _image, _enableSprite, _disableSprite);
+            SoundSettingsHandler = soundSettingsHandler;
         }
 
         private void OnEnable()

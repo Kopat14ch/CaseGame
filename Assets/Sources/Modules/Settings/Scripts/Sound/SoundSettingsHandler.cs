@@ -86,11 +86,18 @@ namespace Sources.Modules.Settings.Scripts.Sound
         private void OnSliderUpdate(float value)
         {
             if (value <= 0 && IsEnable)
+            {
                 Toggle(value);
+            }
             else if (value > 0 && IsEnable == false)
+            {
                 Toggle(value);
+            }
             else
+            {
                 AudioListener.volume = value;
+                LastVolume = value;
+            }
         }
 
     }

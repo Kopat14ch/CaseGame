@@ -49,6 +49,8 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 
         private void OnClickerClicked()
         {
+            Debug.Log(_soundSettingsHandler.LastVolume);
+            
             if (_currentClicks >= ClicksForAdVideo)
             {
                 ShowVideoAd(() =>
