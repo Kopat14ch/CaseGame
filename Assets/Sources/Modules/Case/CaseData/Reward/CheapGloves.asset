@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699d17427bd74880a1307def7854d609, type: 3}
+  m_Name: CheapGloves
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Cheap gloves
+  <Price>k__BackingField: -1
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 2a65af7c209d6e44a860d01c62b8b8c6, type: 3}
+  <Weapons>k__BackingField:
+  - {fileID: 11400000, guid: ea2ca4691d69aaa46b5235a170c78969, type: 2}
+  - {fileID: 11400000, guid: c30edbbdc754da146974c23e9ed2e706, type: 2}
+  - {fileID: 11400000, guid: 5ef4c49a3140fd7408070840af1c177f, type: 2}
+  - {fileID: 11400000, guid: 8d6695c080484534cad072d7b053320e, type: 2}
+  - {fileID: 11400000, guid: c8d537c010d7dbe429d5da42a93ff2c1, type: 2}
+  - {fileID: 11400000, guid: ee3554788de38224d9548594a66c2529, type: 2}
+  - {fileID: 11400000, guid: 88e0000dc5205ae43923a8282fbd6584, type: 2}

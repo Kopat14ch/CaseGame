@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
+using ModestTree;
 using Sources.Modules.Weapon.Enums;
 using UnityEditor;
 using UnityEngine;
@@ -32,6 +34,21 @@ namespace Sources.Modules.Weapon.Scripts.WeaponData
         
         public abstract string GetName();
 
+        private void OnValidate()
+        {
+            /*string scriptPath = AssetDatabase.GetAssetPath(this);
+            string assetResources = "Assets/Resources/";
+
+            if (scriptPath.StartsWith(assetResources) && PathToFile.IsEmpty())
+            {
+                string relativePath = scriptPath.Substring(assetResources.Length);
+                relativePath = Path.ChangeExtension(relativePath, null);
+                
+                PathToFile = relativePath;
+                
+                EditorUtility.SetDirty(this);
+            }*/
+        }
 
         public Color GetCurrentColor()
         {

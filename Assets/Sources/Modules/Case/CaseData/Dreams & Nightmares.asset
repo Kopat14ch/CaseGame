@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Dreams & Nightmares
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Dreams & Nightmares
-  <Price>k__BackingField: 94
+  <Price>k__BackingField: 357
   <Sprite>k__BackingField: {fileID: 494594294, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 544e05ea5c36a4a4489554cb2e847281, type: 2}

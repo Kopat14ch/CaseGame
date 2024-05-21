@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Bravo
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Bravo
-  <Price>k__BackingField: 4720
+  <Price>k__BackingField: 6250
   <Sprite>k__BackingField: {fileID: 1133489283, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 4a97c469ad74316469bc204cc094a72b, type: 2}

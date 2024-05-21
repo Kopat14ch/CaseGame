@@ -759,6 +759,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 1941703836986318229}
-  _nameText: {fileID: 1325137052277467070}
-  _openText: {fileID: 7617868659121140562}
   _openButton: {fileID: 2485089727122578801}
+  _nameText: {fileID: 1325137052277467070}
+  <OpenText>k__BackingField: {fileID: 7617868659121140562}

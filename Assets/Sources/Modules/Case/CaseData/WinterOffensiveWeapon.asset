@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: WinterOffensiveWeapon
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Winter Offensive Weapon
-  <Price>k__BackingField: 609
+  <Price>k__BackingField: 1300
   <Sprite>k__BackingField: {fileID: 734512773, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 01e2a32b67bcfe446a1c7a86a1e8bc20, type: 2}

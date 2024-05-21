@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Recoil
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Recoil
-  <Price>k__BackingField: 18
+  <Price>k__BackingField: 210
   <Sprite>k__BackingField: {fileID: 1021743399, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 3d14d3acacc4a2d459f3ffddb885a73b, type: 2}

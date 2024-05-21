@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512dc9e248474abebf949d5cd596eae3, type: 3}
+  m_Name: XM1014 XOXO
+  m_EditorClassIdentifier: 
+  <SkinName>k__BackingField: XOXO
+  <Sprite>k__BackingField: {fileID: 21300000, guid: df96685ca33ae5449b4e3f59863697af, type: 3}
+  <Quality>k__BackingField: 4
+  <PathToFile>k__BackingField: WeaponData/Snakebite Case/XM1014 XOXO
+  _minPrice: 95
+  _maxPrice: 750
+  _weaponName: 6

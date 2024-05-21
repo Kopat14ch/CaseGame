@@ -1,4 +1,4 @@
-﻿namespace Sources.Modules.YandexSDK.Scripts.Interfaces
+﻿namespace Sources.Modules.YandexSDK.Interfaces
 {
     public interface IYandexSDKRoot
     {

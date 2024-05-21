@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Weapon2
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Weapon Case 2
-  <Price>k__BackingField: 1200
+  <Price>k__BackingField: 2400
   <Sprite>k__BackingField: {fileID: 2081758044, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: daa01eca8a062654a85d10289ffad9ad, type: 2}

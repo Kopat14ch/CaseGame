@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Revolution
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Revolution
-  <Price>k__BackingField: 34
+  <Price>k__BackingField: 135
   <Sprite>k__BackingField: {fileID: 1023749577, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 53b701e33f5b0e2439d61dcb46fe1a2f, type: 2}

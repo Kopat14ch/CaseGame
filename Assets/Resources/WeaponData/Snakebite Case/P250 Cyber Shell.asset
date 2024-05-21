@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 512dc9e248474abebf949d5cd596eae3, type: 3}
+  m_Name: P250 Cyber Shell
+  m_EditorClassIdentifier: 
+  <SkinName>k__BackingField: Cyber Shell
+  <Sprite>k__BackingField: {fileID: 21300000, guid: e912726a4de5404458c588b6d66a0aba, type: 3}
+  <Quality>k__BackingField: 3
+  <PathToFile>k__BackingField: WeaponData/Snakebite Case/P250 Cyber Shell
+  _minPrice: 19
+  _maxPrice: 100
+  _weaponName: 20

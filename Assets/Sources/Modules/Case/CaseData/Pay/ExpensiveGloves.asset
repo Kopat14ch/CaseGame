@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 699d17427bd74880a1307def7854d609, type: 3}
+  m_Name: ExpensiveGloves
+  m_EditorClassIdentifier: 
+  <Name>k__BackingField: Expensive gloves
+  <Price>k__BackingField: -1
+  <Sprite>k__BackingField: {fileID: 21300000, guid: 95ce3352468b1a042a67bee744fba37c, type: 3}
+  <Weapons>k__BackingField:
+  - {fileID: 11400000, guid: 88e0000dc5205ae43923a8282fbd6584, type: 2}
+  - {fileID: 11400000, guid: 6568bdf10819e214b91d57c6f5bf2729, type: 2}
+  - {fileID: 11400000, guid: 5ef4c49a3140fd7408070840af1c177f, type: 2}
+  - {fileID: 11400000, guid: 46ad24b8b3e775d429ff41ebcc99383c, type: 2}

@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 {
-    public class AdvertisementHandler : IDisposable
+    public class AdvertisementHandler : IDisposable, IAdvertisementHandler
     {
         private const int ClicksForAd = 20;
         private const int ClicksForAdVideo = 50;
@@ -67,7 +67,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
             _currentClicks++;
         }
 
-        private void ShowVideoAd(Action onOpenCallback = null, Action<string> onErrorCallback = null)
+        public void ShowVideoAd(Action onOpenCallback = null, Action<string> onErrorCallback = null, Action onRewardedCallback = null)
         {
 #if UNITY_EDITOR
             return;
@@ -82,10 +82,10 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
             {
                 Time.timeScale = 1f;
                 AudioListener.volume = _soundSettingsHandler.LastVolume;
-            }, onErrorCallback: onErrorCallback);
+            }, onRewardedCallback: onRewardedCallback, onErrorCallback: onErrorCallback);
         }
 
-        private void ShowAd(Action onOpenCallback = null)
+        public void ShowAd(Action onOpenCallback = null)
         {
 #if UNITY_EDITOR
             return;

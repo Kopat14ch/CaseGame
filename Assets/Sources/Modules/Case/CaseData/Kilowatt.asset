@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Kilowatt
   m_EditorClassIdentifier: 
   <Name>k__BackingField: Kilowatt
-  <Price>k__BackingField: 169
+  <Price>k__BackingField: 469
   <Sprite>k__BackingField: {fileID: 88005154, guid: 341fc917d435bc84ca008a631bd2d1b7, type: 3}
   <Weapons>k__BackingField:
   - {fileID: 11400000, guid: 8c8b821fc79770940adbc1a758856d65, type: 2}

@@ -9,29 +9,34 @@ namespace Sources.Modules.Case.Scripts
     public class CaseView : MonoBehaviour
     {
         [SerializeField] private Image _image;
-        [SerializeField] private TMP_Text _nameText;
-        [SerializeField] private TMP_Text _openText;
         [SerializeField] private Button _openButton;
+        [SerializeField] private TMP_Text _nameText;
+        [field: SerializeField] protected TMP_Text OpenText { get; private set; }
 
         public event Action OpenButtonClicked;
 
-        private CaseData _caseData;
+        protected CaseData Data { get; private set; }
         
         public void Awake()
         {
-            _image.sprite = _caseData.Sprite;
-            _nameText.text = _caseData.Name;
+            _image.sprite = Data.Sprite;
+            _nameText.text = Data.Name;
         }
 
         public void Init(CaseData caseData)
         {
-            _caseData = caseData;
-            _openText.text = $"{LeanLocalization.GetTranslationText("Open")} \n{_caseData.Price}$";
+            Data = caseData;
+            UpdateText();
         }
 
         private void OnEnable()
         {
             _openButton.onClick.AddListener(OnOpenButtonClick);
+        }
+
+        public virtual void UpdateText()
+        {
+            OpenText.text = $"{LeanLocalization.GetTranslationText("Open")} \n{Data.Price}$";
         }
 
         private void OnDisable()

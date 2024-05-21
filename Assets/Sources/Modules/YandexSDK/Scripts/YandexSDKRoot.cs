@@ -1,5 +1,5 @@
 ﻿using Agava.YandexGames;
-using Sources.Modules.YandexSDK.Scripts.Interfaces;
+using Sources.Modules.YandexSDK.Interfaces;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
 using UnityEngine;
 using Zenject;
