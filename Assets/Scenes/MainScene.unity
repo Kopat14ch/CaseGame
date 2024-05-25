@@ -1586,6 +1586,7 @@ GameObject:
   - component: {fileID: 102291458}
   - component: {fileID: 102291460}
   - component: {fileID: 102291459}
+  - component: {fileID: 102291461}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -1632,7 +1633,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u043D\u0442\u043D\u044B\u0435"
+  m_text: Standart cases
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
   m_sharedMaterial: {fileID: -378241495204406425, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
@@ -1709,6 +1710,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 102291457}
   m_CullTransparentMesh: 1
+--- !u!114 &102291461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 102291457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Standart cases
+  FallbackText: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u043D\u0442\u043D\u044B\u0435"
 --- !u!1 &125278747
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,8 +2154,16 @@ MonoBehaviour:
     Text: Take
   - Name: Again
     Text: Again
-  - Name: You received
-    Text: You received
+  - Name: Earned
+    Text: Earned
+  - Name: You crashed
+    Text: You crashed
+  - Name: Reward cases
+    Text: Reward cases
+  - Name: Paid cases
+    Text: Paid cases
+  - Name: Standart cases
+    Text: Standart cases
 --- !u!1 &197048725
 GameObject:
   m_ObjectHideFlags: 0
@@ -2534,7 +2557,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -178.87997, y: 0}
+  m_AnchoredPosition: {x: -178.88, y: 0}
   m_SizeDelta: {x: 100, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &252765089
@@ -2961,6 +2984,7 @@ GameObject:
   - component: {fileID: 305287603}
   - component: {fileID: 305287605}
   - component: {fileID: 305287604}
+  - component: {fileID: 305287606}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -3007,7 +3031,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u0412\u044B \u0432\u0440\u0435\u0437\u0430\u043B\u0438\u0441\u044C!"
+  m_text: You crashed
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
   m_sharedMaterial: {fileID: -378241495204406425, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
@@ -3034,7 +3058,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 64.25
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3084,6 +3108,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 305287602}
   m_CullTransparentMesh: 1
+--- !u!114 &305287606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 305287602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: You crashed
+  FallbackText: "\u0412\u044B \u0432\u0440\u0435\u0437\u0430\u043B\u0438\u0441\u044C"
 --- !u!1 &306278181 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2958712691066512325, guid: d8d48eb4666c36748a2be611b53e82d9, type: 3}
@@ -5622,6 +5660,7 @@ GameObject:
   - component: {fileID: 624616718}
   - component: {fileID: 624616720}
   - component: {fileID: 624616719}
+  - component: {fileID: 624616721}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -5668,7 +5707,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041F\u043B\u0430\u0442\u043D\u044B\u0435"
+  m_text: Paid cases
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
   m_sharedMaterial: {fileID: -378241495204406425, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
@@ -5745,6 +5784,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 624616717}
   m_CullTransparentMesh: 1
+--- !u!114 &624616721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624616717}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Paid cases
+  FallbackText: "\u041F\u043B\u0430\u0442\u043D\u044B\u0435"
 --- !u!1 &637438951
 GameObject:
   m_ObjectHideFlags: 0
@@ -6998,6 +7051,7 @@ GameObject:
   - component: {fileID: 747736555}
   - component: {fileID: 747736557}
   - component: {fileID: 747736556}
+  - component: {fileID: 747736558}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -7044,7 +7098,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\u041A\u0435\u0439\u0441\u044B \u0437\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
+  m_text: Reward cases
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
   m_sharedMaterial: {fileID: -378241495204406425, guid: 9b24d175004d22145ac6bd2f0239f6af, type: 2}
@@ -7121,6 +7175,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 747736554}
   m_CullTransparentMesh: 1
+--- !u!114 &747736558
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 747736554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Reward cases
+  FallbackText: "\u041A\u0435\u0439\u0441\u044B \u0437\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
 --- !u!224 &765416145 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7752449496322546980, guid: 54fce36c2fbcc634b808f64c891c6780, type: 3}
@@ -9201,8 +9269,16 @@ MonoBehaviour:
     Text: Almak
   - Name: Again
     Text: Tekrar
-  - Name: You received
-    Text: "Ald\u0131n\u0131z"
+  - Name: Earned
+    Text: "Kazand\u0131"
+  - Name: You crashed
+    Text: "Siz \xE7arpd\u0131n\u0131z"
+  - Name: Reward cases
+    Text: "Reklam i\xE7in vakalar"
+  - Name: Paid cases
+    Text: "\xDCcretli vakalar"
+  - Name: Standart cases
+    Text: Standart vakalar
 --- !u!224 &1007675363 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7752449496322546980, guid: 54fce36c2fbcc634b808f64c891c6780, type: 3}
@@ -11028,7 +11104,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 135.45
+  m_fontSize: 133.75
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -12631,8 +12707,16 @@ MonoBehaviour:
     Text: "\u0417\u0430\u0431\u0440\u0430\u0442\u044C"
   - Name: Again
     Text: "\u0415\u0449\u0435 \u0440\u0430\u0437"
-  - Name: You received
-    Text: "\u0412\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438"
+  - Name: Earned
+    Text: "\u0417\u0430\u0440\u0430\u0431\u043E\u0442\u0430\u043D\u043E"
+  - Name: You crashed
+    Text: "\u0412\u044B \u0432\u0440\u0435\u0437\u0430\u043B\u0438\u0441\u044C"
+  - Name: Reward cases
+    Text: "\u041A\u0435\u0439\u0441\u044B \u0437\u0430 \u0440\u0435\u043A\u043B\u0430\u043C\u0443"
+  - Name: Paid cases
+    Text: "\u041F\u043B\u0430\u0442\u043D\u044B\u0435 \u043A\u0435\u0439\u0441\u044B"
+  - Name: Standart cases
+    Text: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0435 \u043A\u0435\u0439\u0441\u044B"
 --- !u!1001 &1483945209
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14302,7 +14386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLanguage: English
-  detectLanguage: 0
+  detectLanguage: 1
   defaultLanguage: Turkish
   saveLoad: 0
   prefabs: []

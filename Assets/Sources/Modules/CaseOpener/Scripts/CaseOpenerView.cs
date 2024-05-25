@@ -26,6 +26,7 @@ namespace Sources.Modules.CaseOpener.Scripts
         
         public CaseOpenerContent Content => _content;
         private bool _isEnable;
+        private bool _againEnable;
         
         public event Action SellButtonClicked;
         public event Action OpenAgainButtonClicked;
@@ -65,6 +66,7 @@ namespace Sources.Modules.CaseOpener.Scripts
             _canvasGroup.blocksRaycasts = true;
             _canvasGroup.alpha = 1;
             _openAgainButtonText.text = $"{LeanLocalization.GetTranslationText("Again")}\n{casePrice}$";
+            _againEnable = casePrice > 0;
             _content.DisableLayout();
             _isEnable = true;
         }
@@ -107,7 +109,9 @@ namespace Sources.Modules.CaseOpener.Scripts
             _sellButton.gameObject.SetActive(true);
             _takeButton.gameObject.SetActive(true);
             _winItemText.gameObject.SetActive(true);
-            _openAgainButton.gameObject.SetActive(true);
+
+            if (_againEnable)
+                _openAgainButton.gameObject.SetActive(true);
         }
 
         private void DisableWinUI()

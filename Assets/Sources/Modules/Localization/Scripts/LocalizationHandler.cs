@@ -20,6 +20,10 @@ namespace Sources.Modules.Localization.Scripts
             switch (YandexGamesSdk.Environment.i18n.lang)
             {
                 case "ru":
+                case "be":
+                case "kk":
+                case "uk":
+                case "uz":
                     SetCurrentLanguage("Russian");
                     break;
                 case "en":
@@ -29,7 +33,7 @@ namespace Sources.Modules.Localization.Scripts
                     SetCurrentLanguage("Turkish");
                     break;
                 default:
-                    SetCurrentLanguage("Russian");
+                    SetCurrentLanguage("English");
                     break;
             }
         }

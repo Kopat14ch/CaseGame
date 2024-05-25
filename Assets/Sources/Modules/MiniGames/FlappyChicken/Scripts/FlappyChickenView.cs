@@ -1,4 +1,5 @@
 using System;
+using Lean.Localization;
 using Sources.Modules.MiniGames.FlappyChicken.Interfaces;
 using Sources.Modules.MiniGames.Scripts;
 using Sources.Modules.Utils;
@@ -31,6 +32,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         private void Start()
         {
             Disable?.Invoke();
+            _earnedText.text = $"{LeanLocalization.GetTranslationText("Earned")}: {_currentCoins}";
         }
 
         protected override void OnEnable()
@@ -61,7 +63,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             base.OnExitButtonClick();
             CanvasGroupUtil.Disable(_obstaclesCanvasGroup);
             _currentCoins = 0;
-            _earnedText.text = $"Заработано: {_currentCoins}";
+            _earnedText.text = $"{LeanLocalization.GetTranslationText("Earned")}: {_currentCoins}";
             CanvasGroupUtil.Disable(_endCanvasGroup);
         }
 
@@ -73,7 +75,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         private void OnCoinAdded(int coins)
         {
             _currentCoins += coins;
-            _earnedText.text = $"Заработано: {_currentCoins}";
+            _earnedText.text = $"{LeanLocalization.GetTranslationText("Earned")}: {_currentCoins}";
         }
     }
 }
