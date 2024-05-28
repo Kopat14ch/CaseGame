@@ -19,7 +19,7 @@ namespace Sources.Modules.Case.Scripts
         protected CaseData Data => _data;
 
         [Inject]
-        public void Construct(ICaseOpener caseOpenerRoot, IWalletRoot walletRoot)
+        public virtual void Construct(ICaseOpener caseOpenerRoot, IWalletRoot walletRoot)
         {
             _walletRoot = walletRoot;
             CaseOpenerRoot = caseOpenerRoot;

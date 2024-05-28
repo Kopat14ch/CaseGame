@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Cysharp.Threading.Tasks;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.Weapon.Scripts.WeaponData;
 using Sources.Modules.YandexSDK.Scripts;
@@ -33,7 +32,7 @@ namespace Sources.Modules.Inventory.Scripts
 
         public async Task<WeaponRoot[]> Initialize()
         {
-            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
+            await YandexSaves.Instance.IsLoadedAsync();
             
             return InitWeapons(YandexSaves.Instance.Load().WeaponsData);
         }

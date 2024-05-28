@@ -11,44 +11,70 @@ namespace Sources.Modules.YandexSDK.Scripts.Leaderboard
     {
         private readonly Button _closeButton;
         private readonly Button _openButton;
-        private readonly CanvasGroup _canvasGroup;
+        private readonly Button _authorizedButton;
+        private readonly CanvasGroup _myCanvasGroup;
+        private readonly CanvasGroup _baseCanvasGroup;
+        private readonly CanvasGroup _authorizedCanvasGroup;
 
         public event Action Opened;
+        public event Action Authorized;
 
         public LeaderboardViewHandler(ILeaderboardView leaderboardView)
         {
             _closeButton = leaderboardView.CloseButton;
             _openButton = leaderboardView.OpenButton;
-            _canvasGroup = leaderboardView.MyCanvasGroup;
+            _authorizedButton = leaderboardView.AuthorizedButton;
+            _myCanvasGroup = leaderboardView.MyCanvasGroup;
+            _baseCanvasGroup = leaderboardView.BaseCanvasGroup;
+            _authorizedCanvasGroup = leaderboardView.AuthorizedCanvasGroup;
 
-            _closeButton.onClick.AddListener(OnCloseButtonClick);
+            _closeButton.onClick.AddListener(DisableAll);
             _openButton.onClick.AddListener(OnOpenButtonClick);
-            
-            CanvasGroupUtil.Disable(_canvasGroup);
+            _authorizedButton.onClick.AddListener(OnAuthorizedButtonClick);
+
+            DisableAll();
         }
 
         public void Dispose()
         {
-            _closeButton.onClick.RemoveListener(OnCloseButtonClick);
+            _closeButton.onClick.RemoveListener(DisableAll);
             _openButton.onClick.RemoveListener(OnOpenButtonClick);
+            _authorizedButton.onClick.RemoveListener(OnAuthorizedButtonClick);
+            
         }
         
-        private void OnCloseButtonClick()
+        private void DisableAll()
         {
-            CanvasGroupUtil.Disable(_canvasGroup);
+            CanvasGroupUtil.Disable(_myCanvasGroup);
+            CanvasGroupUtil.Disable(_authorizedCanvasGroup);
+            CanvasGroupUtil.Disable(_baseCanvasGroup);
         }
         
         private void OnOpenButtonClick()
         {
-            Opened?.Invoke();
-
+            CanvasGroupUtil.Enable(_baseCanvasGroup);
+            
 #if UNITY_EDITOR == false
             if (PlayerAccount.IsAuthorized)
-                CanvasGroupUtil.Enable(_canvasGroup);
+            {
+                CanvasGroupUtil.Enable(_myCanvasGroup);
+                Opened?.Invoke();
+            }
+            else
+            {
+                CanvasGroupUtil.Enable(_authorizedCanvasGroup);
+            }
             return;
 #endif
             
-            CanvasGroupUtil.Enable(_canvasGroup);
+            Opened?.Invoke();
+            CanvasGroupUtil.Enable(_myCanvasGroup);
+        }
+
+        private void OnAuthorizedButtonClick()
+        {
+            Authorized?.Invoke();
+            DisableAll();
         }
     }
 }

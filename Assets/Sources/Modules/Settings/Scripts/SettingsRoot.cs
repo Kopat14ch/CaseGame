@@ -4,7 +4,6 @@ using Sources.Modules.Settings.Scripts.Sound;
 using Sources.Modules.Utils;
 using UnityEngine;
 using UnityEngine.UI;
-using Zenject;
 
 namespace Sources.Modules.Settings.Scripts
 {

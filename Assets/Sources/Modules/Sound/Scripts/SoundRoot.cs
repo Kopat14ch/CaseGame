@@ -16,7 +16,7 @@ namespace Sources.Modules.Sound.Scripts
             _soundHandler = new SoundHandler(_audioClips, GetComponent<AudioSource>());
         }
 
-        private void OnDisable()
+        private void OnDestroy()
         {
             _soundHandler.Disable();
         }

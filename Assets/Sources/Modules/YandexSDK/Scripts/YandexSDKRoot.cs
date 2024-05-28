@@ -34,15 +34,15 @@ namespace Sources.Modules.YandexSDK.Scripts
 
         private void OnEnable()
         {
-            _leaderboardViewHandler.Opened += OnLeaderboardOpened;
+            _leaderboardViewHandler.Authorized += OnLeaderboardAuthorized;
         }
 
         private void OnDisable()
         {
-            _leaderboardViewHandler.Opened -= OnLeaderboardOpened;
+            _leaderboardViewHandler.Authorized -= OnLeaderboardAuthorized;
         }
 
-        private void OnLeaderboardOpened()
+        private void OnLeaderboardAuthorized()
         {
 #if UNITY_EDITOR
             return;

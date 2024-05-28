@@ -1,4 +1,5 @@
 ﻿using System;
+using Sources.Modules.Case.Scripts;
 using Sources.Modules.Settings.Scripts.Sound;
 using Sources.Modules.Weapon.Scripts.WeaponData;
 
@@ -13,6 +14,7 @@ namespace Sources.Modules.YandexSDK.Scripts
         public uint Experience;
         public uint MaxExperience;
         public SoundData SoundData;
+        public PayCaseData[] PayCaseDatas;
         
         public YandexData()
         {
@@ -21,6 +23,7 @@ namespace Sources.Modules.YandexSDK.Scripts
             MaxExperience = 50;
             WeaponsData = Array.Empty<WeaponSaveData>();
             SoundData = new SoundData();
+            PayCaseDatas = Array.Empty<PayCaseData>();
         }
     }
 }

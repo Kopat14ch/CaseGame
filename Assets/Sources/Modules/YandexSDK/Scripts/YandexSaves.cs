@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Agava.YandexGames;
+using Cysharp.Threading.Tasks;
+using Sources.Modules.Case.Scripts;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Interfaces;
 using Sources.Modules.Settings.Interfaces;
@@ -18,12 +21,16 @@ namespace Sources.Modules.YandexSDK.Scripts
         private readonly IInventoryHandler _inventoryHandler;
         private readonly IWalletHandler _walletHandler;
         private readonly ISettingsRoot _settingsRoot;
+        private readonly PayCases _payCases;
+        
         private YandexData _yandexData;
 
         public static YandexSaves Instance { get; private set; }
-        public bool IsLoaded { get; private set; }
+        private bool _isLoaded;
 
-        public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler, IWalletHandler walletHandler, ISettingsRoot settingsRoot)
+        public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler,
+            IWalletHandler walletHandler, ISettingsRoot settingsRoot,
+            PayCases payCases)
         {
             Instance = this;
             
@@ -31,17 +38,18 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler = inventoryHandler;
             _walletHandler = walletHandler;
             _settingsRoot = settingsRoot;
+            _payCases = payCases;
 
 #if UNITY_EDITOR == false
             PlayerAccount.GetCloudSaveData(json =>
                 {
                     _yandexData = JsonUtility.FromJson<YandexData>(json) ?? new YandexData();
-                    IsLoaded = true;
+                    _isLoaded = true;
                 }
             );
 #else
             _yandexData = new YandexData();
-            IsLoaded = true;
+            _isLoaded = true;
 #endif
             
             _levelHandlerEvent.LevelLimitUpdated += OnLevelLimitUpdated;
@@ -50,9 +58,17 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler.WeaponAdded += OnWeaponAdded;
             _walletHandler.MoneyChanged += OnMoneyChanged;
             _settingsRoot.Disabled += OnSettingsDisabled;
+
+            foreach (var payCase in _payCases.PayCaseRoots)
+                payCase.PurchaseDataUpdated += OnPurchaseDataUpdated;
         }
 
         public YandexData Load() => _yandexData;
+
+        public async Task IsLoadedAsync()
+        {
+            await UniTask.WaitUntil(() => _isLoaded);
+        }
         
         public void Dispose()
         {
@@ -62,6 +78,9 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler.WeaponAdded -= OnWeaponAdded;
             _walletHandler.MoneyChanged -= OnMoneyChanged;
             _settingsRoot.Disabled -= OnSettingsDisabled;
+            
+            foreach (var payCase in _payCases.PayCaseRoots)
+                payCase.PurchaseDataUpdated -= OnPurchaseDataUpdated;
         }
         
         private void OnLevelLimitUpdated(int level, uint maxExperience)
@@ -146,6 +165,35 @@ namespace Sources.Modules.YandexSDK.Scripts
         {
             _yandexData.SoundData.LastVolume = soundSettingsHandler.LastVolume;
             _yandexData.SoundData.IsEnable = soundSettingsHandler.IsEnable;
+            
+            Save();
+        }
+        
+        private void OnPurchaseDataUpdated(string id, string token, bool isPurchase)
+        {
+            PayCaseData payCaseDataTemp = new PayCaseData()
+            {
+                Id = id,
+                PurchaseToken = token,
+                IsPurchase = isPurchase
+            };
+
+            for (int i = 0; i < _yandexData.PayCaseDatas.Length; i++)
+            {
+                PayCaseData payCaseData = _yandexData.PayCaseDatas[i];
+                
+                if (payCaseData.Id == id)
+                {
+                    _yandexData.PayCaseDatas[i] = payCaseDataTemp;
+                    Save();
+                    return;
+                }
+            }
+
+            List<PayCaseData> payCaseDatas = new List<PayCaseData>(_yandexData.PayCaseDatas);
+            payCaseDatas.Add(payCaseDataTemp);
+
+            _yandexData.PayCaseDatas = payCaseDatas.ToArray();
             
             Save();
         }

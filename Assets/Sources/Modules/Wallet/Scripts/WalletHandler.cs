@@ -28,7 +28,7 @@ namespace Sources.Modules.Wallet.Scripts
         
         public async void Init()
         {
-            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
+            await YandexSaves.Instance.IsLoadedAsync();
             
             Money = YandexSaves.Instance.Load().Money;
         }

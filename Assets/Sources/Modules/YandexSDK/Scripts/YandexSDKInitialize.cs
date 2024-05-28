@@ -14,7 +14,7 @@ namespace Sources.Modules.YandexSDK.Scripts
 
         private IEnumerator Start()
         {
-            yield return YandexGamesSdk.Initialize(YandexGamesSdk.GameReady);
+            yield return YandexGamesSdk.Initialize();
         }
 #endif
     }

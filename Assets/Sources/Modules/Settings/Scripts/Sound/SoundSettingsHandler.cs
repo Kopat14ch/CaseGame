@@ -3,10 +3,11 @@ using Sources.Modules.Settings.Interfaces;
 using Sources.Modules.YandexSDK.Scripts;
 using UnityEngine;
 using UnityEngine.UI;
+using Zenject;
 
 namespace Sources.Modules.Settings.Scripts.Sound
 {
-    public class SoundSettingsHandler : ISoundSettingsHandler
+    public class SoundSettingsHandler : ISoundSettingsHandler, IInitializable
     {
         private readonly Slider _slider;
         private readonly Button _toggleButton;
@@ -24,8 +25,6 @@ namespace Sources.Modules.Settings.Scripts.Sound
             _image = image;
             _enableSprite = enableSprite;
             _disableSprite = disableSprite;
-            
-            Init();
         }
 
         public void Enable()
@@ -40,10 +39,10 @@ namespace Sources.Modules.Settings.Scripts.Sound
             _slider.onValueChanged.RemoveListener(OnSliderUpdate);
         }
         
-        private async void Init()
+        public async void Initialize()
         {
-            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
-
+            await YandexSaves.Instance.IsLoadedAsync();
+            
             SoundData soundData = YandexSaves.Instance.Load().SoundData;
 
             IsEnable = soundData.IsEnable;
@@ -99,6 +98,6 @@ namespace Sources.Modules.Settings.Scripts.Sound
                 LastVolume = value;
             }
         }
-
+        
     }
 }

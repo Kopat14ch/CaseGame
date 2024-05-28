@@ -1,3 +1,4 @@
+using System;
 using Sources.Modules.Case.Scripts;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Wallet.Interfaces;
@@ -16,6 +17,8 @@ namespace Sources.Modules.CaseOpener.Scripts
         private CaseOpenerContent _contentCaseOpener;
         private CaseData _lastCaseData;
         private IWalletRoot _walletRoot;
+
+        private event Action ScrollComplete;
         
         [Inject]
         public void Construct(CaseOpenerHandler caseOpenerHandler, IWalletRoot walletRoot)
@@ -33,14 +36,16 @@ namespace Sources.Modules.CaseOpener.Scripts
         private void OnEnable()
         {
             _caseOpenerView.OpenAgainButtonClicked += OpenAgain;
+            _caseOpenerHandler.ScrollComplete += OnScrollComplete;
         }
 
         private void OnDisable()
         {
             _caseOpenerView.OpenAgainButtonClicked -= OpenAgain;
+            _caseOpenerHandler.ScrollComplete -= OnScrollComplete;
         }
 
-        public void Open(CaseData caseData, bool again = false)
+        public void Open(CaseData caseData, bool again = false, Action onScrollComplete = null)
         {
             if (again == false)
                 _lastCaseData = caseData;
@@ -49,6 +54,12 @@ namespace Sources.Modules.CaseOpener.Scripts
             
             _caseOpenerHandler.Open(_lastCaseData.Weapons, _caseOpenerArrow, _caseOpenerView.Content.transform);
             _caseOpenerView.EnableView(caseData.Price);
+            ScrollComplete = onScrollComplete;
+        }
+
+        private void OnScrollComplete(Common.Scripts.Weapon _)
+        {
+            ScrollComplete?.Invoke();
         }
 
         private void OpenAgain()

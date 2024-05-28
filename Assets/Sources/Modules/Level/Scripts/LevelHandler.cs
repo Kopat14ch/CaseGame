@@ -1,10 +1,8 @@
 ﻿using System;
-using Cysharp.Threading.Tasks;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Inventory.Interfaces;
 using Sources.Modules.Level.Configs;
 using Sources.Modules.Level.Interfaces;
-using Sources.Modules.Weapon.Enums;
 using Sources.Modules.Weapon.Scripts;
 using Sources.Modules.YandexSDK.Scripts;
 
@@ -36,7 +34,7 @@ namespace Sources.Modules.Level.Scripts
         
         public async void Init()
         {
-            await UniTask.WaitUntil(() => YandexSaves.Instance.IsLoaded);
+            await YandexSaves.Instance.IsLoadedAsync();
 
             YandexData yandexSaves = YandexSaves.Instance.Load();
             

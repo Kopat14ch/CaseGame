@@ -17,7 +17,7 @@ namespace Sources.Modules.Case.Scripts
 
         protected CaseData Data { get; private set; }
         
-        public void Awake()
+        private void Awake()
         {
             _image.sprite = Data.Sprite;
             _nameText.text = Data.Name;
@@ -34,7 +34,7 @@ namespace Sources.Modules.Case.Scripts
             _openButton.onClick.AddListener(OnOpenButtonClick);
         }
 
-        public virtual void UpdateText()
+        protected virtual void UpdateText()
         {
             OpenText.text = $"{LeanLocalization.GetTranslationText("Open")} \n{Data.Price}$";
         }

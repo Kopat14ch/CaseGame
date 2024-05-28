@@ -14,8 +14,8 @@ namespace Sources.Modules.LoadingScreen.Scripts
         [SerializeField] private TMP_Text _progressText;
         [SerializeField] private string _sceneName;
 
-        private const float MinAddValue = 0.001f;
-        private const float MaxAddValue = 0.2f;
+        private const float MinAddValue = 0.005f;
+        private const float MaxAddValue = 0.3f;
         private const float MaxValue = 100;
 
         private float _currentValue;

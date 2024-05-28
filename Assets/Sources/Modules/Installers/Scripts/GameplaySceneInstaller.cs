@@ -1,4 +1,5 @@
-﻿using Sources.Modules.Configs.WeaponChance;
+﻿using Sources.Modules.Case.Scripts;
+using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.Inventory.Scripts;
 using Sources.Modules.Level.Configs;
 using Sources.Modules.Level.Scripts;
@@ -20,10 +21,12 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private InventoryView _inventoryView;
         [SerializeField] private LevelConfig _levelConfig;
         [SerializeField] private SettingsRoot _settingsRoot;
+        [SerializeField] private PayCases _payCases;
         
         public override void InstallBindings()
         { 
             BindConfigs();
+            BindCases();
             BindWeaponRoot();
             BindInventory();
             BindWallet();
@@ -31,6 +34,11 @@ namespace Sources.Modules.Installers.Scripts
             BindSettings();
         }
 
+        private void BindCases()
+        {
+            Container.Bind<PayCases>().FromInstance(_payCases).AsSingle();
+        }
+        
         private void BindConfigs()
         {
             Container.Bind<WeaponChanceConfig>().FromInstance(_weaponChanceConfig).AsSingle();
