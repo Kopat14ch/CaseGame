@@ -2287,6 +2287,8 @@ MonoBehaviour:
     Text: Standart cases
   - Name: You received
     Text: You received
+  - Name: Log in
+    Text: Log in
 --- !u!1 &197048725
 GameObject:
   m_ObjectHideFlags: 0
@@ -9520,6 +9522,8 @@ MonoBehaviour:
     Text: Standart vakalar
   - Name: You received
     Text: "Ald\u0131n\u0131z"
+  - Name: Log in
+    Text: "Giri\u015F yapmak"
 --- !u!224 &1007675363 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7752449496322546980, guid: 54fce36c2fbcc634b808f64c891c6780, type: 3}
@@ -12166,6 +12170,7 @@ GameObject:
   - component: {fileID: 1428912161}
   - component: {fileID: 1428912163}
   - component: {fileID: 1428912162}
+  - component: {fileID: 1428912164}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -12289,6 +12294,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1428912160}
   m_CullTransparentMesh: 1
+--- !u!114 &1428912164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1428912160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbf51be86e70d7941bd40914206e4ddc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  translationName: Log in
+  FallbackText: "\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F"
 --- !u!1001 &1442582835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13095,6 +13114,8 @@ MonoBehaviour:
     Text: "\u0421\u0442\u0430\u043D\u0434\u0430\u0440\u0442\u043D\u044B\u0435 \u043A\u0435\u0439\u0441\u044B"
   - Name: You received
     Text: "\u0412\u044B \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438"
+  - Name: Log in
+    Text: "\u0410\u0432\u0442\u043E\u0440\u0438\u0437\u043E\u0432\u0430\u0442\u044C\u0441\u044F"
 --- !u!1001 &1483945209
 PrefabInstance:
   m_ObjectHideFlags: 0
