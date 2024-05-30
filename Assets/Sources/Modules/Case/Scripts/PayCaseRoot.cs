@@ -1,5 +1,6 @@
 ﻿using System;
 using Agava.YandexGames;
+using Cysharp.Threading.Tasks;
 using Sources.Modules.Case.Interfaces;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.Wallet.Interfaces;
@@ -18,8 +19,9 @@ namespace Sources.Modules.Case.Scripts
         public bool IsPurchase { get; private set; }
         private string _purchaseToken;
 
+
+        public string Id => _id;
         public event Action PurchaseUpdated;
-        public event Action<string,string,bool> PurchaseDataUpdated;
 
         public override void Construct(ICaseOpener caseOpenerRoot, IWalletRoot walletRoot)
         {
@@ -27,24 +29,6 @@ namespace Sources.Modules.Case.Scripts
             base.Construct(caseOpenerRoot, walletRoot);
         }
 
-        private async void Awake()
-        {
-            await YandexSaves.Instance.IsLoadedAsync();
-
-            PayCaseData[] payCaseDatas = YandexSaves.Instance.Load().PayCaseDatas;
-
-            foreach (var payCaseData in payCaseDatas)
-            {
-                if (payCaseData.Id != _id) 
-                    continue;
-                
-                IsPurchase = payCaseData.IsPurchase;
-                _purchaseToken = payCaseData.PurchaseToken;
-                break;
-            }
-            
-            PurchaseUpdated?.Invoke();
-        }
 
         protected override void OnOpenButtonClicked()
         {
@@ -57,25 +41,65 @@ namespace Sources.Modules.Case.Scripts
             {
                 CaseOpenerRoot.Open(Data, onScrollComplete: () =>
                 {
-                    Billing.ConsumeProduct(_purchaseToken, () =>
+                    Billing.ConsumeProduct(_purchaseToken, async () =>
                     {
-                        IsPurchase = false;
-                        _purchaseToken = null;
+                        PurchasedProduct purchasedProduct = await TryGetPurchasedProductAsync();
+                        
+                        if (purchasedProduct != null)
+                        {
+                            IsPurchase = true;
+                            _purchaseToken = purchasedProduct.purchaseToken;
+                        }
+                        else
+                        {
+                            IsPurchase = false;
+                            _purchaseToken = null;
+                        }
+     
                         PurchaseUpdated?.Invoke();
-                        PurchaseDataUpdated?.Invoke(_id, _purchaseToken, IsPurchase);
                     });
                 });
             }
             else
             {
+                
                 Billing.PurchaseProduct(_id, purchaseProductResponse =>
                 {
                     _purchaseToken = purchaseProductResponse.purchaseData.purchaseToken;
                     IsPurchase = true;
                     PurchaseUpdated?.Invoke();
-                    PurchaseDataUpdated?.Invoke(_id, _purchaseToken, IsPurchase);
                 });
             }
         }
+
+        private async UniTask<PurchasedProduct> TryGetPurchasedProductAsync()
+        {
+            var tcs = new UniTaskCompletionSource<PurchasedProduct>();
+
+            Billing.GetPurchasedProducts(
+                onSuccessCallback: response =>
+                {
+                    PurchasedProduct purchasedProduct = null;
+                    foreach (var product in response.purchasedProducts)
+                    {
+                        if (product.productID != _id)
+                            continue;
+
+                        purchasedProduct = product;
+                        break;
+                    }
+
+                    tcs.TrySetResult(purchasedProduct);
+                });
+            return await tcs.Task;
+        }
+
+        public void SetHavePurchased(string purchaseToken)
+        {
+            IsPurchase = true;
+            _purchaseToken = purchaseToken;
+            PurchaseUpdated?.Invoke();
+        }
+
     }
 }

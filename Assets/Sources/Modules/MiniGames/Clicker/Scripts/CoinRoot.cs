@@ -10,7 +10,8 @@ namespace Sources.Modules.MiniGames.Clicker.Scripts
     {
         private Button _button;
         
-        public event Action Clicked; 
+        public event Action Clicked;
+        public event Action Closed;
 
         private void Awake()
         {

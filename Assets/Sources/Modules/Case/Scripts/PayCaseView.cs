@@ -15,6 +15,7 @@ namespace Sources.Modules.Case.Scripts
             {
                 _payCaseRoot = payCaseRoot;
                 _payCaseRoot.PurchaseUpdated += UpdateText;
+                UpdateText();
             }
         }
         

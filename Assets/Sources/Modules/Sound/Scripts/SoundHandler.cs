@@ -37,7 +37,7 @@ namespace Sources.Modules.Sound.Scripts
                 currentIndexAudioClip++;
                 currentIndexAudioClip %= _audioClips.Count;
                 
-                await UniTask.WaitUntil(() => _audioSource.isPlaying == false, cancellationToken: token);
+                await UniTask.WaitUntil(() => _audioSource.time >= _audioSource.clip.length, cancellationToken: token);
             }
         }
     }

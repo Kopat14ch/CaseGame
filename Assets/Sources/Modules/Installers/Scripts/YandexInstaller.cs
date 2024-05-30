@@ -1,4 +1,5 @@
-﻿using Sources.Modules.YandexSDK.Scripts;
+﻿using Sources.Modules.Background.Scripts;
+using Sources.Modules.YandexSDK.Scripts;
 using Sources.Modules.YandexSDK.Scripts.Advertisement;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard;
 using Sources.Modules.YandexSDK.Scripts.Leaderboard.Interfaces;
@@ -13,6 +14,7 @@ namespace Sources.Modules.Installers.Scripts
         [SerializeField] private YandexSDKRoot _yandexSDKRoot;
         [SerializeField] private UserRoot _userPrefab;
         [SerializeField] private UsersContainer _usersContainer;
+        [SerializeField] private AdvertisementView _advertisementView;
         
         public override void InstallBindings()
         {
@@ -39,6 +41,7 @@ namespace Sources.Modules.Installers.Scripts
         private void BindAd()
         {
             Container.BindInterfacesTo<AdvertisementHandler>().AsSingle().NonLazy();
+            Container.Bind<AdvertisementView>().FromInstance(_advertisementView).AsSingle();
         }
     }
 }

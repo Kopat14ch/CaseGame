@@ -1,17 +1,20 @@
 ﻿using System;
+
 using Agava.YandexGames;
+using Cysharp.Threading.Tasks;
 using Sources.Modules.CaseOpener.Interfaces;
 using Sources.Modules.MiniGames.Clicker.Interfaces;
 using Sources.Modules.Settings.Interfaces;
-using Sources.Modules.Settings.Scripts.Sound;
+using Sources.Modules.YandexSDK.Scripts.Advertisement.Interfaces;
 using UnityEngine;
+using Zenject;
 
 namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 {
-    public class AdvertisementHandler : IDisposable, IAdvertisementHandler
+    public class AdvertisementHandler : IDisposable, IAdvertisementHandler, IAsyncTimerAd
     {
-        private const int ClicksForAd = 20;
-        private const int ClicksForAdVideo = 50;
+        private const int ClicksForAd = 100;
+        private const int ClicksForAdVideo = 320;
         private const int CaseOpenForAd = 2;
         
         private readonly ICaseOpenerView _caseOpenerView;
@@ -23,6 +26,10 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
         private int _currentClicks;
         private int _currentOpen;
 
+        public event Action<int> AsyncTimerAdUpdated;
+        public event Action AsyncTimerAdStart;
+        public event Action AsyncTimerAdStop;
+
         public AdvertisementHandler(ICaseOpenerView caseOpenerView, ICaseOpenerHandler caseOpenerHandler, ICoinRoot coinRoot, ISoundSettingsHandler soundSettingsHandler)
         {
             _caseOpenerView = caseOpenerView;
@@ -33,8 +40,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 
             _caseOpenerView.SellButtonClicked += OnCaseOpenerAction;
             _caseOpenerView.OpenAgainButtonClicked += OnCaseOpenerAction;
-
-            _caseOpenerHandler.Opened += OnCaseOpenerAction;
+            _caseOpenerView.TakeButtonClicked += OnCaseOpenerAction;
 
             _coinRoot.Clicked += OnClickerClicked;
         }
@@ -47,20 +53,27 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
             _currentOpen++;
         }
 
-        private void OnClickerClicked()
+        private async void OnClickerClicked()
         {
-            Debug.Log(_soundSettingsHandler.LastVolume);
-            
             if (_currentClicks >= ClicksForAdVideo)
             {
+                await AsyncTimerAd();
+                
                 ShowVideoAd(() =>
                 {
                     _currentClicks = 0;
                     _canShowClickerAd = true;
+                },onErrorCallback: _ =>
+                {
+                    _currentClicks = 0;
+                    _canShowClickerAd = true;
+                    ShowAd();
                 });
             }
             else if (_currentClicks >= ClicksForAd && _canShowClickerAd)
             {
+                await AsyncTimerAd();
+                
                 ShowAd(onOpenCallback: () => _canShowClickerAd = false);
             }
 
@@ -107,10 +120,26 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
         {
             _caseOpenerView.SellButtonClicked -= OnCaseOpenerAction;
             _caseOpenerView.OpenAgainButtonClicked -= OnCaseOpenerAction;
-
-            _caseOpenerHandler.Opened -= OnCaseOpenerAction;
+            _caseOpenerView.TakeButtonClicked -= OnCaseOpenerAction;
 
             _coinRoot.Clicked -= OnClickerClicked;
+        }
+
+        private async UniTask AsyncTimerAd()
+        {
+            int seconds = 3;
+
+            AsyncTimerAdStart?.Invoke();
+            Time.timeScale = 0f;
+            
+            while (seconds >= 0)
+            {
+                AsyncTimerAdUpdated?.Invoke(seconds);
+                seconds--;
+                await UniTask.WaitForSeconds(1, true);
+            }
+
+            AsyncTimerAdStop?.Invoke();
         }
     }
 }

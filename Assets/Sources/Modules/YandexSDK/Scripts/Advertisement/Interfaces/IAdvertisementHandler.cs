@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sources.Modules.YandexSDK.Scripts.Advertisement
+namespace Sources.Modules.YandexSDK.Scripts.Advertisement.Interfaces
 {
     public interface IAdvertisementHandler
     {

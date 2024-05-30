@@ -1,4 +1,5 @@
-﻿using Sources.Modules.Case.Scripts;
+﻿using Sources.Modules.Background.Scripts;
+using Sources.Modules.Case.Scripts;
 using Sources.Modules.Configs.WeaponChance;
 using Sources.Modules.Inventory.Scripts;
 using Sources.Modules.Level.Configs;
@@ -84,6 +85,7 @@ namespace Sources.Modules.Installers.Scripts
             Container.Bind<SoundSettingsHandler>().FromInstance(soundSettingsHandler).AsSingle().NonLazy();
             Container.BindInterfacesTo<SoundSettingsHandler>().FromResolve();
 
+            Container.BindInterfacesTo<BackgroundHandler>().AsSingle().NonLazy();
         }
     }
 }

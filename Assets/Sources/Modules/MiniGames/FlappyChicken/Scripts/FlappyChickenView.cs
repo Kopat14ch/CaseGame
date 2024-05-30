@@ -17,6 +17,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
         
         private int _currentCoins;
         private FlappyChickenRoot _chickenRoot;
+        private bool _isEnable;
 
         public event Action EnterButtonClick;
         public event Action Disable;
@@ -56,6 +57,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             base.OnEnterButtonClick();
             EnterButtonClick?.Invoke();
             CanvasGroupUtil.Enable(_obstaclesCanvasGroup);
+            _isEnable = true;
         }
 
         protected override void OnExitButtonClick()
@@ -65,17 +67,23 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             _currentCoins = 0;
             _earnedText.text = $"{LeanLocalization.GetTranslationText("Earned")}: {_currentCoins}";
             CanvasGroupUtil.Disable(_endCanvasGroup);
+            _isEnable = false;
         }
 
         private void OnPlayerEnetered()
         {
-            CanvasGroupUtil.Enable(_endCanvasGroup);
+            if (_isEnable)
+                CanvasGroupUtil.Enable(_endCanvasGroup);
+            
         }
 
         private void OnCoinAdded(int coins)
         {
-            _currentCoins += coins;
-            _earnedText.text = $"{LeanLocalization.GetTranslationText("Earned")}: {_currentCoins}";
+            if (_isEnable)
+            {
+                _currentCoins += coins;
+                _earnedText.text = $"{LeanLocalization.GetTranslationText("Earned")}: {_currentCoins}";
+            }
         }
     }
 }

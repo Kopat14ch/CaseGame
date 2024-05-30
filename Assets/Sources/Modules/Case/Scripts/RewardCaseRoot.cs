@@ -1,4 +1,5 @@
 ﻿using Sources.Modules.YandexSDK.Scripts.Advertisement;
+using Sources.Modules.YandexSDK.Scripts.Advertisement.Interfaces;
 using Zenject;
 
 namespace Sources.Modules.Case.Scripts

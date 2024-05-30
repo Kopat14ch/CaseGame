@@ -7,6 +7,5 @@ namespace Sources.Modules.Case.Interfaces
         public bool IsPurchase { get; }
 
         public event Action PurchaseUpdated;
-        public event Action<string,string,bool> PurchaseDataUpdated;
     }
 }

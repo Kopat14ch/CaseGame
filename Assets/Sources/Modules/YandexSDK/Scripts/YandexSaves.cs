@@ -21,7 +21,6 @@ namespace Sources.Modules.YandexSDK.Scripts
         private readonly IInventoryHandler _inventoryHandler;
         private readonly IWalletHandler _walletHandler;
         private readonly ISettingsRoot _settingsRoot;
-        private readonly PayCases _payCases;
         
         private YandexData _yandexData;
 
@@ -29,8 +28,7 @@ namespace Sources.Modules.YandexSDK.Scripts
         private bool _isLoaded;
 
         public YandexSaves(ILevelHandlerEvent levelHandlerEvent, IInventoryHandler inventoryHandler,
-            IWalletHandler walletHandler, ISettingsRoot settingsRoot,
-            PayCases payCases)
+            IWalletHandler walletHandler, ISettingsRoot settingsRoot)
         {
             Instance = this;
             
@@ -38,7 +36,7 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler = inventoryHandler;
             _walletHandler = walletHandler;
             _settingsRoot = settingsRoot;
-            _payCases = payCases;
+
 
 #if UNITY_EDITOR == false
             PlayerAccount.GetCloudSaveData(json =>
@@ -58,9 +56,6 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler.WeaponAdded += OnWeaponAdded;
             _walletHandler.MoneyChanged += OnMoneyChanged;
             _settingsRoot.Disabled += OnSettingsDisabled;
-
-            foreach (var payCase in _payCases.PayCaseRoots)
-                payCase.PurchaseDataUpdated += OnPurchaseDataUpdated;
         }
 
         public YandexData Load() => _yandexData;
@@ -78,9 +73,6 @@ namespace Sources.Modules.YandexSDK.Scripts
             _inventoryHandler.WeaponAdded -= OnWeaponAdded;
             _walletHandler.MoneyChanged -= OnMoneyChanged;
             _settingsRoot.Disabled -= OnSettingsDisabled;
-            
-            foreach (var payCase in _payCases.PayCaseRoots)
-                payCase.PurchaseDataUpdated -= OnPurchaseDataUpdated;
         }
         
         private void OnLevelLimitUpdated(int level, uint maxExperience)
@@ -165,35 +157,6 @@ namespace Sources.Modules.YandexSDK.Scripts
         {
             _yandexData.SoundData.LastVolume = soundSettingsHandler.LastVolume;
             _yandexData.SoundData.IsEnable = soundSettingsHandler.IsEnable;
-            
-            Save();
-        }
-        
-        private void OnPurchaseDataUpdated(string id, string token, bool isPurchase)
-        {
-            PayCaseData payCaseDataTemp = new PayCaseData()
-            {
-                Id = id,
-                PurchaseToken = token,
-                IsPurchase = isPurchase
-            };
-
-            for (int i = 0; i < _yandexData.PayCaseDatas.Length; i++)
-            {
-                PayCaseData payCaseData = _yandexData.PayCaseDatas[i];
-                
-                if (payCaseData.Id == id)
-                {
-                    _yandexData.PayCaseDatas[i] = payCaseDataTemp;
-                    Save();
-                    return;
-                }
-            }
-
-            List<PayCaseData> payCaseDatas = new List<PayCaseData>(_yandexData.PayCaseDatas);
-            payCaseDatas.Add(payCaseDataTemp);
-
-            _yandexData.PayCaseDatas = payCaseDatas.ToArray();
             
             Save();
         }
