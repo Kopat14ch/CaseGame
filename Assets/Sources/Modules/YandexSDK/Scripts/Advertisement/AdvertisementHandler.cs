@@ -13,16 +13,13 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 {
     public class AdvertisementHandler : IDisposable, IAdvertisementHandler, IAsyncTimerAd
     {
-        private const int ClicksForAd = 100;
-        private const int ClicksForAdVideo = 320;
+        private const int ClicksForAd = 150;
         private const int CaseOpenForAd = 2;
         
         private readonly ICaseOpenerView _caseOpenerView;
-        private readonly ICaseOpenerHandler _caseOpenerHandler;
         private readonly ICoinRoot _coinRoot;
         private readonly ISoundSettingsHandler _soundSettingsHandler;
-
-        private bool _canShowClickerAd;
+        
         private int _currentClicks;
         private int _currentOpen;
 
@@ -30,13 +27,11 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
         public event Action AsyncTimerAdStart;
         public event Action AsyncTimerAdStop;
 
-        public AdvertisementHandler(ICaseOpenerView caseOpenerView, ICaseOpenerHandler caseOpenerHandler, ICoinRoot coinRoot, ISoundSettingsHandler soundSettingsHandler)
+        public AdvertisementHandler(ICaseOpenerView caseOpenerView, ICoinRoot coinRoot, ISoundSettingsHandler soundSettingsHandler)
         {
             _caseOpenerView = caseOpenerView;
-            _caseOpenerHandler = caseOpenerHandler;
             _coinRoot = coinRoot;
             _soundSettingsHandler = soundSettingsHandler;
-            _canShowClickerAd = true;
 
             _caseOpenerView.SellButtonClicked += OnCaseOpenerAction;
             _caseOpenerView.OpenAgainButtonClicked += OnCaseOpenerAction;
@@ -48,33 +43,18 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
         private void OnCaseOpenerAction()
         {
             if (_currentOpen >= CaseOpenForAd)
-                ShowVideoAd(onOpenCallback: () => _currentOpen = 0, onErrorCallback: _ => ShowAd());
+                ShowAd(onOpenCallback: () => _currentOpen = 0);
 
             _currentOpen++;
         }
 
         private async void OnClickerClicked()
         {
-            if (_currentClicks >= ClicksForAdVideo)
+            if (_currentClicks >= ClicksForAd) 
             {
                 await AsyncTimerAd();
                 
-                ShowVideoAd(() =>
-                {
-                    _currentClicks = 0;
-                    _canShowClickerAd = true;
-                },onErrorCallback: _ =>
-                {
-                    _currentClicks = 0;
-                    _canShowClickerAd = true;
-                    ShowAd();
-                });
-            }
-            else if (_currentClicks >= ClicksForAd && _canShowClickerAd)
-            {
-                await AsyncTimerAd();
-                
-                ShowAd(onOpenCallback: () => _canShowClickerAd = false);
+                ShowAd(onOpenCallback: () => _currentClicks = 0);
             }
 
             _currentClicks++;
