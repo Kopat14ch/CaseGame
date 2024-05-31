@@ -91,6 +91,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
                 onOpenCallback?.Invoke();
                 Time.timeScale = 0f;
                 AudioListener.volume = 0;
+                AsyncTimerAdStop?.Invoke();
             }, onCloseCallback: () =>
             {
                 Time.timeScale = 1f;
@@ -109,6 +110,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
                 onOpenCallback?.Invoke();
                 Time.timeScale = 0f;
                 AudioListener.volume = 0;
+                AsyncTimerAdStop?.Invoke();
             }, onCloseCallback: _ =>
             {
                 Time.timeScale = 1f;
@@ -138,8 +140,6 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
                 seconds--;
                 await UniTask.WaitForSeconds(1, true);
             }
-
-            AsyncTimerAdStop?.Invoke();
         }
     }
 }
