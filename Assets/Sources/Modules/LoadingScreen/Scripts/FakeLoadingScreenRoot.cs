@@ -1,5 +1,7 @@
 using System;
 using System.Collections;
+using Agava.YandexGames;
+using Cysharp.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -24,12 +26,16 @@ namespace Sources.Modules.LoadingScreen.Scripts
         {
             _currentValue = 0;
 
-            StartCoroutine(Loading());
+            Loading().Forget();
         }
 
 
-        private IEnumerator Loading()
+        private async UniTaskVoid Loading()
         {
+#if UNITY_EDITOR == false
+            await UniTask.WaitUntil(() => YandexGamesSdk.IsInitialized);
+#endif
+            
             while (_currentValue < MaxValue)
             {
                 _currentValue += Random.Range(MinAddValue, MaxAddValue);
@@ -37,10 +43,10 @@ namespace Sources.Modules.LoadingScreen.Scripts
                 _currentValue = Mathf.Clamp(_currentValue, 0, MaxValue);
 
                 _progressText.text = $"{Math.Round(_currentValue ,2)}%";
-                
-                yield return null;
-            }
 
+                await UniTask.Yield();
+            }
+            
             SceneManager.LoadScene(_sceneName);
         }
     }

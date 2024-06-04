@@ -9,12 +9,12 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
     public class FlappyChickenRoot : MonoBehaviour
     {
         [SerializeField] private FlappyChickenView _flappyChickenView;
+        [SerializeField] private Transform _spawnPoint;
         
         private const int AddEnterValue = 5;
         
         private Rigidbody2D _rigidbody2D;
         private IWalletRoot _walletRoot;
-        private Vector3 _startPosition;
 
         public event Action<int> CoinAdded;
         public event Action Disabled;
@@ -30,11 +30,6 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
             _walletRoot = walletRoot;
             _rigidbody2D = GetComponent<Rigidbody2D>();
             _flappyChickenHandler = new FlappyChickenHandler(this);
-        }
-
-        private void Start()
-        {
-            _startPosition = transform.localPosition;
         }
 
         private void OnEnable()
@@ -72,7 +67,7 @@ namespace Sources.Modules.MiniGames.FlappyChicken.Scripts
 
         private void Enable()
         {
-            transform.localPosition = _startPosition;
+            transform.localPosition = _spawnPoint.localPosition;
             _rigidbody2D.isKinematic = false;
             _rigidbody2D.simulated = true;
         }

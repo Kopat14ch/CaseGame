@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using Agava.YandexGames;
+﻿using Agava.YandexGames;
+using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Sources.Modules.YandexSDK.Scripts
@@ -12,9 +12,10 @@ namespace Sources.Modules.YandexSDK.Scripts
             YandexGamesSdk.CallbackLogging = true;
         }
 
-        private IEnumerator Start()
+        private async void Start()
         {
-            yield return YandexGamesSdk.Initialize();
+            await YandexGamesSdk.Initialize();
+
         }
 #endif
     }
