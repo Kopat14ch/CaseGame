@@ -15,7 +15,7 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
     {
         private const int ClicksForAd = 50;
         private const int CaseOpenForAd = 2;
-        private const int SecondsForAd = 60;
+        private const int SecondsForAd = 65;
         
         private readonly ICaseOpenerView _caseOpenerView;
         private readonly ICoinRoot _coinRoot;
@@ -89,10 +89,13 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 
         public async void ShowAd(Action onOpenCallback = null)
         {
-            await AsyncTimerAd();
+            if (_canShowAd == false)
+                return;
             
             AsyncWaitingAd().Forget();
             _canShowAd = false;
+            
+            await AsyncTimerAd();
             
 #if UNITY_EDITOR
             return;
@@ -137,11 +140,6 @@ namespace Sources.Modules.YandexSDK.Scripts.Advertisement
 
         private async UniTaskVoid AsyncWaitingAd()
         {
-            if (_canShowAd == false)
-            {
-                _currentAdTime = 0;
-                return;
-            }
             
             while (true)
             {
